@@ -365,3 +365,38 @@
             }
 
         })();
+
+        // 1. Auto Fading Slider for Intro & Dining
+const sliders = document.querySelectorAll('.slider-container[data-autoplay]');
+sliders.forEach(slider => {
+    const slides = slider.querySelectorAll('.slide');
+    let current = 0;
+    const interval = parseInt(slider.dataset.autoplay);
+
+    setInterval(() => {
+        slides[current].classList.remove('active');
+        current = (current + 1) % slides.length;
+        slides[current].classList.add('active');
+    }, interval);
+});
+
+// 2. Auto Scrolling Slider for Experiences (Instagram Reels)
+const expScroll = document.querySelector('.exp-scroll');
+if (expScroll) {
+    let scrollPos = 0;
+    const scrollSpeed = 1; // Adjust for speed (pixels per frame)
+    
+    function autoScrollReels() {
+        // Check if not hovered
+        if (!expScroll.matches(':hover')) {
+            scrollPos += scrollSpeed;
+            const maxScroll = expScroll.scrollWidth - expScroll.clientWidth;
+            if (scrollPos >= maxScroll) {
+                scrollPos = 0;
+            }
+            expScroll.scrollTo({ left: scrollPos, behavior: 'smooth' });
+        }
+        requestAnimationFrame(autoScrollReels);
+    }
+    autoScrollReels();
+}
