@@ -1,4 +1,4 @@
-        :root {
+:root {
             --primary: #2F6530;
             --primary-dark: #1F4520;
             --secondary: #3F7A40;
@@ -434,10 +434,10 @@
             transition: color .4s;
         }
         .logo-img {
-            height: 40px;
-            width: auto;
-            display: block;
-        }
+    height: 65px; /* Increased from 40px */
+    width: auto;
+    display: block;
+}
         .logo-text {
             display: flex;
             flex-direction: column;
@@ -886,7 +886,42 @@
            INTRO SECTION
            ============================================================ */
         .intro {
-            padding: 150px 0 110px;
+            padding: 80px 0 70px;
+            position: relative;
+            overflow: hidden;
+            background: var(--light-stone);
+        }
+        /* Photo sits behind the whole section as a soft ambient wash —
+           the image's own cream/haze tones are close to --light-stone,
+           so a strong same-tone overlay lets it read as a subtle
+           textured backdrop rather than competing with the copy. */
+        .intro-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        .intro-bg .ph-img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 60%;
+            z-index: 0;
+        }
+        .intro-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg,
+                rgba(245, 245, 242, .55) 0%,
+                rgba(245, 245, 242, .32) 45%,
+                rgba(245, 245, 242, .62) 100%);
+            z-index: 1;
+        }
+        .intro > .intro-grid {
+            position: relative;
+            z-index: 2;
         }
         .intro-grid {
             display: grid;
@@ -909,6 +944,14 @@
             border-radius: var(--radius-lg);
             z-index: 6;
             pointer-events: none;
+        }
+        .intro-body {
+            position: relative;
+            z-index: 3;
+            background: rgba(245, 245, 242, .58);
+            border-radius: var(--radius-lg);
+            padding: 34px 38px;
+            backdrop-filter: blur(2px);
         }
         .intro-body p {
             color: var(--muted);
@@ -1781,13 +1824,23 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: center 68%;
             z-index: 0;
         }
+        /* Overlay is intentionally light at the very top so the photo's
+           own warm cream sky glows through like a dusk horizon, then
+           deepens into the site's forest-dark so footer text stays
+           fully legible — the image's palette already matches ours,
+           so we're blending it in rather than covering it up. */
         .footer-bg::after {
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(180deg, rgba(31, 69, 32, .82) 0%, rgba(20, 50, 21, .94) 55%, var(--primary-dark) 100%);
+            background: linear-gradient(180deg,
+                rgba(28, 65, 40, .38) 0%,
+                rgba(22, 55, 33, .72) 32%,
+                rgba(16, 40, 25, .92) 62%,
+                var(--primary-dark) 100%);
             z-index: 1;
         }
         .site-footer>.container,
@@ -1810,10 +1863,10 @@
             color: var(--white);
         }
         .footer-brand .logo-img {
-            height: 35px;
-            width: auto;
-            filter: brightness(0) invert(1);
-        }
+    height: 55px; /* Increased from 35px */
+    width: auto;
+    filter: brightness(0) invert(1);
+}
         .footer-brand .logo .logo-text span {
             color: rgba(255, 255, 255, .7);
         }
@@ -2177,3 +2230,259 @@
                 font-size: 26px;
             }
         }
+
+/* ============================================================
+   TESTIMONIALS BACKGROUND & NEW CTA BUTTONS
+   ============================================================ */
+.testi-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+.testi-bg .ph-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 60%;
+    z-index: 0;
+}
+.testi-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    /* Gradient overlay to keep white text crisp while letting the artwork breathe */
+    background: linear-gradient(180deg,
+        rgba(184, 155, 114, 0.15) 0%,   /* Light earthy mist at top */
+        rgba(184, 155, 114, 0.40) 45%,  /* Mid-tone earth */
+        rgba(31, 69, 32, 0.85) 100%     /* Deep forest dark at bottom */
+    );
+    z-index: 1;
+}
+
+/* Testimonials CTA Buttons */
+.testi-ctas {
+    position: relative;
+    z-index: 6; /* Sit above the background image and overlay */
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 48px;
+}
+
+/* Customize buttons to sit cleanly on the earthy testimonials background */
+.testi-ctas .btn-white {
+    background: var(--white);
+    color: var(--primary);
+}
+.testi-ctas .btn-white:hover {
+    background: var(--light-stone);
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px -12px rgba(255, 255, 255, 0.25);
+}
+
+.testi-ctas .btn-google {
+    background: var(--white);
+    color: var(--charcoal);
+    border: 1px solid var(--border);
+}
+.testi-ctas .btn-google:hover {
+    background: var(--light-stone);
+    transform: translateY(-2px);
+}
+.testi-ctas .btn-google svg {
+    display: inline-block;
+}
+
+/* Header Logo Swap */
+.logo-main { display: block; }
+.logo-sticky { display: none; }
+.site-header.scrolled .logo-main { display: none; }
+.site-header.scrolled .logo-sticky { display: block; }
+
+/* Auto Image Slider Base */
+.slider-container {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: 0;
+}
+.slider-track {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1.2s ease-in-out;
+    z-index: 0;
+}
+.slide.active {
+    opacity: 1;
+    z-index: 1;
+}
+.slide .ph-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 60%;
+}
+/* Clean Image Slider for intro-art */
+.intro-art {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-lg); /* Keep the original rounded corners */
+    box-shadow: 0 40px 80px -30px rgba(47, 101, 48, 0.3); /* Keep the original drop shadow */
+}
+.intro-art .slider-container {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+.intro-art .slide .ph-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 60%; /* Keeps the focus on the beautiful scenery */
+}
+/* Forces the Instagram button to sit on its own line, centered below the cards */
+.exp-follow-wrapper {
+    width: 100%;
+    display: block;
+    text-align: center;
+    margin-top: 42px;
+    clear: both; /* Guarantees a break to a new line */
+}
+/* Lock the dining card so nothing spills out */
+.dining-art {
+    position: relative;      /* Vital for absolute positioning inside */
+    width: 100%;             /* Respect grid width */
+    height: 100%;            /* Respect grid height */
+    aspect-ratio: 4 / 5;     /* Keep the elegant portrait ratio */
+    border-radius: var(--radius-lg);
+    overflow: hidden;        /* PREVENTS IMAGE FROM SPLITTING THE PAGE */
+    box-shadow: 0 40px 80px -30px rgba(47, 101, 48, .25);
+}
+
+/* Lock the slider strictly inside the card */
+.dining-art .slider-container {
+    position: absolute;
+    inset: 0;      /* Top: 0, Right: 0, Bottom: 0, Left: 0 */
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.dining-art .slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1.2s ease-in-out;
+    z-index: 0;
+}
+
+.dining-art .slide.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+/* Force images to completely cover the area without stretching/spilling */
+.dining-art .slide .ph-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 60%;
+    display: block;
+}
+
+/* Ensure the dining grid aligns perfectly */
+.dining-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+@media (max-width: 980px) {
+    .dining-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* ============================================================
+   DINING SECTION - RIGHT ALIGNED SLIDER
+   ============================================================ */
+.dining-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+/* Secure the slider card against overflow */
+.dining-art {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 4 / 5;
+    border-radius: var(--radius-lg);
+    overflow: hidden;    /* Stops images from breaking the page */
+    box-shadow: 0 40px 80px -30px rgba(47, 101, 48, .25);
+}
+
+.dining-art .slider-container {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+.dining-art .slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1.2s ease-in-out;
+    z-index: 0;
+}
+.dining-art .slide.active {
+    opacity: 1;
+    z-index: 1;
+}
+.dining-art .slide .ph-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 60%;
+    display: block;
+}
+
+/* Responsive alignment (Mobile first: Image moves to the top) */
+@media (max-width: 980px) {
+    .dining-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .dining-art {
+        order: -1;       /* Moves the image slider to the top on mobile */
+        aspect-ratio: 16/9; /* Shifts to widescreen landscape ratio for mobile */
+    }
+}
