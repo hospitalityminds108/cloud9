@@ -54,9 +54,12 @@
     <header class="site-header" id="siteHeader">
         <div class="container header-inner">
             <a href="index.html" class="logo">
-                <img src="assets/logos.png" alt="Cloud 9 Hills Resort Logo" class="logo-img" />
-                <span class="logo-text">
-            </a>
+    <!-- White logo (Main) -->
+    <img src="assets/logos.png" alt="Cloud 9 Hills Resort Logo" class="logo-img logo-main" />
+    <!-- Colored logo (Sticky) -->
+    <img src="assets/logoo.png" alt="Cloud 9 Hills Resort Logo" class="logo-img logo-sticky" />
+  
+</a>
 
             <nav class="main-nav" aria-label="Primary">
                 <ul>
@@ -105,7 +108,7 @@
                 <a href="https://wa.me/919819739444" class="icon-link" target="_blank" rel="noopener" aria-label="Message on WhatsApp" data-track="whatsapp_click" data-track-loc="header">
                     <svg viewBox="0 0 24 24" fill="none"><path d="M4 20l1.3-4A8 8 0 1 1 9 19l-5 1Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
                 </a>
-                <a href="#booking" class="btn btn-primary" data-track="book_now_click" data-track-loc="header">Book Your Stay</a>
+                <a href="https://www.swiftbook.io/inst/#home?propertyId=2647" class="btn btn-primary" data-track="book_now_click" data-track-loc="header">Book Your Stay</a>
             </div>
 
             <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
@@ -137,7 +140,7 @@
             <li><a href="about.html" class="mobile-nav-link">About</a></li>
             <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
         </ul>
-        <a href="#booking" class="btn btn-accent" data-track="book_now_click" data-track-loc="mobile_nav">Book Now</a>
+        <a href="https://www.swiftbook.io/inst/#home?propertyId=2647" class="btn btn-accent" data-track="book_now_click" data-track-loc="mobile_nav">Book Now</a>
     </nav>
 
     <main>
@@ -171,16 +174,21 @@
 
         </section>
 
-
-
         <!-- ===== INTRO ===== -->
         <section class="intro" id="intro">
+            <div class="intro-bg" aria-hidden="true">
+                <img class="ph-img" src="assets/background.png" alt="" loading="lazy" width="1983" height="793" onerror="this.remove()" />
+            </div>
             <div class="container intro-grid">
-                <div class="intro-art reveal hill-art tone-forest">
-                    <svg viewBox="0 0 800 1000" preserveAspectRatio="xMidYMax slice" class="mtn mtn-1"><path d="M0 760 L150 640 L300 730 L470 580 L640 720 L800 610 L800 1000 L0 1000 Z"/></svg>
-                    <svg viewBox="0 0 800 1000" preserveAspectRatio="xMidYMax slice" class="mtn mtn-2"><path d="M0 840 L200 720 L380 810 L560 680 L800 800 L800 1000 L0 1000 Z"/></svg>
-                    <div class="cloud-layer"><div class="cloud cloud--a"></div><div class="cloud cloud--b"></div></div>
-                </div>
+               <div class="intro-art reveal hill-art tone-forest">
+    <div class="slider-container" data-autoplay="4000">
+        <div class="slider-track">
+            <div class="slide active"><img class="ph-img" src="couple.jpeg" alt="Slide 1" loading="lazy" onerror="this.remove()" /></div>
+            <div class="slide"><img class="ph-img" src="assets/image/cottage.jpg" alt="Slide 2" loading="lazy" onerror="this.remove()" /></div>
+            <div class="slide"><img class="ph-img" src="assets/image/Conference.jpg" alt="Slide 3" loading="lazy" onerror="this.remove()" /></div>
+        </div>
+    </div>
+</div>
                 <div class="intro-body reveal reveal-delay-1">
                     <p class="eyebrow">The Cloud 9 Experience</p>
                     <h2 class="section-title">A Different Kind<br />of Escape</h2>
@@ -198,53 +206,89 @@
 
         <!-- ===== EXPERIENCES ===== -->
         <section class="experiences on-dark" id="experiences">
-            <div class="container exp-header reveal">
-                <div>
-                    <p class="eyebrow light">Signature Moments</p>
-                    <h2 class="section-title">Experiences Worth Remembering</h2>
-                </div>
-                <p class="section-lead">From misty mountain mornings to bonfire evenings, every hour at Cloud 9 is shaped by the hills around it.</p>
+    <div class="container">
+        <!-- Header -->
+        <div class="exp-header reveal">
+            <div>
+                <p class="eyebrow light">Signature Moments</p>
+                <h2 class="section-title">Experiences Worth Remembering</h2>
             </div>
+            <p class="section-lead">From misty mountain mornings to bonfire evenings, every hour at Cloud 9 is shaped by the hills around it.</p>
+        </div>
 
-            <div class="exp-scroll reveal">
-                <article class="exp-card">
-                    <div class="hill-art tone-dawn"><img class="ph-img" src="assets/images/placeholder-01.jpg" alt="Cloud 9 Hills Resort — scenic view" loading="lazy" width="800" height="600" onerror="this.remove()"><svg viewBox="0 0 500 700" preserveAspectRatio="xMidYMax slice"><path d="M0 500 L120 420 L260 480 L400 380 L500 460 L500 700 L0 700 Z" fill="#3D5E3E"/></svg></div>
-                    <div class="exp-gold-line"></div>
-                    <div class="exp-card-arrow"><svg viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H5M12 4v7" stroke="currentColor" stroke-width="1.6"/></svg></div>
-                    <div class="exp-card-content"><span class="cat">Nature</span><h3>Mountain View</h3><p>Uninterrupted layers of the Sahyadri range from every terrace.</p></div>
-                </article>
-                <article class="exp-card">
-                    <div class="hill-art tone-forest"><img class="ph-img" src="assets/images/placeholder-02.jpg" alt="Cloud 9 Hills Resort — scenic view" loading="lazy" width="800" height="600" onerror="this.remove()"><svg viewBox="0 0 500 700" preserveAspectRatio="xMidYMax slice"><path d="M0 520 L140 440 L300 500 L460 400 L500 430 L500 700 L0 700 Z" fill="#2F6530"/></svg></div>
-                    <div class="exp-gold-line"></div>
-                    <div class="exp-card-arrow"><svg viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H5M12 4v7" stroke="currentColor" stroke-width="1.6"/></svg></div>
-                    <div class="exp-card-content"><span class="cat">Leisure</span><h3>Infinity Pool</h3><p>A cliff-edge pool that appears to spill into the valley below.</p></div>
-                </article>
-                <article class="exp-card">
-                    <div class="hill-art tone-monsoon"><img class="ph-img" src="assets/images/placeholder-03.jpg" alt="Cloud 9 Hills Resort — scenic view" loading="lazy" width="800" height="600" onerror="this.remove()"><svg viewBox="0 0 500 700" preserveAspectRatio="xMidYMax slice"><path d="M0 540 L160 460 L320 520 L500 440 L500 700 L0 700 Z" fill="#3F7A40"/></svg></div>
-                    <div class="exp-gold-line"></div>
-                    <div class="exp-card-arrow"><svg viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H5M12 4v7" stroke="currentColor" stroke-width="1.6"/></svg></div>
-                    <div class="exp-card-content"><span class="cat">Nature</span><h3>Cloud &amp; Mist Mornings</h3><p>Wake to a valley completely wrapped in drifting monsoon cloud.</p></div>
-                </article>
-                <article class="exp-card">
-                    <div class="hill-art tone-dusk"><img class="ph-img" src="assets/images/placeholder-04.jpg" alt="Cloud 9 Hills Resort — scenic view" loading="lazy" width="800" height="600" onerror="this.remove()"><svg viewBox="0 0 500 700" preserveAspectRatio="xMidYMax slice"><path d="M0 540 L150 460 L310 510 L470 420 L500 450 L500 700 L0 700 Z" fill="#B89B72"/></svg></div>
-                    <div class="exp-gold-line"></div>
-                    <div class="exp-card-arrow"><svg viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H5M12 4v7" stroke="currentColor" stroke-width="1.6"/></svg></div>
-                    <div class="exp-card-content"><span class="cat">Romance</span><h3>Romantic Escapes</h3><p>Private hilltop dinners and candlelight beneath open sky.</p></div>
-                </article>
-                <article class="exp-card">
-                    <div class="hill-art tone-forest"><img class="ph-img" src="assets/images/placeholder-05.jpg" alt="Cloud 9 Hills Resort — scenic view" loading="lazy" width="800" height="600" onerror="this.remove()"><svg viewBox="0 0 500 700" preserveAspectRatio="xMidYMax slice"><path d="M0 560 L130 480 L290 530 L450 450 L500 480 L500 700 L0 700 Z" fill="#2F6530"/></svg></div>
-                    <div class="exp-gold-line"></div>
-                    <div class="exp-card-arrow"><svg viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H5M12 4v7" stroke="currentColor" stroke-width="1.6"/></svg></div>
-                    <div class="exp-card-content"><span class="cat">Nature</span><h3>Nature Walks</h3><p>Guided trails through native sholas and monsoon streams.</p></div>
-                </article>
-                <article class="exp-card">
-                    <div class="hill-art tone-dusk"><img class="ph-img" src="assets/images/placeholder-06.jpg" alt="Cloud 9 Hills Resort — scenic view" loading="lazy" width="800" height="600" onerror="this.remove()"><svg viewBox="0 0 500 700" preserveAspectRatio="xMidYMax slice"><path d="M0 540 L170 470 L330 520 L500 440 L500 700 L0 700 Z" fill="#B89B72"/></svg></div>
-                    <div class="exp-gold-line"></div>
-                    <div class="exp-card-arrow"><svg viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H5M12 4v7" stroke="currentColor" stroke-width="1.6"/></svg></div>
-                    <div class="exp-card-content"><span class="cat">Leisure</span><h3>Bonfire Evenings</h3><p>Fireside stories under a sky full of stars.</p></div>
-                </article>
-            </div>
-        </section>
+        <!-- Auto-Slider Cards -->
+        <div class="exp-scroll reveal">
+    <!-- Card 1 -->
+   <article class="exp-card">
+    <div class="hill-art tone-dawn">
+        <!-- Native video works perfectly for autoplay, loop and mute -->
+        <video autoplay loop muted playsinline style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:1;">
+            <source src="assets/videos/1.mp4" type="video/mp4">
+            <img class="ph-img" src="assets/image/khandala.png" alt="" loading="lazy" />
+        </video>
+    </div>
+</article>
+    <!-- Card 2 -->
+     <article class="exp-card">
+    <div class="hill-art tone-dawn">
+        <!-- Native video works perfectly for autoplay, loop and mute -->
+        <video autoplay loop muted playsinline style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:1;">
+            <source src="assets/videos/2.mp4" type="video/mp4">
+            <img class="ph-img" src="assets/image/khandala.png" alt="" loading="lazy" />
+        </video>
+    </div>
+</article>
+    <!-- Card 3 -->
+       <article class="exp-card">
+    <div class="hill-art tone-dawn">
+        <!-- Native video works perfectly for autoplay, loop and mute -->
+        <video autoplay loop muted playsinline style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:1;">
+            <source src="assets/videos/3.mp4" type="video/mp4">
+            <img class="ph-img" src="assets/image/khandala.png" alt="" loading="lazy" />
+        </video>
+    </div>
+</article>
+    <!-- Card 4 -->
+       <article class="exp-card">
+    <div class="hill-art tone-dawn">
+        <!-- Native video works perfectly for autoplay, loop and mute -->
+        <video autoplay loop muted playsinline style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:1;">
+            <source src="assets/videos/4.mp4" type="video/mp4">
+            <img class="ph-img" src="assets/image/khandala.png" alt="" loading="lazy" />
+        </video>
+    </div>
+</article>
+    <!-- Card 5 -->
+       <article class="exp-card">
+    <div class="hill-art tone-dawn">
+        <!-- Native video works perfectly for autoplay, loop and mute -->
+        <video autoplay loop muted playsinline style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:1;">
+            <source src="assets/videos/5.mp4" type="video/mp4">
+            <img class="ph-img" src="assets/image/khandala.png" alt="" loading="lazy" />
+        </video>
+    </div>
+</article>
+    <!-- Card 6 -->
+       <article class="exp-card">
+    <div class="hill-art tone-dawn">
+        <!-- Native video works perfectly for autoplay, loop and mute -->
+        <video autoplay loop muted playsinline style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:1;">
+            <source src="assets/videos/6.mp4" type="video/mp4">
+            <img class="ph-img" src="assets/image/khandala.png" alt="" loading="lazy" />
+        </video>
+    </div>
+</article>
+</div>
+
+        <!-- NEW: Instagram Follow Button (Forced to a new line below the cards) -->
+        <div class="exp-follow-wrapper reveal">
+            <a href="https://www.instagram.com/cloud9hillsresortlonavala/" target="_blank" rel="noopener" class="btn btn-primary">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:18px;height:18px;margin-right:8px;"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M18 6h.01"/></svg>
+                Follow us on Instagram
+            </a>
+        </div>
+    </div>
+</section>
 
         <!-- ===== ROOMS ===== -->
         <section class="rooms" id="rooms">
@@ -257,42 +301,39 @@
 
                 <div class="rooms-grid">
                     <article class="room-large reveal">
-                        <div class="hill-art tone-dawn"><img class="ph-img" src="assets/images/placeholder-07.jpg" alt="Cloud 9 Hills Resort — scenic view" loading="lazy" width="800" height="600" onerror="this.remove()"><svg viewBox="0 0 700 900" preserveAspectRatio="xMidYMax slice"><path d="M0 640 L150 540 L320 620 L500 500 L700 610 L700 900 L0 900 Z" fill="#7E9D63"/></svg></div>
+                        <div class="hill-art tone-dawn"><img class="ph-img" src="assets/image/Duplex Master bedroom.jpg" alt="Cloud 9 Hills Resort — scenic view" loading="lazy" width="800" height="600" onerror="this.remove()"><svg viewBox="0 0 700 900" preserveAspectRatio="xMidYMax slice"><path d="M0 640 L150 540 L320 620 L500 500 L700 610 L700 900 L0 900 Z" fill="#7E9D63"/></svg></div>
                         <div class="room-info">
-                            <h3 class="room-name">Presidential Hill Villa</h3>
+                            <h3 class="room-name">3 Bedroom Villa</h3>
                             <div class="room-meta">
-                                <span><svg viewBox="0 0 24 24" fill="none"><path d="M3 12h18M3 12l3-4M3 12l3 4M21 12l-3-4M21 12l-3 4" stroke="currentColor" stroke-width="1.5"/></svg>950 sq.ft</span>
-                                <span><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.2" stroke="currentColor" stroke-width="1.5"/><path d="M5 20c1-4 4-6 7-6s6 2 7 6" stroke="currentColor" stroke-width="1.5"/></svg>4 Guests</span>
+                                <span><svg viewBox="0 0 24 24" fill="none"><path d="M3 12h18M3 12l3-4M3 12l3 4M21 12l-3-4M21 12l-3 4" stroke="currentColor" stroke-width="1.5"/></svg></span>
+                                <span><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.2" stroke="currentColor" stroke-width="1.5"/><path d="M5 20c1-4 4-6 7-6s6 2 7 6" stroke="currentColor" stroke-width="1.5"/></svg></span>
                                 <span>Private Plunge Pool · Panoramic Deck</span>
                             </div>
                             <div class="room-actions">
-                                <div class="room-price"><small>From</small>₹24,500 / night</div>
                                 <a href="#" class="btn-ghost light">Explore Room<svg viewBox="0 0 16 16" fill="none"><path d="M2 8h11M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.6"/></svg></a>
-                                <a href="#booking" class="btn btn-accent" data-track="book_now_click" data-track-loc="room_presidential">Book Now</a>
+                                <a href="https://www.swiftbook.io/inst/#home?propertyId=2647" class="btn btn-accent" data-track="book_now_click" data-track-loc="room_presidential">Book Now</a>
                             </div>
                         </div>
                     </article>
 
                     <div class="room-stack">
                         <article class="room-card reveal reveal-delay-1">
-                            <div class="hill-art tone-forest"><img class="ph-img" src="assets/images/placeholder-08.jpg" alt="Cloud 9 Hills Resort — scenic view" loading="lazy" width="800" height="600" onerror="this.remove()"><svg viewBox="0 0 700 500" preserveAspectRatio="xMidYMax slice"><path d="M0 320 L140 260 L300 310 L460 250 L700 320 L700 500 L0 500 Z" fill="#3D5E3E"/></svg></div>
+                            <div class="hill-art tone-forest"><img class="ph-img" src="assets/image/Deluxe cottage.jpg" alt="Cloud 9 Hills Resort — scenic view" loading="lazy" width="800" height="600" onerror="this.remove()"><svg viewBox="0 0 700 500" preserveAspectRatio="xMidYMax slice"><path d="M0 320 L140 260 L300 310 L460 250 L700 320 L700 500 L0 500 Z" fill="#3D5E3E"/></svg></div>
                             <div class="room-info">
-                                <h3 class="room-name">Cloud Deck Room</h3>
-                                <div class="room-meta"><span>420 sq.ft</span><span>2 Guests</span><span>Balcony View</span></div>
+                                <h3 class="room-name">Deluxe Cottatge</h3>
+                                <div class="room-meta"><span></span><span></span><span>Balcony View</span></div>
                                 <div class="room-actions">
-                                    <div class="room-price"><small>From</small>₹12,900</div>
-                                    <a href="#booking" class="btn btn-outline-dark" data-track="book_now_click" data-track-loc="room_cloud_deck">Book Now</a>
+                                    <a href="https://www.swiftbook.io/inst/#home?propertyId=2647" class="btn btn-outline-dark" data-track="book_now_click" data-track-loc="room_cloud_deck">Book Now</a>
                                 </div>
                             </div>
                         </article>
                         <article class="room-card reveal reveal-delay-2">
-                            <div class="hill-art tone-monsoon"><img class="ph-img" src="assets/images/placeholder-09.jpg" alt="Cloud 9 Hills Resort — scenic view" loading="lazy" width="800" height="600" onerror="this.remove()"><svg viewBox="0 0 700 500" preserveAspectRatio="xMidYMax slice"><path d="M0 340 L160 270 L340 320 L520 260 L700 330 L700 500 L0 500 Z" fill="#3F7A40"/></svg></div>
+                            <div class="hill-art tone-monsoon"><img class="ph-img" src="assets/image/Duplex Bedroom.jpg" alt="Cloud 9 Hills Resort — scenic view" loading="lazy" width="800" height="600" onerror="this.remove()"><svg viewBox="0 0 700 500" preserveAspectRatio="xMidYMax slice"><path d="M0 340 L160 270 L340 320 L520 260 L700 330 L700 500 L0 500 Z" fill="#3F7A40"/></svg></div>
                             <div class="room-info">
-                                <h3 class="room-name">Forest Cottage</h3>
+                                <h3 class="room-name">Duplex Cottage</h3>
                                 <div class="room-meta"><span>580 sq.ft</span><span>3 Guests</span><span>Private Garden</span></div>
                                 <div class="room-actions">
-                                    <div class="room-price"><small>From</small>₹16,400</div>
-                                    <a href="#booking" class="btn btn-outline-dark" data-track="book_now_click" data-track-loc="room_forest_cottage">Book Now</a>
+                                    <a href="https://www.swiftbook.io/inst/#home?propertyId=2647" class="btn btn-outline-dark" data-track="book_now_click" data-track-loc="room_forest_cottage">Book Now</a>
                                 </div>
                             </div>
                         </article>
@@ -303,7 +344,7 @@
 
         <!-- ===== HILL VIEW ===== -->
         <section class="hillview hill-art tone-forest">
-            <img class="ph-img" src="assets/image/lohagad.png" alt="Panoramic view of Lonavala hills from Cloud 9" loading="lazy" width="1440" height="700" onerror="this.remove()" />
+            <img class="ph-img" src="assets/image/view.jpg" alt="Panoramic view of Lonavala hills from Cloud 9" loading="lazy" width="1440" height="700" onerror="this.remove()" />
             <svg viewBox="0 0 1440 700" preserveAspectRatio="xMidYMax slice" class="mtn mtn-1"><path d="M0 500 L160 400 L340 470 L540 360 L740 460 L960 380 L1160 480 L1440 400 L1440 700 L0 700 Z"/></svg>
             <svg viewBox="0 0 1440 700" preserveAspectRatio="xMidYMax slice" class="mtn mtn-2"><path d="M0 560 L200 470 L400 540 L620 440 L820 540 L1040 450 L1260 550 L1440 470 L1440 700 L0 700 Z"/></svg>
             <div class="contour-lines" aria-hidden="true">
@@ -321,44 +362,33 @@
             </div>
         </section>
 
-        <!-- ===== DINING ===== -->
-        <section class="dining" id="dining">
-            <div class="container dining-grid">
-                <div class="dining-art reveal hill-art tone-dusk">
-                    <svg viewBox="0 0 800 1000" preserveAspectRatio="xMidYMax slice"><path d="M0 700 L180 600 L360 680 L560 560 L800 690 L800 1000 L0 1000 Z" fill="#B89B72"/></svg>
-                </div>
-                <div class="reveal reveal-delay-1">
-                    <p class="eyebrow">Dine With a View</p>
-                    <h2 class="section-title">Local Flavours,<br />Contemporary Comfort</h2>
-                    <p class="section-lead">Seasonal menus built around Maharashtrian produce, served on decks that look straight into the valley — memorable evenings, unhurried mornings.</p>
-                    <div class="dining-cats">
-                        <span>Breakfast</span><span>All Day Dining</span><span>Romantic Dinner</span><span>High Tea</span><span>Bonfire Dining</span>
-                    </div>
-                    <a href="#" class="btn btn-outline-dark">Explore Dining</a>
-                </div>
+      <!-- ===== DINING ===== -->
+<section class="dining" id="dining">
+    <div class="container dining-grid">
+        <!-- LEFT SIDE: Content -->
+        <div class="reveal reveal-delay-1">
+            <p class="eyebrow">Dine With a View</p>
+            <h2 class="section-title">Local Flavours,<br />Contemporary Comfort</h2>
+            <p class="section-lead">Seasonal menus built around Maharashtrian produce, served on decks that look straight into the valley — memorable evenings, unhurried mornings.</p>
+            <div class="dining-cats">
+                <span>Breakfast</span><span>All Day Dining</span><span>Romantic Dinner</span><span>High Tea</span><span>Bonfire Dining</span>
             </div>
-        </section>
+            <a href="#" class="btn btn-outline-dark">Explore Dining</a>
+        </div>
 
-        <!-- ===== VIDEO REEL ===== -->
-        <section class="reels" id="reels">
-            <div class="container">
-                <div class="reveal">
-                    <p class="eyebrow">See Cloud 9</p>
-                    <h2 class="section-title">A Resort Best Seen in Motion</h2>
-                </div>
-                <div class="reel-scroll reveal">
-                    <div class="reel-card wide hill-art tone-dawn"><div class="reel-play" data-video><span><svg viewBox="0 0 16 16" fill="currentColor"><path d="M4 2l10 6-10 6V2z"/></svg></span></div></div>
-                    <div class="reel-card hill-art tone-forest"><div class="reel-play" data-video><span><svg viewBox="0 0 16 16" fill="currentColor"><path d="M4 2l10 6-10 6V2z"/></svg></span></div></div>
-                    <div class="reel-card hill-art tone-monsoon"><div class="reel-play" data-video><span><svg viewBox="0 0 16 16" fill="currentColor"><path d="M4 2l10 6-10 6V2z"/></svg></span></div></div>
-                    <div class="reel-card hill-art tone-dusk"><div class="reel-play" data-video><span><svg viewBox="0 0 16 16" fill="currentColor"><path d="M4 2l10 6-10 6V2z"/></svg></span></div></div>
-                    <div class="reel-card wide hill-art tone-forest"><div class="reel-play" data-video><span><svg viewBox="0 0 16 16" fill="currentColor"><path d="M4 2l10 6-10 6V2z"/></svg></span></div></div>
-                </div>
-                <div class="reel-ctas">
-                    <a href="#" class="btn btn-outline-dark">Watch Experience</a>
-                    <a href="#" class="btn btn-ghost">View Instagram <svg viewBox="0 0 16 16" fill="none"><path d="M2 8h11M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.6"/></svg></a>
+        <!-- RIGHT SIDE: Auto Image Slider -->
+        <div class="dining-art reveal hill-art tone-dusk">
+            <div class="slider-container" data-autoplay="4500">
+                <div class="slider-track">
+                    <div class="slide active"><img class="ph-img" src="assets/image/Resturant.jpg" alt="Dining View 1" loading="lazy" onerror="this.remove()" /></div>
+                    <div class="slide"><img class="ph-img" src="assets/image/Candle light.jpg" alt="Dining View 2" loading="lazy" onerror="this.remove()" /></div>
+                    <div class="slide"><img class="ph-img" src="assets/image/scope.jpg" alt="Dining View 3" loading="lazy" onerror="this.remove()" /></div>
                 </div>
             </div>
-        </section>
+        </div>
+    </div>
+</section>
+
 
         <!-- ===== MONSOON ===== -->
         <section class="monsoon hill-art tone-monsoon">
@@ -368,7 +398,7 @@
             <div class="container monsoon-content reveal">
                 <p class="eyebrow light"><span></span>Monsoon in the Ghats</p>
                 <h2>Lonavala Looks Better in the Monsoon</h2>
-                <a href="#booking" class="btn btn-accent" data-track="book_now_click" data-track-loc="monsoon">Plan a Monsoon Escape</a>
+                <a href="https://www.swiftbook.io/inst/#home?propertyId=2647" class="btn btn-accent" data-track="book_now_click" data-track-loc="monsoon">Plan a Monsoon Escape</a>
             </div>
         </section>
 
@@ -415,109 +445,80 @@
             </div>
         </section>
 
-        <!-- ===== OFFERS ===== -->
-        <section class="offers" id="offers">
-            <div class="container">
-                <div class="reveal">
-                    <p class="eyebrow">Curated Stays</p>
-                    <h2 class="section-title">Offers Worth Planning Around</h2>
-                </div>
-                <div class="offers-grid reveal">
-                    <div class="offer-card"><div class="hill-art tone-monsoon"><img class="ph-img" src="assets/images/placeholder-18.jpg" alt="Cloud 9 Hills Resort — scenic view" loading="lazy" width="800" height="600" onerror="this.remove()"></div><div class="offer-body"><span class="offer-label">Save 20%</span><h4>Monsoon Escape</h4><p>Two nights in a Cloud Deck Room with breakfast and evening tea.</p><div class="offer-valid">Valid Jun – Sep</div><a href="#booking" class="btn-ghost">View Offer<svg viewBox="0 0 16 16" fill="none"><path d="M2 8h11M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.6"/></svg></a></div></div>
-                    <div class="offer-card"><div class="hill-art tone-forest"><img class="ph-img" src="assets/images/placeholder-19.jpg" alt="Cloud 9 Hills Resort — scenic view" loading="lazy" width="800" height="600" onerror="this.remove()"></div><div class="offer-body"><span class="offer-label">Most Booked</span><h4>Weekend Retreat</h4><p>A relaxed two-night stay with guided nature walk included.</p><div class="offer-valid">Fri – Sun</div><a href="#booking" class="btn-ghost">View Offer<svg viewBox="0 0 16 16" fill="none"><path d="M2 8h11M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.6"/></svg></a></div></div>
-                    <div class="offer-card"><div class="hill-art tone-dusk"><img class="ph-img" src="assets/images/placeholder-20.jpg" alt="Cloud 9 Hills Resort — scenic view" loading="lazy" width="800" height="600" onerror="this.remove()"></div><div class="offer-body"><span class="offer-label">Couples</span><h4>Romantic Getaway</h4><p>Private hilltop dinner and late checkout for two.</p><div class="offer-valid">Year Round</div><a href="#booking" class="btn-ghost">View Offer<svg viewBox="0 0 16 16" fill="none"><path d="M2 8h11M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.6"/></svg></a></div></div>
-                    <div class="offer-card"><div class="hill-art tone-dawn"><img class="ph-img" src="assets/images/placeholder-21.jpg" alt="Cloud 9 Hills Resort — scenic view" loading="lazy" width="800" height="600" onerror="this.remove()"></div><div class="offer-body"><span class="offer-label">Families</span><h4>Family Escape</h4><p>Connecting rooms, kids' activities and a bonfire evening.</p><div class="offer-valid">All Season</div><a href="#booking" class="btn-ghost">View Offer<svg viewBox="0 0 16 16" fill="none"><path d="M2 8h11M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.6"/></svg></a></div></div>
-                </div>
+
+   <!-- ===== TESTIMONIALS ===== -->
+<section class="testimonials" id="testimonials">
+    <!-- New background image block -->
+    <div class="testi-bg" aria-hidden="true">
+        <img class="ph-img" src="back.png" alt="" loading="lazy" width="1983" height="793" onerror="this.remove()" />
+    </div>
+
+    <div class="container">
+        <div class="reveal center" style="max-width:520px">
+            <p class="eyebrow" style="color:rgba(255,255,255,0.8);">Guest Stories</p>
+            <h2 class="section-title" style="color:var(--white);">Loved by Those Who Visit</h2>
+        </div>
+
+        <div class="testi-track-wrap reveal">
+            <div class="quote-mark center" style="width:fit-content">"</div>
+
+            <div class="testi-slide active">
+                <div class="testi-stars">★★★★★</div>
+                <p class="quote">We woke up to clouds moving through the valley below our balcony. Cloud 9 doesn't feel like a hotel — it feels like a private hilltop.</p>
+                <div class="testi-name">Ananya &amp; Rohan Mehta</div>
+                <div class="testi-role">Anniversary Stay</div>
             </div>
-        </section>
-
-        <!-- ===== TESTIMONIALS ===== -->
-        <section class="testimonials" id="testimonials">
-            <div class="container">
-                <div class="reveal center" style="max-width:520px">
-                    <p class="eyebrow" style="color:rgba(255,255,255,0.8);">Guest Stories</p>
-                    <h2 class="section-title" style="color:var(--white);">Loved by Those Who Visit</h2>
-                </div>
-
-                <div class="testi-track-wrap reveal">
-                    <div class="quote-mark center" style="width:fit-content">"</div>
-
-                    <div class="testi-slide active">
-                        <div class="testi-stars">★★★★★</div>
-                        <p class="quote">We woke up to clouds moving through the valley below our balcony. Cloud 9 doesn't feel like a hotel — it feels like a private hilltop.</p>
-                        <div class="testi-name">Ananya &amp; Rohan Mehta</div>
-                        <div class="testi-role">Anniversary Stay</div>
-                    </div>
-                    <div class="testi-slide">
-                        <div class="testi-stars">★★★★★</div>
-                        <p class="quote">The monsoon evenings on the deck, with tea and mist rolling in, were the highlight of our trip from Mumbai.</p>
-                        <div class="testi-name">Karan Deshmukh</div>
-                        <div class="testi-role">Weekend Retreat</div>
-                    </div>
-                    <div class="testi-slide">
-                        <div class="testi-stars">★★★★★</div>
-                        <p class="quote">Our kids loved the bonfire evenings, and we loved the quiet. A rare resort that works for both.</p>
-                        <div class="testi-name">The Iyer Family</div>
-                        <div class="testi-role">Family Escape</div>
-                    </div>
-
-                    <div class="testi-controls">
-                        <button class="testi-arrow" id="testiPrev" aria-label="Previous testimonial"><svg viewBox="0 0 16 16" fill="none"><path d="M10 3L4 8l6 5" stroke="currentColor" stroke-width="1.6"/></svg></button>
-                        <div class="testi-dots" id="testiDots">
-                            <span class="testi-dot active"></span><span class="testi-dot"></span><span class="testi-dot"></span>
-                        </div>
-                        <button class="testi-arrow" id="testiNext" aria-label="Next testimonial"><svg viewBox="0 0 16 16" fill="none"><path d="M6 3l6 5-6 5" stroke="currentColor" stroke-width="1.6"/></svg></button>
-                    </div>
-                </div>
+            <div class="testi-slide">
+                <div class="testi-stars">★★★★★</div>
+                <p class="quote">The monsoon evenings on the deck, with tea and mist rolling in, were the highlight of our trip from Mumbai.</p>
+                <div class="testi-name">Karan Deshmukh</div>
+                <div class="testi-role">Weekend Retreat</div>
             </div>
-        </section>
+            <div class="testi-slide">
+                <div class="testi-stars">★★★★★</div>
+                <p class="quote">Our kids loved the bonfire evenings, and we loved the quiet. A rare resort that works for both.</p>
+                <div class="testi-name">The Iyer Family</div>
+                <div class="testi-role">Family Escape</div>
+            </div>
 
-        <!-- ===== SOCIAL / INSTAGRAM ===== -->
-        <section class="social" id="social">
-            <div class="container">
-                <div class="reveal center" style="max-width:520px">
-                    <p class="eyebrow">Social Proof</p>
-                    <h2 class="section-title">Life at Cloud 9</h2>
+            <div class="testi-controls">
+                <button class="testi-arrow" id="testiPrev" aria-label="Previous testimonial"><svg viewBox="0 0 16 16" fill="none"><path d="M10 3L4 8l6 5" stroke="currentColor" stroke-width="1.6"/></svg></button>
+                <div class="testi-dots" id="testiDots">
+                    <span class="testi-dot active"></span><span class="testi-dot"></span><span class="testi-dot"></span>
                 </div>
-                <div class="social-grid reveal">
-                    <a class="social-tile" href="#"><div class="hill-art tone-dawn"><img class="ph-img" src="assets/images/placeholder-22.jpg" alt="Cloud 9 Hills Resort — scenic view" loading="lazy" width="800" height="600" onerror="this.remove()"></div><div class="social-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg><span>View Reel</span></div></a>
-                    <a class="social-tile" href="#"><div class="hill-art tone-forest"><img class="ph-img" src="assets/images/placeholder-23.jpg" alt="Cloud 9 Hills Resort — scenic view" loading="lazy" width="800" height="600" onerror="this.remove()"></div><div class="social-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg><span>View Reel</span></div></a>
-                    <a class="social-tile" href="#"><div class="hill-art tone-monsoon"><img class="ph-img" src="assets/images/placeholder-24.jpg" alt="Cloud 9 Hills Resort — scenic view" loading="lazy" width="800" height="600" onerror="this.remove()"></div><div class="social-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg><span>View Reel</span></div></a>
-                    <a class="social-tile" href="#"><div class="hill-art tone-dusk"><img class="ph-img" src="assets/images/placeholder-25.jpg" alt="Cloud 9 Hills Resort — scenic view" loading="lazy" width="800" height="600" onerror="this.remove()"></div><div class="social-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg><span>View Reel</span></div></a>
-                    <a class="social-tile" href="#"><div class="hill-art tone-forest"><img class="ph-img" src="assets/images/placeholder-26.jpg" alt="Cloud 9 Hills Resort — scenic view" loading="lazy" width="800" height="600" onerror="this.remove()"></div><div class="social-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg><span>View Reel</span></div></a>
-                    <a class="social-tile" href="#"><div class="hill-art tone-dawn"><img class="ph-img" src="assets/images/placeholder-27.jpg" alt="Cloud 9 Hills Resort — scenic view" loading="lazy" width="800" height="600" onerror="this.remove()"></div><div class="social-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg><span>View Reel</span></div></a>
-                    <a class="social-tile" href="#"><div class="hill-art tone-monsoon"><img class="ph-img" src="assets/images/placeholder-28.jpg" alt="Cloud 9 Hills Resort — scenic view" loading="lazy" width="800" height="600" onerror="this.remove()"></div><div class="social-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg><span>View Reel</span></div></a>
-                    <a class="social-tile" href="#"><div class="hill-art tone-dusk"><img class="ph-img" src="assets/images/placeholder-29.jpg" alt="Cloud 9 Hills Resort — scenic view" loading="lazy" width="800" height="600" onerror="this.remove()"></div><div class="social-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg><span>View Reel</span></div></a>
-                </div>
-                <div class="social-follow reveal"><a href="#" class="btn btn-outline-dark">Follow @cloud9hillsresort</a></div>
+                <button class="testi-arrow" id="testiNext" aria-label="Next testimonial"><svg viewBox="0 0 16 16" fill="none"><path d="M6 3l6 5-6 5" stroke="currentColor" stroke-width="1.6"/></svg></button>
             </div>
-        </section>
+        </div>
 
-        <!-- ===== FINAL CTA ===== -->
-        <section class="final-cta hill-art tone-dusk" id="contact">
-            <img class="ph-img" src="assets/image/tigerpoint.png" alt="Lonavala sunset over misty mountains" loading="lazy" width="1440" height="700" onerror="this.remove()" />
-            <svg viewBox="0 0 1440 700" preserveAspectRatio="xMidYMax slice" class="mtn mtn-1"><path d="M0 480 L200 390 L420 460 L640 360 L860 460 L1080 380 L1300 470 L1440 400 L1440 700 L0 700 Z"/></svg>
-            <div class="cloud-layer"><div class="cloud cloud--a"></div><div class="cloud cloud--b"></div></div>
-            <div class="container final-cta-content reveal">
-                <h2>Your Cloud 9 Escape Awaits</h2>
-                <p>Leave the city behind. Follow the hills.</p>
-                <div class="final-cta-ctas">
-                    <a href="https://www.swiftbook.io/inst/#home?propertyId=2647" class="btn btn-accent" data-track="book_now_click" data-track-loc="final_cta">Book Your Stay</a>
-                    <a href="https://wa.me/919819739444" class="btn btn-outline" data-track="whatsapp_click" data-track-loc="final_cta">WhatsApp Us</a>
-                    <a href="tel:+919819118832" class="btn btn-outline" data-track="call_click" data-track-loc="final_cta">Call Now</a>
-                </div>
-            </div>
-            <div class="wave-divider" aria-hidden="true">
-                <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path d="M0 40 C 240 90 480 0 720 40 C 960 80 1200 10 1440 40 L1440 90 L0 90 Z" fill="#1F4520"/></svg>
-            </div>
-        </section>
+        <!-- ===== NEW BUTTON GROUP BELOW TESTIMONIALS ===== -->
+        <div class="testi-ctas reveal reveal-delay-1">
+            <a href="https://www.swiftbook.io/inst/#home?propertyId=2647" class="btn btn-white" data-track="book_now_click" data-track-loc="testimonials_cta">
+                Book Your Stay
+                <svg viewBox="0 0 16 16" fill="none"><path d="M2 8h11M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.6"/></svg>
+            </a>
+            <a href="tel:+919819118832" class="btn btn-outline" data-track="call_click" data-track-loc="testimonials_cta">
+                Call Now
+            </a>
+            <!-- Replace href="#" with your actual Google Review Link -->
+            <a href="https://www.google.com/travel/search?q=cloud%209%20hills%20resort%20lonavala%20reviews&g2lb=4899568%2C4899569%2C4965990%2C72471280%2C72560029%2C72573224%2C72647020%2C72686036%2C72803964%2C72882230%2C73064764%2C121529350%2C121608706%2C121738283%2C121762713&hl=en-IN&gl=in&ssta=1&ts=CAEaRwopEicyJTB4M2JlODAzNmQ5MmNhMzljMzoweGIxZjU2M2MzYWE2NDgxODcSGhIUCgcI6g8QCBgUEgcI6g8QCBgVGAEyAhAA&qs=CAEyFENnc0loNE9TMDdyNDJQcXhBUkFCOAJCCQmHgWSqw2P1sUIJCYeBZKrDY_Wx&ap=ugEHcmV2aWV3cw&ictx=111&ved=0CAAQ5JsGahcKEwio66e6366WAxUAAAAAHQAAAAAQAw" target="_blank" rel="noopener" class="btn btn-google" data-track="google_review_click" data-track-loc="testimonials_cta">
+                Google Review
+                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="20" height="20">
+            <path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"/>
+            <path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"/>
+            <path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"/>
+            <path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"/>
+                 </svg>    
+        </a>
+        </div>
+    </div>
+</section>
 
     </main>
 
     <!-- ===== FOOTER ===== -->
     <footer class="site-footer">
         <div class="footer-bg" aria-hidden="true">
-            <img class="ph-img" src="assets/background.png" alt="" loading="lazy" width="1440" height="500" onerror="this.remove()" />
+            <img class="ph-img" src="assets/background.png" alt="Misty hills of the Western Ghats surrounding Cloud 9 Hills Resort" loading="lazy" width="1440" height="500" onerror="this.remove()" />
         </div>
         <div class="container footer-grid">
             <div class="footer-brand">
@@ -551,15 +552,7 @@
                     <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg><a href="https://www.google.com/maps/place/cloud9+resort+lonavala/data=!4m2!3m1!1s0x3be8036d92ca39c3:0xb1f563c3aa648187?sa=X&ved=1t:242&ictx=111" target="_blank" rel="noopener">4 km after Lion's Point, Village Jambhulne, Amby Valley City Road, Mulshi Taluka, Lonavala, Maharashtra 410401</a></li>
                 </ul>
             </div>
-            <div>
-                <h5>Stay in the Loop</h5>
-                <p style="font-size:14px;color:rgba(255,255,255,.7);font-weight:300;">Seasonal offers and hill-view stories, occasionally.</p>
-                <form class="newsletter" aria-label="Newsletter signup">
-                    <input type="email" placeholder="Your email address" required />
-                    <button type="submit">Join</button>
-                </form>
-            </div>
-        </div>
+
         <div class="container footer-bottom">
             <span>© 2026 Cloud 9 Hills Resort, Lonavala. All rights reserved.</span>
             <span>Privacy Policy · Terms of Stay</span>
