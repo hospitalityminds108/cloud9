@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery | Cloud 9 Hills Resort, Lonavala</title>
+    <meta name="description" content="Photo gallery of Cloud 9 Hills Resort, Lonavala — stunning views, luxury cottages, dining experiences, and monsoon moments." />
+    <link rel="canonical" href="https://www.cloud9hillsresort.com/gallery.html" />
+    <link rel="icon" href="/favicon/favicon.ico" sizes="any" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <!-- ===== HEADER ===== -->
+    <header class="site-header" id="siteHeader">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">
+                <img src="assets/logos.png" alt="Cloud 9 Hills Resort Logo" class="logo-img logo-main" />
+                <img src="assets/logoo.png" alt="Cloud 9 Hills Resort Logo" class="logo-img logo-sticky" />
+            </a>
+
+            <nav class="main-nav" aria-label="Primary">
+                <ul>
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item">
+                        <button class="nav-link" aria-haspopup="true" aria-expanded="false">Stay <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6"/></svg></button>
+                        <div class="dropdown" role="menu">
+                            <a href="stay.html" role="menuitem">Rooms &amp; Suites</a>
+                            <a href="stay.html#villas" role="menuitem">Villas</a>
+                            <a href="stay.html#cottages" role="menuitem">Cottages</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" aria-haspopup="true" aria-expanded="false">Experiences <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6"/></svg></button>
+                        <div class="dropdown" role="menu">
+                            <a href="dining.html" role="menuitem">Dining</a>
+                            <a href="index.html#experiences" role="menuitem">Infinity Pool</a>
+                            <a href="index.html#experiences" role="menuitem">Nature Experiences</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" aria-haspopup="true" aria-expanded="false">Celebrations <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6"/></svg></button>
+                        <div class="dropdown" role="menu">
+                            <a href="events.html" role="menuitem">Weddings</a>
+                            <a href="events.html" role="menuitem">Events</a>
+                            <a href="events.html#corporate" role="menuitem">Corporate</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" aria-haspopup="true" aria-expanded="false">Explore <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6"/></svg></button>
+                        <div class="dropdown" role="menu">
+                            <a href="gallery.html" role="menuitem">Gallery</a>
+                            <a href="blog.html" role="menuitem">Blog</a>
+                            <a href="about.html" role="menuitem">About Us</a>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <a href="tel:+919819118832" class="icon-link" aria-label="Call Cloud 9 Hills Resort" data-track="call_click" data-track-loc="header">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3h4l2 5-2.5 1.5a11 11 0 0 0 5 5L16 12l5 2v4a2 2 0 0 1-2 2C10.5 20 4 13.5 4 5a2 2 0 0 1 2-2Z"/></svg>
+                </a>
+                <a href="https://wa.me/919819739444" class="icon-link" target="_blank" rel="noopener" aria-label="Message on WhatsApp" data-track="whatsapp_click" data-track-loc="header">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 20l1.3-4A8 8 0 1 1 9 19l-5 1Z"/></svg>
+                </a>
+                <a href="https://www.swiftbook.io/inst/#home?propertyId=2647" class="btn btn-primary" data-track="book_now_click" data-track-loc="header">Book Your Stay</a>
+            </div>
+
+            <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ===== MOBILE NAV ===== -->
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
+        <ul>
+            <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+            <li>
+                <div class="mobile-nav-link" data-accordion>Stay <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6"/></svg></div>
+                <div class="mobile-sub"><a href="stay.html">Rooms &amp; Suites</a><a href="stay.html#villas">Villas</a><a href="stay.html#cottages">Cottages</a></div>
+            </li>
+            <li>
+                <div class="mobile-nav-link" data-accordion>Experiences <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6"/></svg></div>
+                <div class="mobile-sub"><a href="dining.html">Dining</a><a href="index.html#experiences">Infinity Pool</a><a href="index.html#experiences">Nature Experiences</a></div>
+            </li>
+            <li>
+                <div class="mobile-nav-link" data-accordion>Celebrations <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6"/></svg></div>
+                <div class="mobile-sub"><a href="events.html">Weddings</a><a href="events.html">Events</a><a href="events.html#corporate">Corporate</a></div>
+            </li>
+            <li>
+                <div class="mobile-nav-link" data-accordion>Explore <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6"/></svg></div>
+                <div class="mobile-sub"><a href="gallery.html">Gallery</a><a href="blog.html">Blog</a><a href="about.html">About Us</a></div>
+            </li>
+            <li><a href="about.html" class="mobile-nav-link">About</a></li>
+            <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+        </ul>
+        <a href="https://www.swiftbook.io/inst/#home?propertyId=2647" class="btn btn-accent" data-track="book_now_click" data-track-loc="mobile_nav">Book Now</a>
+    </nav>
+
+    <main>
+
+        <!-- ===== GALLERY HERO ===== -->
+        <section class="gallery-hero hill-art tone-dawn">
+            <img class="ph-img" src="assets/image/view.jpg" alt="Cloud 9 Hills Resort gallery" loading="lazy" width="1440" height="700" onerror="this.remove()" />
+            <div class="cloud-layer"><div class="cloud cloud--a"></div><div class="cloud cloud--c"></div></div>
+            <div class="container gallery-hero-content reveal">
+                <p class="eyebrow light"><span></span>Moments at Cloud 9</p>
+                <h1>Gallery</h1>
+                <p>A glimpse of the beauty, the calm, and the magic that awaits.</p>
+            </div>
+        </section>
+
+        <!-- ===== FILTER BAR ===== -->
+        <section class="gallery-filter-bar">
+            <div class="container">
+                <div class="gallery-filter">
+                    <button class="gallery-filter-btn active" data-filter="all">All</button>
+                    <button class="gallery-filter-btn" data-filter="views">Views</button>
+                    <button class="gallery-filter-btn" data-filter="rooms">Rooms</button>
+                    <button class="gallery-filter-btn" data-filter="dining">Dining</button>
+                    <button class="gallery-filter-btn" data-filter="experiences">Experiences</button>
+                    <button class="gallery-filter-btn" data-filter="events">Events</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== MASONRY GALLERY ===== -->
+        <section class="gallery-masonry">
+            <div class="container">
+                <div class="gallery-grid" id="galleryGrid">
+                    <!-- Item 1 -->
+                    <div class="gallery-item reveal" data-category="views" style="grid-row: span 2;">
+                        <div class="hill-art tone-dawn">
+                            <img class="ph-img" src="assets/image/view.jpg" alt="Panoramic view" loading="lazy" onerror="this.remove()" />
+                            <div class="gallery-overlay">
+                                <span class="gallery-cat">Views</span>
+                                <h4>The Valley Below</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="gallery-item reveal" data-category="rooms">
+                        <div class="hill-art tone-forest">
+                            <img class="ph-img" src="assets/image/cottage.jpg" alt="Cottage exterior" loading="lazy" onerror="this.remove()" />
+                            <div class="gallery-overlay">
+                                <span class="gallery-cat">Rooms</span>
+                                <h4>Hill Top Cottage</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="gallery-item reveal" data-category="dining">
+                        <div class="hill-art tone-dusk">
+                            <img class="ph-img" src="assets/image/Resturant.jpg" alt="Restaurant dining" loading="lazy" onerror="this.remove()" />
+                            <div class="gallery-overlay">
+                                <span class="gallery-cat">Dining</span>
+                                <h4>The Valley View Restaurant</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div class="gallery-item reveal" data-category="experiences">
+                        <div class="hill-art tone-monsoon">
+                            <img class="ph-img" src="assets/image/Candle light.jpg" alt="Candle light dinner" loading="lazy" onerror="this.remove()" />
+                            <div class="gallery-overlay">
+                                <span class="gallery-cat">Experiences</span>
+                                <h4>Candlelit Evenings</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 5 -->
+                    <div class="gallery-item reveal" data-category="views">
+                        <div class="hill-art tone-forest">
+                            <img class="ph-img" src="assets/image/khandala.png" alt="Monsoon hills" loading="lazy" onerror="this.remove()" />
+                            <div class="gallery-overlay">
+                                <span class="gallery-cat">Views</span>
+                                <h4>Monsoon Magic</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 6 -->
+                    <div class="gallery-item reveal" data-category="rooms" style="grid-row: span 2;">
+                        <div class="hill-art tone-dawn">
+                            <img class="ph-img" src="assets/image/Duplex Master bedroom.jpg" alt="Duplex bedroom" loading="lazy" onerror="this.remove()" />
+                            <div class="gallery-overlay">
+                                <span class="gallery-cat">Rooms</span>
+                                <h4>Duplex Bedroom</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 7 -->
+                    <div class="gallery-item reveal" data-category="events">
+                        <div class="hill-art tone-dusk">
+                            <img class="ph-img" src="assets/image/Conference.jpg" alt="Conference room" loading="lazy" onerror="this.remove()" />
+                            <div class="gallery-overlay">
+                                <span class="gallery-cat">Events</span>
+                                <h4>Corporate Retreats</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 8 -->
+                    <div class="gallery-item reveal" data-category="dining">
+                        <div class="hill-art tone-monsoon">
+                            <img class="ph-img" src="assets/image/scope.jpg" alt="Dining view" loading="lazy" onerror="this.remove()" />
+                            <div class="gallery-overlay">
+                                <span class="gallery-cat">Dining</span>
+                                <h4>Breakfast with a View</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 9 -->
+                    <div class="gallery-item reveal" data-category="experiences">
+                        <div class="hill-art tone-forest">
+                            <img class="ph-img" src="couple.jpeg" alt="Couple experience" loading="lazy" onerror="this.remove()" />
+                            <div class="gallery-overlay">
+                                <span class="gallery-cat">Experiences</span>
+                                <h4>Romantic Escapes</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 10 -->
+                    <div class="gallery-item reveal" data-category="views" style="grid-row: span 2;">
+                        <div class="hill-art tone-dusk">
+                            <img class="ph-img" src="assets/image/tigerpoint.png" alt="Tiger point view" loading="lazy" onerror="this.remove()" />
+                            <div class="gallery-overlay">
+                                <span class="gallery-cat">Views</span>
+                                <h4>Tiger Point</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 11 -->
+                    <div class="gallery-item reveal" data-category="rooms">
+                        <div class="hill-art tone-forest">
+                            <img class="ph-img" src="assets/image/Deluxe cottage.jpg" alt="Deluxe cottage" loading="lazy" onerror="this.remove()" />
+                            <div class="gallery-overlay">
+                                <span class="gallery-cat">Rooms</span>
+                                <h4>Deluxe Cottage</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 12 -->
+                    <div class="gallery-item reveal" data-category="experiences">
+                        <div class="hill-art tone-monsoon">
+                            <img class="ph-img" src="assets/image/RAJMACHI.png" alt="Rajmachi trek" loading="lazy" onerror="this.remove()" />
+                            <div class="gallery-overlay">
+                                <span class="gallery-cat">Experiences</span>
+                                <h4>Trekking the Western Ghats</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== INSTAGRAM CTA ===== -->
+        <section class="gallery-insta">
+            <div class="container reveal">
+                <div class="gallery-insta-content">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M18 6h.01"/></svg>
+                    <h3>Follow us on Instagram</h3>
+                    <p>@cloud9hillsresortlonavala</p>
+                    <a href="https://www.instagram.com/cloud9hillsresortlonavala/" target="_blank" rel="noopener" class="btn btn-primary">Follow Us</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+        <div class="footer-bg" aria-hidden="true">
+            <img class="ph-img" src="assets/background.png" alt="Misty hills of the Western Ghats surrounding Cloud 9 Hills Resort" loading="lazy" width="1440" height="500" onerror="this.remove()" />
+        </div>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <img src="assets/logos.png" alt="Cloud 9 Hills Resort Logo" class="logo-img" />
+                </a>
+                <p>A luxury hilltop retreat above the clouds in the Western Ghats — where the pace of the mountains sets the pace of your stay.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a>
+                    <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 9h3V6h-3a4 4 0 0 0-4 4v2H8v3h2v6h3v-6h3l1-3h-4v-2a1 1 0 0 1 1-1z"/></svg></a>
+                    <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="3"/><path d="M10 9l6 3-6 3z"/></svg></a>
+                </div>
+            </div>
+            <div>
+                <h5>Quick Links</h5>
+                <ul class="footer-links">
+                    <li><a href="stay.html">Stay</a></li>
+                    <li><a href="dining.html">Dining</a></li>
+                    <li><a href="index.html#experiences">Experiences</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5>Contact</h5>
+                <ul class="footer-contact">
+                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3h4l2 5-2.5 1.5a11 11 0 0 0 5 5L16 12l5 2v4a2 2 0 0 1-2 2C10.5 20 4 13.5 4 5a2 2 0 0 1 2-2Z"/></svg><a href="tel:+919819118832" data-track="call_click" data-track-loc="footer">+91 98191 18832</a></li>
+                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 20l1.3-4A8 8 0 1 1 9 19l-5 1Z"/></svg><a href="https://wa.me/919819739444" data-track="whatsapp_click" data-track-loc="footer">WhatsApp Us</a></li>
+                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16v16H4z"/><path d="M4 4l8 8 8-8"/></svg><a href="mailto:cloud9hillsresort@gmail.com">cloud9hillsresort@gmail.com</a></li>
+                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg><a href="https://www.google.com/maps/place/cloud9+resort+lonavala/data=!4m2!3m1!1s0x3be8036d92ca39c3:0xb1f563c3aa648187?sa=X&ved=1t:242&ictx=111" target="_blank" rel="noopener">4 km after Lion's Point, Village Jambhulne, Amby Valley City Road, Mulshi Taluka, Lonavala, Maharashtra 410401</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            <span>© 2026 Cloud 9 Hills Resort, Lonavala. All rights reserved.</span>
+            <span>Privacy Policy · Terms of Stay</span>
+        </div>
+    </footer>
+
+    <!-- ===== FLOATING CTAs ===== -->
+    <div class="float-ctas">
+        <a href="https://wa.me/919819739444" class="float-btn float-whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp us" data-track="whatsapp_click" data-track-loc="floating">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20l1.3-4A8 8 0 1 1 9 19l-5 1Z" /></svg>
+        </a>
+        <a href="tel:+919819118832" class="float-btn float-call" aria-label="Call the resort" data-track="call_click" data-track-loc="floating">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3h4l2 5-2.5 1.5a11 11 0 0 0 5 5L16 12l5 2v4a2 2 0 0 1-2 2C10.5 20 4 13.5 4 5a2 2 0 0 1 2-2Z" /></svg>
+        </a>
+    </div>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <svg viewBox="0 0 16 16" fill="none"><path d="M8 13V3M3 8l5-5 5 5" stroke="currentColor" stroke-width="1.6" /></svg>
+    </button>
+
+    <!-- ===== MOBILE STICKY BAR ===== -->
+    <div class="mobile-sticky-bar">
+        <ul>
+            <li><a href="tel:+919819118832" data-track="call_click" data-track-loc="mobile_sticky"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3h4l2 5-2.5 1.5a11 11 0 0 0 5 5L16 12l5 2v4a2 2 0 0 1-2 2C10.5 20 4 13.5 4 5a2 2 0 0 1 2-2Z" /></svg>Call</a></li>
+            <li><a href="https://wa.me/919819739444" data-track="whatsapp_click" data-track-loc="mobile_sticky"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20l1.3-4A8 8 0 1 1 9 19l-5 1Z" /></svg>WhatsApp</a></li>
+            <li><a href="https://www.swiftbook.io/inst/#home?propertyId=2647" data-track="book_now_click" data-track-loc="mobile_sticky"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="16" rx="2" /><path d="M8 3v4M16 3v4M3 10h18" /></svg>Book</a></li>
+        </ul>
+    </div>
+
+    <script>
+        // Gallery Filter
+        const galleryFilterBtns = document.querySelectorAll('.gallery-filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        galleryFilterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                galleryFilterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const filter = btn.dataset.filter;
+
+                galleryItems.forEach(item => {
+                    if (filter === 'all' || item.dataset.category === filter) {
+                        item.style.display = 'block';
+                        item.classList.add('reveal', 'in-view');
+                        setTimeout(() => { item.style.opacity = '1'; item.style.transform = 'translateY(0)'; }, 50);
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
