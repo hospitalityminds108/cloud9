@@ -529,17 +529,131 @@
         </section>
 
         <!-- ===== MONSOON ===== -->
-        <section class="monsoon hill-art tone-monsoon">
-            <img class="ph-img" src="assets/image/khandala.png" alt="Rainy monsoon hills of Lonavala" loading="lazy" width="1440" height="700" onerror="this.remove()" />
-            <div class="rain-layer" id="rainLayer" aria-hidden="true"></div>
-            <div class="cloud-layer"><div class="cloud cloud--a"></div><div class="cloud cloud--b"></div></div>
-            <div class="container monsoon-content reveal">
-                <p class="eyebrow light"><span></span>Monsoon in the Ghats</p>
-                <h2>Lonavala Looks Better in the Monsoon</h2>
-                <a href="https://www.swiftbook.io/inst/#home?propertyId=2647" class="btn btn-accent" data-track="book_now_click" data-track-loc="monsoon">Plan a Monsoon Escape</a>
-            </div>
-        </section>
+       
+         <!-- ============================================================
+    SEASON SLIDER
+    ============================================================ -->
+    <section class="season-slider" id="seasonSlider" role="region" aria-label="Seasonal slider">
 
+        <div class="season-slides">
+
+            <!-- ——— SLIDE 1 : MONSOON ——— -->
+            <div class="season-slide active" data-season="monsoon" role="group" aria-label="Monsoon season">
+                <img
+                class="ph-img"
+                src="assets/image/lohagad.png"
+                alt="Rainy monsoon hills with mist"
+                loading="lazy"
+                width="1440"
+                height="900"
+                />
+
+                <div class="season-overlay season-overlay--monsoon"></div>
+
+                <!-- Rain -->
+                <div class="rain-layer" id="rainLayer" aria-hidden="true"></div>
+
+                <!-- Clouds -->
+                <div class="cloud-layer" aria-hidden="true">
+                    <div class="cloud cloud--a"></div>
+                    <div class="cloud cloud--b"></div>
+                </div>
+
+                <div class="slide-content">
+                    <div class="eyebrow"><i class="fas fa-cloud-rain"></i> Monsoon in the Ghats</div>
+                    <h2>Lonavala Looks Better in the Monsoon</h2>
+                    <p>Watch the mist roll over emerald valleys as the rains transform the Western Ghats into a lush paradise.</p>
+                    <a href="#" class="btn">Plan a Monsoon Escape <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- ——— SLIDE 2 : WINTER ——— -->
+            <div class="season-slide" data-season="winter" role="group" aria-label="Winter season">
+                <img
+                class="ph-img"
+                src="assets/image/RAJMACHI.png"
+                alt="Snowy winter landscape with clouds"
+                loading="lazy"
+                width="1440"
+                height="900"
+                />
+
+                <div class="season-overlay season-overlay--winter"></div>
+
+                <!-- Fog -->
+                <div class="fog-layer" aria-hidden="true">
+                    <div class="fog fog--1"></div>
+                    <div class="fog fog--2"></div>
+                    <div class="fog fog--3"></div>
+                </div>
+
+                <!-- Winter clouds -->
+                <div class="winter-clouds" aria-hidden="true">
+                    <div class="wc wc--1"></div>
+                    <div class="wc wc--2"></div>
+                    <div class="wc wc--3"></div>
+                </div>
+
+                <!-- Snow -->
+                <div class="snow-layer" id="snowLayer" aria-hidden="true"></div>
+
+                <div class="slide-content">
+                    <div class="eyebrow"><i class="fas fa-snowflake"></i> Winter in the Hills</div>
+                    <h2>Crisp Mornings Above the Clouds</h2>
+                    <p>Experience the serene beauty of winter — crisp air, snow-dusted pines, and a world wrapped in white.</p>
+                    <a href="#" class="btn">Plan a Winter Stay <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- ——— SLIDE 3 : SUMMER ——— -->
+            <div class="season-slide" data-season="summer" role="group" aria-label="Summer season">
+                <img
+                class="ph-img"
+                src="assets/image/pawna lake.png"
+                alt="Bright summer sunshine over the valley"
+                loading="lazy"
+                width="1440"
+                height="900"
+                />
+
+                <div class="season-overlay season-overlay--summer"></div>
+
+                <!-- Sun -->
+                <div class="sun-layer" aria-hidden="true">
+                    <div class="sun-glow"></div>
+                    <div class="sun-rays"></div>
+                </div>
+
+                <!-- Sparkles -->
+                <div class="sparkle-layer" id="sparkleLayer" aria-hidden="true"></div>
+
+                <!-- Heat shimmer -->
+                <div class="heat-shimmer" aria-hidden="true"></div>
+
+                <div class="slide-content">
+                    <div class="eyebrow"><i class="fas fa-sun"></i> Summer in the Sahyadris</div>
+                    <h2>Sunshine Over the Valley</h2>
+                    <p>Long days, golden light, and endless blue skies — summer is the season for adventure and joy.</p>
+                    <a href="#" class="btn">Plan a Summer Getaway <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ===== NAVIGATION ===== -->
+        <div class="season-label" aria-hidden="true">
+            <span class="active">Monsoon</span>
+            <span>Winter</span>
+            <span>Summer</span>
+        </div>
+
+        <div class="season-dots" role="tablist" aria-label="Slide indicators">
+            <button class="season-dot active" data-index="0" role="tab" aria-label="Monsoon slide" aria-selected="true"></button>
+            <button class="season-dot" data-index="1" role="tab" aria-label="Winter slide" aria-selected="false"></button>
+            <button class="season-dot" data-index="2" role="tab" aria-label="Summer slide" aria-selected="false"></button>
+        </div>
+
+    </section>
         <!-- ===== TESTIMONIALS ===== -->
         <section class="testimonials" id="testimonials">
             <div class="testi-bg" aria-hidden="true">

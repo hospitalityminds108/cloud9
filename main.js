@@ -84,12 +84,18 @@
             // ===== MOBILE NAV =====
             var hamburger = document.getElementById('hamburgerBtn');
             var mobileNav = document.getElementById('mobileNav');
-            hamburger.addEventListener('click', function() {
-                var isOpen = mobileNav.classList.toggle('open');
-                hamburger.classList.toggle('active', isOpen);
-                hamburger.setAttribute('aria-expanded', String(isOpen));
-                document.body.style.overflow = isOpen ? 'hidden' : '';
-            });
+            // Guard: a duplicate hamburger toggle handler is registered later in this
+            // file. To avoid a double-toggle (open -> closed) on a single click, we
+            // delegate the actual toggling to that single handler and skip it here.
+            if (!window.__c9HamburgerBound) {
+                window.__c9HamburgerBound = true;
+                hamburger.addEventListener('click', function() {
+                    var isOpen = mobileNav.classList.toggle('open');
+                    hamburger.classList.toggle('active', isOpen);
+                    hamburger.setAttribute('aria-expanded', String(isOpen));
+                    document.body.style.overflow = isOpen ? 'hidden' : '';
+                });
+            }
             mobileNav.querySelectorAll('a').forEach(function(a) {
                 a.addEventListener('click', function() {
                     mobileNav.classList.remove('open');
@@ -105,6 +111,7 @@
                     if (!wasOpen) li.classList.add('open');
                 });
             });
+            window.__c9AccordionBound = true;
 
             // ===== SCROLL REVEAL =====
             var revealEls = document.querySelectorAll('.reveal');
@@ -650,7 +657,8 @@ if (expScroll) {
 
             // ===== MOBILE NAV accordion =====
             var mobileNav = document.getElementById('mobileNav');
-            if (mobileNav) {
+            if (mobileNav && !window.__c9AccordionBound) {
+                window.__c9AccordionBound = true;
                 mobileNav.querySelectorAll('[data-accordion]').forEach(function(trigger) {
                     trigger.addEventListener('click', function() {
                         var li = trigger.closest('li');
@@ -670,7 +678,8 @@ if (expScroll) {
 
             // ===== HAMBURGER toggling =====
             var hamburger = document.getElementById('hamburgerBtn');
-            if (hamburger && mobileNav) {
+            if (hamburger && mobileNav && !window.__c9HamburgerBound) {
+                window.__c9HamburgerBound = true;
                 hamburger.addEventListener('click', function() {
                     var isOpen = mobileNav.classList.toggle('open');
                     hamburger.classList.toggle('active', isOpen);
@@ -1011,3 +1020,440 @@ if (expScroll) {
                 currentIndex: function() { return currentIndex; }
             };
         });
+
+// ============================================================
+// SITE-WIDE FIXES BUNDLE
+//  1. Correct active-page state on desktop + mobile nav
+//  2. Open internal website links in a new tab
+//  3. Make enquiry / event forms actually send (WhatsApp + mailto compose)
+//  4. Mobile nav polish & responsiveness
+// (No HTML structure or design changes — enhancement only)
+// ============================================================
+(function () {
+    'use strict';
+
+    /* ---------- CONFIG ---------- */
+    var CONFIG = {
+        WHATSAPP_NUMBER: '919819739444',
+        EMAIL: 'cloud9hillsresort@gmail.com',
+        PHONE: '919819118832',
+        // Map of page filename -> which nav label should be active.
+        // Keys are lowercase filenames. "stay-*" means Stay. "event-ish" handled below.
+    };
+
+    /* ---------- HELPERS ---------- */
+    function currentFileName() {
+        var p = window.location.pathname.split('/').pop() || 'index.html';
+        // strip query/hash
+        return p.split('?')[0].split('#')[0].toLowerCase();
+    }
+
+    function removeInlineActiveStyles(el) {
+        if (!el) return;
+        // Remove the inline "Home" highlight color so JS-controlled class wins
+        if (el.style && el.style.color) el.style.color = '';
+    }
+
+    /* ============================================================
+       1. ACTIVE PAGE STATE (desktop + mobile)
+       ============================================================ */
+    function setActiveNav() {
+        var file = currentFileName();
+
+        // Determine which top-level section the current page belongs to.
+        var activeSection = null;
+        if (file === '' || file === 'index.html') activeSection = 'home';
+        else if (file === 'about.html') activeSection = 'about';
+        else if (file === 'dining.html') activeSection = 'dining';
+        else if (file === 'explore.html') activeSection = 'explore';
+        else if (file === 'contact.html') activeSection = 'contact';
+        else if (file === 'blog.html') activeSection = 'blog';
+        else if (file === 'gallery.html') activeSection = 'gallery';
+        else if (file === 'offers.html') activeSection = 'offers';
+        else if (file === 'events.html') activeSection = 'events';
+        else if (file === 'stay.html') activeSection = 'stay';
+        else if (
+            file.indexOf('villa') > -1 ||
+            file.indexOf('cottage') > -1 ||
+            file.indexOf('suite') > -1 ||
+            file.indexOf('honeymoon') > -1
+        ) activeSection = 'stay';
+
+        // --- DESKTOP NAV ---
+        // First, clear every active-page / active class on desktop nav links
+        var desktopLinks = document.querySelectorAll('.main-nav .nav-link');
+        desktopLinks.forEach(function (link) {
+            link.classList.remove('active-page', 'active');
+        });
+
+        // Map section -> text label used in the desktop nav
+        var labelMap = {
+            home: 'home',
+            about: 'about',
+            stay: 'stay',
+            dining: 'dining',
+            events: 'events',
+            explore: 'explore',
+            contact: 'contact'
+        };
+
+        // Offers belongs under the Events dropdown parent; Gallery & Blog are not in the
+        // main top-nav, so we highlight the closest related item (Events for offers,
+        // nothing extra for gallery/blog since they live only in footer).
+        var desktopTarget = labelMap[activeSection];
+        if (activeSection === 'offers') desktopTarget = 'events';
+
+        if (desktopTarget) {
+            desktopLinks.forEach(function (link) {
+                var txt = (link.textContent || '').trim().toLowerCase();
+                if (txt === desktopTarget) {
+                    link.classList.add('active-page');
+                }
+            });
+        }
+
+        // --- MOBILE NAV ---
+        // The mobile nav uses <a class="mobile-nav-link"> for plain items and
+        // <div class="mobile-nav-link" data-accordion> for dropdowns.
+        // First, strip the inline color highlight that was hardcoded on "Home".
+        var mobileLinks = document.querySelectorAll('.mobile-nav .mobile-nav-link');
+        mobileLinks.forEach(function (ml) {
+            removeInlineActiveStyles(ml);
+            if (ml.tagName === 'A') ml.classList.remove('active-page');
+        });
+
+        var mobileLabelMap = {
+            home: 'home',
+            about: 'about',
+            stay: 'stay',
+            dining: 'dining',
+            events: 'events',
+            explore: 'explore',
+            contact: 'contact'
+        };
+        var mobileTarget = mobileLabelMap[activeSection];
+        if (activeSection === 'offers') mobileTarget = 'events';
+
+        if (mobileTarget) {
+            mobileLinks.forEach(function (ml) {
+                var txt = (ml.textContent || '').trim().toLowerCase();
+                if (txt.indexOf(mobileTarget) === 0) {
+                    if (ml.tagName === 'A') {
+                        ml.classList.add('active-page');
+                    } else {
+                        // For accordion (div) items, add active-page too so it highlights
+                        ml.classList.add('active-page');
+                    }
+                }
+            });
+        }
+    }
+
+    /* ============================================================
+       2. OPEN INTERNAL LINKS IN A NEW TAB
+       Strategy: any <a href="*.html"> or same-site link that is NOT in the
+       header nav / mobile nav controls should open in a new tab.
+       (Header nav remains in-tab so the active-state logic can read the new
+        page — but since each page is a full reload, opening nav links in a new
+        tab is also fine. We keep header nav in-tab for natural flow, and make
+        all OTHER internal links (footer, content cards, CTAs, "similar stays",
+        blog cards, etc.) open in a new tab.)
+       ============================================================ */
+    function makeInternalLinksOpenNewTab() {
+        var aTags = document.querySelectorAll('a[href]');
+        aTags.forEach(function (a) {
+            var href = a.getAttribute('href') || '';
+
+            // skip anchors on same page (#...)
+            if (href.charAt(0) === '#') return;
+            // skip empty / javascript
+            if (!href || href.toLowerCase().indexOf('javascript') === 0) return;
+            // skip external (http/https/tel/mailto/wa.me) — keep their existing behavior
+            if (/^(https?:|tel:|mailto:|wa\.me)/i.test(href)) return;
+
+            // It's a relative/absolute internal .html link.
+            // Don't touch the primary desktop header nav links (they reload same tab),
+            // but DO make footer links + mobile nav links + content links open new tab.
+            var inDesktopHeader = a.closest('.main-nav') || a.closest('.header-actions');
+            if (inDesktopHeader) return;
+
+            // Avoid duplicate target attr
+            if (a.getAttribute('target')) return;
+
+            a.setAttribute('target', '_blank');
+            a.setAttribute('rel', 'noopener');
+        });
+    }
+
+    /* ============================================================
+       3. WORKING ENQUIRY / EVENT FORMS
+       The original forms use action="mailto:..." with enctype="text/plain",
+       which is unreliable. We intercept submit, gather field values, and:
+         - Build a nicely formatted WhatsApp message and open wa.me in a new tab
+         - Also provide a mailto: compose fallback link
+         - Show an inline success message on the form
+       This works on contact.html (#enquiryForm) and events.html form, plus
+       any other form with class "contact-form" or any form whose action
+       starts with "mailto:".
+       ============================================================ */
+    function serializeForm(form) {
+        var data = {};
+        var labels = {};
+        Array.prototype.forEach.call(form.elements, function (el) {
+            if (!el.name) return;
+            var key = el.name;
+            var val = (el.type === 'checkbox' || el.type === 'radio') ? (el.checked ? el.value : '') : (el.value || '');
+            data[key] = val;
+            // Try to find a human label
+            if (el.id) {
+                var lab = form.querySelector('label[for="' + CSS.escape(el.id) + '"]');
+                if (lab) labels[key] = (lab.textContent || '').trim();
+            }
+        });
+        return { data: data, labels: labels };
+    }
+
+    function buildMessageLines(form) {
+        var info = serializeForm(form);
+        var lines = [];
+        Object.keys(info.data).forEach(function (key) {
+            var val = info.data[key];
+            if (val !== '' && val != null) {
+                var label = info.labels[key] || key;
+                // Make label readable
+                label = label.charAt(0).toUpperCase() + label.slice(1);
+                lines.push(label + ': ' + val);
+            }
+        });
+        return lines;
+    }
+
+    function showFormSuccess(form, msgHtml) {
+        // Remove any existing notice
+        var existing = form.querySelector('.form-success-notice');
+        if (existing) existing.remove();
+
+        var notice = document.createElement('div');
+        notice.className = 'form-success-notice';
+        notice.style.cssText = [
+            'margin-top:18px',
+            'padding:16px 20px',
+            'border-radius:12px',
+            'background:rgba(47,101,48,.10)',
+            'border:1px solid rgba(47,101,48,.35)',
+            'color:#2f6530',
+            'font-family:var(--font-body,Montserrat,sans-serif)',
+            'font-size:14px',
+            'line-height:1.6'
+        ].join(';');
+        notice.innerHTML = msgHtml;
+        form.appendChild(notice);
+        notice.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    function enhanceForms() {
+        // Select contact form, event form, and any mailto action form
+        var forms = [];
+        var byId = document.getElementById('enquiryForm');
+        if (byId) forms.push(byId);
+        // any other form with action starting mailto:
+        Array.prototype.forEach.call(document.querySelectorAll('form'), function (f) {
+            if (f === byId) return;
+            var act = f.getAttribute('action') || '';
+            if (act.toLowerCase().indexOf('mailto:') === 0) forms.push(f);
+        });
+
+        forms.forEach(function (form) {
+            // Prevent the native mailto behaviour
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                if (!form.checkValidity()) {
+                    form.reportValidity();
+                    return;
+                }
+
+                var lines = buildMessageLines(form);
+                var heading = 'New Enquiry — Cloud 9 Hills Resort';
+                var body = heading + '\n\n' + lines.join('\n');
+
+                // WhatsApp deep link
+                var waText = encodeURIComponent(body);
+                var waUrl = 'https://wa.me/' + CONFIG.WHATSAPP_NUMBER + '?text=' + waText;
+
+                // mailto compose fallback (URL-encoded, line breaks as %0D%0A)
+                var mailtoBody = encodeURIComponent(body).replace(/%0A/g, '%0D%0A');
+                var mailtoUrl = 'mailto:' + CONFIG.EMAIL + '?subject=' + encodeURIComponent(heading) + '&body=' + mailtoBody;
+
+                // Build the inline success message with BOTH send options as links
+                var successHtml =
+                    '<strong>Thank you! Your enquiry is ready to send.</strong><br>' +
+                    'Choose how you\'d like to send it: ' +
+                    '<a href="' + waUrl + '" target="_blank" rel="noopener" style="color:#2f6530;font-weight:600;text-decoration:underline;margin:0 4px;">Send via WhatsApp</a> &nbsp;or&nbsp; ' +
+                    '<a href="' + mailtoUrl + '" style="color:#2f6530;font-weight:600;text-decoration:underline;margin:0 4px;">Send via Email</a>.<br>' +
+                    '<span style="display:block;margin-top:6px;font-size:13px;opacity:.85;">Prefer to talk? Call us at <a href="tel:+' + CONFIG.PHONE + '" style="color:#2f6530;font-weight:600;">+' + CONFIG.PHONE + '</a>.</span>';
+
+                // Show the success notice FIRST (so it stays even if popup behaviour varies)
+                showFormSuccess(form, successHtml);
+
+                // Now try to auto-open WhatsApp in a new tab. We never navigate the
+                // current page away — if the popup is blocked, the user can use the
+                // links in the success notice above.
+                try {
+                    window.open(waUrl, '_blank', 'noopener');
+                } catch (err) {
+                    /* ignore — links in notice cover this case */
+                }
+            });
+        });
+    }
+
+    /* ============================================================
+       4. MOBILE NAV POLISH
+       - Close mobile nav when clicking a plain link (already done in existing JS,
+         but we add a safety net).
+       - Close on Escape.
+       - Close on resize to desktop.
+       ============================================================ */
+    function mobileNavPolish() {
+        var mobileNav = document.getElementById('mobileNav');
+        var hamburger = document.getElementById('hamburgerBtn');
+        if (!mobileNav || !hamburger) return;
+
+        function closeNav() {
+            mobileNav.classList.remove('open');
+            hamburger.classList.remove('active');
+            hamburger.setAttribute('aria-expanded', 'false');
+        }
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && mobileNav.classList.contains('open')) {
+                closeNav();
+            }
+        });
+
+        var resizeTimer;
+        window.addEventListener('resize', function () {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(function () {
+                if (window.innerWidth > 980 && mobileNav.classList.contains('open')) {
+                    closeNav();
+                }
+            }, 150);
+        });
+
+        // Safety net: any <a> inside mobile nav closes the menu
+        mobileNav.querySelectorAll('a').forEach(function (a) {
+            if (!a.getAttribute('data-polished')) {
+                a.setAttribute('data-polished', '1');
+                a.addEventListener('click', function () {
+                    // allow target=_blank to work; just close the overlay
+                    setTimeout(closeNav, 120);
+                });
+            }
+        });
+    }
+
+    /* ---------- INIT ---------- */
+    function init() {
+        setActiveNav();
+        makeInternalLinksOpenNewTab();
+        enhanceForms();
+        mobileNavPolish();
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+})();
+
+
+        /* ============================================================
+   SEASON SLIDER — monsoon / winter / summer, auto-rotating
+   ============================================================ */
+(function () {
+    var section = document.getElementById('seasonSlider');
+    if (!section) return;
+ 
+    var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var slides = Array.prototype.slice.call(section.querySelectorAll('.season-slide'));
+    var dots = Array.prototype.slice.call(section.querySelectorAll('.season-dot'));
+    var labels = Array.prototype.slice.call(section.querySelectorAll('.season-label span'));
+    if (!slides.length) return;
+ 
+    function buildParticles(layerSelector, className, count, build) {
+        var layer = section.querySelector(layerSelector);
+        if (!layer || reducedMotion) return;
+        var frag = document.createDocumentFragment();
+        for (var i = 0; i < count; i++) {
+            var el = document.createElement('span');
+            el.className = className;
+            build(el, i);
+            frag.appendChild(el);
+        }
+        layer.appendChild(frag);
+    }
+ 
+    var isSmall = window.innerWidth < 720;
+ 
+    // Rain (monsoon slide)
+    buildParticles('.rain-layer', 'rain-drop', isSmall ? 26 : 48, function (el) {
+        el.style.left = (Math.random() * 100) + '%';
+        el.style.animationDuration = (0.7 + Math.random() * 0.6) + 's';
+        el.style.animationDelay = (Math.random() * 2) + 's';
+        el.style.opacity = String(0.3 + Math.random() * 0.5);
+    });
+ 
+    // Sparkles (summer slide)
+    buildParticles('.sparkle-layer', 'sparkle', isSmall ? 14 : 28, function (el) {
+        el.style.left = (Math.random() * 100) + '%';
+        el.style.top = (Math.random() * 55) + '%';
+        el.style.animationDuration = (2 + Math.random() * 3) + 's';
+        el.style.animationDelay = (Math.random() * 4) + 's';
+    });
+ 
+    var index = 0;
+    var DURATION = 6000; // keep in sync with the .season-dot::after fill animation (6s)
+    var timerId = null;
+ 
+    function goTo(i) {
+        index = ((i % slides.length) + slides.length) % slides.length;
+ 
+        slides.forEach(function (el, idx) { el.classList.toggle('active', idx === index); });
+        labels.forEach(function (el, idx) { el.classList.toggle('active', idx === index); });
+ 
+        // Restart the current dot's fill animation cleanly:
+        dots.forEach(function (el) { el.classList.remove('active'); });
+        if (dots[index]) { void dots[index].offsetWidth; } // force reflow
+        if (dots[index]) { dots[index].classList.add('active'); }
+    }
+ 
+    function next() { goTo(index + 1); }
+ 
+    function start() {
+        if (reducedMotion) return;
+        stop();
+        timerId = window.setInterval(next, DURATION);
+    }
+    function stop() {
+        if (timerId !== null) { window.clearInterval(timerId); timerId = null; }
+    }
+ 
+    dots.forEach(function (dot, idx) {
+        dot.addEventListener('click', function () {
+            goTo(idx);
+            start();
+        });
+    });
+ 
+    section.addEventListener('mouseenter', stop);
+    section.addEventListener('mouseleave', start);
+ 
+    document.addEventListener('visibilitychange', function () {
+        if (document.hidden) { stop(); } else { start(); }
+    });
+ 
+    goTo(0);
+    start();
+})();
