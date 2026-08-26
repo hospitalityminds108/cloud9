@@ -3,19 +3,24 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dining at Cloud 9 Hills Resort | A Culinary Journey Above the Clouds</title>
-    <meta name="description" content="Experience unforgettable dining at Cloud 9 Hills Resort, Lonavala — a symphony of Maharashtrian flavours, seasonal produce, and breathtaking mountain views. From candlelit dinners to monsoon feasts." />
+    <title>Dining | Cloud 9 Hills Resort, Lonavala</title>
+    <meta name="description" content="Local flavours elevated by the view — explore dining at Cloud 9 Hills Resort, Lonavala, from rooftop dinners to bonfire nights above the Western Ghats." />
     <link rel="canonical" href="https://www.cloud9hillsresort.com/dining.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Cloud 9 Hills Resort" />
+    <meta property="og:title" content="Dining | Cloud 9 Hills Resort" />
+    <meta property="og:description" content="Local flavours, elevated by the view." />
+    <meta property="og:url" content="https://www.cloud9hillsresort.com/dining.html" />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" href="/favicon/favicon.ico" sizes="any" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css">
-     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
     <script src="main.js" defer></script>
 </head>
-<body>
-    <!-- ===== HEADER (unchanged) ===== -->
+<body class="has-custom-cursor">
+  <!-- ===== HEADER ===== -->
     <header class="site-header" id="siteHeader">
         <div class="container header-inner">
             <a href="index.html" class="logo">
@@ -25,50 +30,63 @@
 
             <nav class="main-nav" aria-label="Primary">
                 <ul>
-                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <!-- 1. HOME -->
                     <li class="nav-item">
-                        <button class="nav-link" aria-haspopup="true" aria-expanded="false">Stay <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6"/></svg></button>
+                        <a href="index.html" class="nav-link active-page">Home</a>
+                    </li>
+
+                    <!-- 2. ABOUT -->
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">About</a>
+                    </li>
+
+                    <!-- 3. STAY → submenu: Villa · Cottages -->
+                    <li class="nav-item">
+                        <button class="nav-link" aria-haspopup="true" aria-expanded="false">
+                            Stay
+                            <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6"/></svg>
+                        </button>
                         <div class="dropdown" role="menu">
-                            <a href="stay.html" role="menuitem">Rooms &amp; Suites</a>
-                            <a href="stay.html#villas" role="menuitem">Villas</a>
+                            <a href="stay.html#villas" role="menuitem">Villa</a>
                             <a href="stay.html#cottages" role="menuitem">Cottages</a>
                         </div>
                     </li>
+
+                    <!-- 4. DINING -->
                     <li class="nav-item">
-                        <button class="nav-link" aria-haspopup="true" aria-expanded="false">Experiences <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6"/></svg></button>
+                        <a href="dining.html" class="nav-link">Dining</a>
+                    </li>
+
+                    <!-- 5. EVENTS → submenu: Offers -->
+                    <li class="nav-item">
+                        <button class="nav-link" aria-haspopup="true" aria-expanded="false">
+                            Events
+                            <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6"/></svg>
+                        </button>
                         <div class="dropdown" role="menu">
-                            <a href="dining.html" role="menuitem">Dining</a>
-                            <a href="index.html#experiences" role="menuitem">Infinity Pool</a>
-                            <a href="index.html#experiences" role="menuitem">Nature Experiences</a>
+                            <a href="events.html" role="menuitem">All Events</a>
+                            <a href="offers.html" role="menuitem">Offers</a>
                         </div>
                     </li>
+
+                    <!-- 6. EXPLORE -->
                     <li class="nav-item">
-                        <button class="nav-link" aria-haspopup="true" aria-expanded="false">Celebrations <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6"/></svg></button>
-                        <div class="dropdown" role="menu">
-                            <a href="events.html" role="menuitem">Weddings</a>
-                            <a href="events.html" role="menuitem">Events</a>
-                            <a href="events.html#corporate" role="menuitem">Corporate</a>
-                        </div>
+                        <a href="explore.html" class="nav-link">Explore</a>
                     </li>
+
+                    <!-- 7. CONTACT -->
                     <li class="nav-item">
-                        <button class="nav-link" aria-haspopup="true" aria-expanded="false">Explore <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6"/></svg></button>
-                        <div class="dropdown" role="menu">
-                            <a href="gallery.html" role="menuitem">Gallery</a>
-                            <a href="blog.html" role="menuitem">Blog</a>
-                            <a href="about.html" role="menuitem">About Us</a>
-                        </div>
+                        <a href="contact.html" class="nav-link">Contact</a>
                     </li>
-                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
 
             <div class="header-actions">
                 <a href="tel:+919819118832" class="icon-link" aria-label="Call Cloud 9 Hills Resort" data-track="call_click" data-track-loc="header">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3h4l2 5-2.5 1.5a11 11 0 0 0 5 5L16 12l5 2v4a2 2 0 0 1-2 2C10.5 20 4 13.5 4 5a2 2 0 0 1 2-2Z"/></svg>
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M6 3h4l2 5-2.5 1.5a11 11 0 0 0 5 5L16 12l5 2v4a2 2 0 0 1-2 2C10.5 20 4 13.5 4 5a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
                 </a>
                 <a href="https://wa.me/919819739444" class="icon-link" target="_blank" rel="noopener" aria-label="Message on WhatsApp" data-track="whatsapp_click" data-track-loc="header">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 20l1.3-4A8 8 0 1 1 9 19l-5 1Z"/></svg>
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M4 20l1.3-4A8 8 0 1 1 9 19l-5 1Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
                 </a>
                 <a href="https://www.swiftbook.io/inst/#home?propertyId=2647" class="btn btn-primary" data-track="book_now_click" data-track-loc="header">Book Your Stay</a>
             </div>
@@ -79,224 +97,127 @@
         </div>
     </header>
 
-    <!-- ===== MOBILE NAV (unchanged) ===== -->
+    <!-- ===== MOBILE NAV ===== -->
     <nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
         <ul>
-            <li><a href="index.html" class="mobile-nav-link">Home</a></li>
-            <li>
-                <div class="mobile-nav-link" data-accordion>Stay <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6"/></svg></div>
-                <div class="mobile-sub"><a href="stay.html">Rooms &amp; Suites</a><a href="stay.html#villas">Villas</a><a href="stay.html#cottages">Cottages</a></div>
-            </li>
-            <li>
-                <div class="mobile-nav-link" data-accordion>Experiences <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6"/></svg></div>
-                <div class="mobile-sub"><a href="dining.html">Dining</a><a href="index.html#experiences">Infinity Pool</a><a href="index.html#experiences">Nature Experiences</a></div>
-            </li>
-            <li>
-                <div class="mobile-nav-link" data-accordion>Celebrations <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6"/></svg></div>
-                <div class="mobile-sub"><a href="events.html">Weddings</a><a href="events.html">Events</a><a href="events.html#corporate">Corporate</a></div>
-            </li>
-            <li>
-                <div class="mobile-nav-link" data-accordion>Explore <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6"/></svg></div>
-                <div class="mobile-sub"><a href="gallery.html">Gallery</a><a href="blog.html">Blog</a><a href="about.html">About Us</a></div>
-            </li>
+            <li><a href="index.html" class="mobile-nav-link" style="color:var(--earth);">Home</a></li>
             <li><a href="about.html" class="mobile-nav-link">About</a></li>
+            <li>
+                <div class="mobile-nav-link" data-accordion>
+                    Stay
+                    <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6"/></svg>
+                </div>
+                <div class="mobile-sub">
+                    <a href="stay.html#villas">Villa</a>
+                    <a href="stay.html#cottages">Cottages</a>
+                </div>
+            </li>
+            <li><a href="dining.html" class="mobile-nav-link">Dining</a></li>
+            <li>
+                <div class="mobile-nav-link" data-accordion>
+                    Events
+                    <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6"/></svg>
+                </div>
+                <div class="mobile-sub">
+                    <a href="events.html">All Events</a>
+                    <a href="offers.html">Offers</a>
+                </div>
+            </li>
+            <li><a href="explore.html" class="mobile-nav-link">Explore</a></li>
             <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
         </ul>
         <a href="https://www.swiftbook.io/inst/#home?propertyId=2647" class="btn btn-accent" data-track="book_now_click" data-track-loc="mobile_nav">Book Now</a>
     </nav>
 
+
     <main>
 
         <!-- ===== DINING HERO ===== -->
-        <section class="dining-hero hill-art tone-dusk">
-            <img class="ph-img" src="assets/image/Resturant.jpg" alt="Dining at Cloud 9 Hills Resort" loading="lazy" width="1440" height="700" onerror="this.remove()" />
-            <div class="cloud-layer"><div class="cloud cloud--b"></div></div>
-            <div class="container dining-hero-content reveal">
-                <p class="eyebrow light"><span></span>A Table in the Sky</p>
-                <h1>Dining That<br />Floats Above the World</h1>
-                <p>Every meal at Cloud 9 is a quiet conversation with the mountains—fresh, honest, and deeply rooted in this land.</p>
+        <section class="detail-hero">
+            <div class="slider-container" data-autoplay="4500">
+                <div class="slider-track">
+                    <div class="slide active"><img class="ph-img" src="assets/image/khandala.png" alt="Mountain road leading to Cloud 9 Hills Resort, Lonavala" loading="lazy" onerror="this.remove()" /></div>
+                    <div class="slide"><img class="ph-img" src="assets/image/view.jpg" alt="Cloud 9 view" loading="lazy" onerror="this.remove()" /></div>
+                </div>
+            </div>
+            <div class="container detail-hero-content">
+                <p class="eyebrow light"><span></span>Get in Touch</p>
+                <h1>Plan Your Escape<br />Into the Hills</h1>
+                <p class="detail-hero-sub">Call, WhatsApp or send an enquiry — our team replies quickly.</p>
             </div>
         </section>
 
-        <!-- ===== PHILOSOPHY ===== -->
-        <section class="dining-philosophy">
+
+        <!-- ===== VENUES ===== -->
+        <section class="venue-strip" id="venues">
             <div class="container">
-                <div class="dining-philosophy-grid reveal">
-                    <div class="dining-philosophy-text">
-                        <p class="eyebrow">Our Philosophy</p>
-                        <h2>From the Hills to Your Plate</h2>
-                        <p>We believe the best food is grown where you live. That’s why our menus change with the season, using produce from local farmers and herbs from our own kitchen garden. We cook with the Western Ghats in mind—light, aromatic, and never overcomplicated.</p>
-                        <a href="#menu" class="btn btn-outline-dark">Explore Our Menu</a>
+                <div class="reveal" style="text-align:center;max-width:600px;margin:0 auto 56px;">
+                    <p class="eyebrow light"><span></span>Our Restaurants</p>
+                    <h2 class="section-title" style="color:var(--white);">Two Settings, One View</h2>
+                </div>
+                <div class="venue-grid">
+                    <div class="venue-card reveal">
+                        <div class="venue-card-media clip-reveal">
+                            <div class="hill-art tone-dawn">
+                                <img class="ph-img" src="assets/image/Resturant.jpg" alt="7 Heaven Restaurant at Cloud 9" loading="lazy" onerror="this.remove()" />
+                            </div>
+                        </div>
+                        <div class="venue-card-body">
+                            <h3>7 Heaven Restaurant</h3>
+                            <p>Our all-day dining restaurant, serving breakfast through dinner with a menu spanning Indian, Punjabi, Chinese and South Indian favourites — all with a view of the hills.</p>
+                            <div class="venue-tags"><span>All-Day Dining</span><span>Multi-Cuisine</span><span>Mountain View Seating</span></div>
+                        </div>
                     </div>
-                    <div class="dining-philosophy-art hill-art tone-forest">
-                        <img class="ph-img" src="assets/image/scope.jpg" alt="Fresh produce" loading="lazy" onerror="this.remove()" />
+                    <div class="venue-card reveal reveal-delay-1">
+                        <div class="venue-card-media clip-reveal">
+                            <div class="hill-art tone-monsoon">
+                                <img class="ph-img" src="assets/image/khandala.png" alt="Rooftop Restaurant at Cloud 9" loading="lazy" onerror="this.remove()" />
+                            </div>
+                        </div>
+                        <div class="venue-card-body">
+                            <h3>Rooftop Restaurant</h3>
+                            <p>An open-air setting above the treeline, best reserved for sunset. Ideal for a slower dinner, high tea, or watching the monsoon clouds roll through the valley.</p>
+                            <div class="venue-tags"><span>Open-Air</span><span>Sunset Views</span><span>High Tea &amp; Dinner</span></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ===== DINING EXPERIENCES (NEW APPROACH) ===== -->
-        <section class="dining-experiences alt">
-            <div class="container">
-                <div class="acc-section-head reveal">
-                    <div>
-                        <p class="eyebrow">Experiences</p>
-                        <h2 class="section-title">More Than Meals,<br />Moments in the Mist</h2>
-                    </div>
-                    <p class="section-lead">Each setting is crafted to frame the landscape—whether it’s a sunrise breakfast or a bonfire dinner under the stars.</p>
-                </div>
-
-                <div class="dining-exp-grid">
-                    <!-- Experience 1: Sunrise Breakfast -->
-                    <article class="dining-exp-card reveal">
-                        <div class="dining-exp-media hill-art tone-dawn">
-                            <img class="ph-img" src="assets/image/view.jpg" alt="Sunrise breakfast" loading="lazy" onerror="this.remove()" />
-                        </div>
-                        <div class="dining-exp-body">
-                            <span class="dining-exp-tag">Sunrise Ritual</span>
-                            <h3>Breakfast with the Clouds</h3>
-                            <p>As the sun rises over the valley, enjoy a slow breakfast of freshly baked bread, local fruits, and chai—served on your private balcony.</p>
-                            <div class="dining-exp-details">
-                                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg> 7:30 – 10:30 AM</span>
-                                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 18l5-6 4 4 5-7 6 9"/></svg> Balcony or Restaurant</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Experience 2: Candlelit Dinner -->
-                    <article class="dining-exp-card reveal">
-                        <div class="dining-exp-media hill-art tone-dusk">
-                            <img class="ph-img" src="assets/image/Candle light.jpg" alt="Candlelight dinner" loading="lazy" onerror="this.remove()" />
-                        </div>
-                        <div class="dining-exp-body">
-                            <span class="dining-exp-tag">Romance</span>
-                            <h3>Candlelight in the Mist</h3>
-                            <p>An intimate dinner for two, set on your private deck with flickering candles, a curated menu, and the valley lights below.</p>
-                            <div class="dining-exp-details">
-                                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3c2 4-2 5-2 8a4 4 0 0 0 8 0c0-2-1-3-2-4 1 3-1 4-2 3 1-2 0-4-2-7z"/></svg> By Reservation</span>
-                                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3-7 8-7s8 3 8 7"/></svg> Couples Only</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Experience 3: High Tea with a view -->
-                    <article class="dining-exp-card reveal">
-                        <div class="dining-exp-media hill-art tone-forest">
-                            <img class="ph-img" src="assets/image/scope.jpg" alt="High tea" loading="lazy" onerror="this.remove()" />
-                        </div>
-                        <div class="dining-exp-body">
-                            <span class="dining-exp-tag">Afternoon</span>
-                            <h3>The 4 O'Clock Ritual</h3>
-                            <p>Indian high tea with scones, sandwiches, and a pot of Darjeeling—served on the lawn as the clouds drift past.</p>
-                            <div class="dining-exp-details">
-                                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg> 4 – 6 PM</span>
-                                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 18l5-6 4 4 5-7 6 9"/></svg> Garden or Lounge</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Experience 4: Bonfire Dinner -->
-                    <article class="dining-exp-card reveal">
-                        <div class="dining-exp-media hill-art tone-monsoon">
-                            <img class="ph-img" src="assets/image/Candle light.jpg" alt="Bonfire dinner" loading="lazy" onerror="this.remove()" />
-                        </div>
-                        <div class="dining-exp-body">
-                            <span class="dining-exp-tag">Evening</span>
-                            <h3>Bonfire &amp; Bhakri</h3>
-                            <p>Rustic dining by the fire—grilled local sausages, jowar bhakri, and a glass of mulled wine. The perfect end to a day in the hills.</p>
-                            <div class="dining-exp-details">
-                                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3c2 4-2 5-2 8a4 4 0 0 0 8 0c0-2-1-3-2-4 1 3-1 4-2 3 1-2 0-4-2-7z"/></svg> On Request</span>
-                                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg> Outdoor Setting</span>
-                            </div>
-                        </div>
-                    </article>
-                </div>
+        <!-- ===== CUISINE MARQUEE ===== -->
+        <section class="cuisine-marquee">
+            <div class="marquee-track">
+                <span>Indian Cuisine</span><span>Punjabi Cuisine</span><span>Chinese Cuisine</span><span>South Indian Cuisine</span><span>Continental</span>
+                <span>Indian Cuisine</span><span>Punjabi Cuisine</span><span>Chinese Cuisine</span><span>South Indian Cuisine</span><span>Continental</span>
             </div>
         </section>
 
-        <!-- ===== SIGNATURE DISHES (WITH POETIC DESCRIPTIONS) ===== -->
-        <section class="signature-dishes" id="menu">
+        <!-- ===== DINING EXPERIENCES ===== -->
+        <section class="acc-section">
             <div class="container">
                 <div class="acc-section-head reveal">
                     <div>
-                        <p class="eyebrow">From Our Kitchen</p>
-                        <h2 class="section-title">Signature Flavours</h2>
+                        <p class="eyebrow">Dining Experiences</p>
+                        <h2 class="section-title">Beyond the Table</h2>
+                        <p class="section-lead">Every meal at Cloud 9 can be shaped around the moment — an early breakfast before a walk, a candlelit dinner, or a bonfire under the stars.</p>
                     </div>
-                    <p class="section-lead">Dishes that tell the story of the land—simple, yet unforgettable.</p>
                 </div>
-
-                <div class="dish-grid">
-                    <!-- Dish 1 -->
-                    <article class="dish-card reveal">
-                        <div class="dish-media">
-                            <div class="dish-circle">
-                                <img src="assets/image/Resturant.jpg" alt="Pithla Bhakri" loading="lazy" onerror="this.remove()" />
-                            </div>
-                        </div>
-                        <div class="dish-body">
-                            <h3>Pithla Bhakri</h3>
-                            <p>A humble comfort—gram flour simmered with garlic and green chillies, served with soft jowar flatbread. Tastes like a grandmother's kitchen.</p>
-                            <span class="dish-price">₹450</span>
-                        </div>
-                    </article>
-
-                    <!-- Dish 2 -->
-                    <article class="dish-card reveal">
-                        <div class="dish-media">
-                            <div class="dish-circle">
-                                <img src="assets/image/Resturant.jpg" alt="Veg Kolhapuri" loading="lazy" onerror="this.remove()" />
-                            </div>
-                        </div>
-                        <div class="dish-body">
-                            <h3>Veg Kolhapuri</h3>
-                            <p>A fiery, aromatic curry with the signature Kolhapuri masala—earthy, spicy, and unapologetically bold.</p>
-                            <span class="dish-price">₹520</span>
-                        </div>
-                    </article>
-
-                    <!-- Dish 3 -->
-                    <article class="dish-card reveal">
-                        <div class="dish-media">
-                            <div class="dish-circle">
-                                <img src="assets/image/Resturant.jpg" alt="Chicken Malvani" loading="lazy" onerror="this.remove()" />
-                            </div>
-                        </div>
-                        <div class="dish-body">
-                            <h3>Chicken Malvani</h3>
-                            <p>Coastal curry with coconut, red chillies, and Malvani spices—a journey to the Konkan coast in every bite.</p>
-                            <span class="dish-price">₹580</span>
-                        </div>
-                    </article>
-
-                    <!-- Dish 4 -->
-                    <article class="dish-card reveal">
-                        <div class="dish-media">
-                            <div class="dish-circle">
-                                <img src="assets/image/Resturant.jpg" alt="Puran Poli" loading="lazy" onerror="this.remove()" />
-                            </div>
-                        </div>
-                        <div class="dish-body">
-                            <h3>Puran Poli</h3>
-                            <p>Sweet lentil-stuffed flatbread, generously ghee-roasted—the ultimate comfort dessert that ends every festive meal.</p>
-                            <span class="dish-price">₹250</span>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===== CHEF'S NOTE ===== -->
-        <section class="chef-note">
-            <div class="container">
-                <div class="chef-note-inner reveal">
-                    <div class="hill-art tone-monsoon">
-                        <img class="ph-img" src="assets/image/khandala.png" alt="Chef's note" loading="lazy" onerror="this.remove()" />
+                <div class="experience-dine-grid">
+                    <div class="dine-moment reveal clip-reveal">
+                        <div class="hill-art tone-dawn"><img class="ph-img" src="assets/image/view.jpg" alt="Breakfast at Cloud 9" loading="lazy" onerror="this.remove()" /></div>
+                        <span class="dine-moment-label">Breakfast</span>
                     </div>
-                    <div class="chef-note-text">
-                        <p class="eyebrow">Chef's Note</p>
-                        <h2>"Cook with the season,<br />serve with heart."</h2>
-                        <p>— Chef Arjun, Head of Culinary</p>
-                        <p>Our menu is a living thing—it changes with the rain, the harvest, and the mood of the mountains. Come as a guest, leave as family.</p>
+                    <div class="dine-moment reveal reveal-delay-1 clip-reveal">
+                        <div class="hill-art tone-monsoon"><img class="ph-img" src="assets/image/scope.jpg" alt="High Tea at Cloud 9" loading="lazy" onerror="this.remove()" /></div>
+                        <span class="dine-moment-label">High Tea</span>
+                    </div>
+                    <div class="dine-moment reveal reveal-delay-2 clip-reveal">
+                        <div class="hill-art tone-dusk"><img class="ph-img" src="assets/image/Candle light.jpg" alt="Romantic Dinner at Cloud 9" loading="lazy" onerror="this.remove()" /></div>
+                        <span class="dine-moment-label">Romantic Dinner</span>
+                    </div>
+                    <div class="dine-moment reveal reveal-delay-3 clip-reveal">
+                        <div class="hill-art tone-forest"><img class="ph-img" src="assets/image/cottage.jpg" alt="Bonfire Dining at Cloud 9" loading="lazy" onerror="this.remove()" /></div>
+                        <span class="dine-moment-label">Bonfire Dining</span>
                     </div>
                 </div>
             </div>
@@ -304,21 +225,17 @@
 
         <!-- ===== CTA ===== -->
         <section class="monsoon hill-art tone-monsoon">
-            <img class="ph-img" src="assets/image/khandala.png" alt="Dining at Cloud 9 Hills Resort" loading="lazy" width="1440" height="700" onerror="this.remove()" />
+            <img class="ph-img" src="assets/image/khandala.png" alt="Dining at Cloud 9 in the monsoon" loading="lazy" width="1440" height="700" onerror="this.remove()" />
             <div class="cloud-layer"><div class="cloud cloud--a"></div><div class="cloud cloud--b"></div></div>
             <div class="container monsoon-content reveal">
                 <p class="eyebrow light"><span></span>Reserve Your Table</p>
-                <h2>Hungry for the Hills?</h2>
-                <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap; margin-top:30px;">
-                    <a href="tel:+919819118832" class="btn btn-outline" data-track="call_click" data-track-loc="dining_cta">Call to Reserve</a>
-                    <a href="https://wa.me/919819739444" class="btn btn-accent" data-track="whatsapp_click" data-track-loc="dining_cta">WhatsApp Us</a>
-                </div>
+                <h2>Dinner With a<br />View Awaits</h2>
+                <a href="tel:+919819118832" class="btn btn-accent" data-track="call_click" data-track-loc="dining_cta">Reserve Now</a>
             </div>
         </section>
 
     </main>
-
-    <!-- ===== FOOTER (unchanged) ===== -->
+    <!-- ===== FOOTER ===== -->
     <footer class="site-footer">
         <div class="footer-bg" aria-hidden="true">
             <img class="ph-img" src="assets/background.png" alt="Misty hills of the Western Ghats surrounding Cloud 9 Hills Resort" loading="lazy" width="1440" height="500" onerror="this.remove()" />
@@ -340,9 +257,10 @@
                 <ul class="footer-links">
                     <li><a href="stay.html">Stay</a></li>
                     <li><a href="dining.html">Dining</a></li>
-                    <li><a href="index.html#experiences">Experiences</a></li>
+                    <li><a href="events.html">Celebrations</a></li>
                     <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="blog.html">Journal</a></li>
+                    <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
@@ -355,7 +273,6 @@
                     <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg><a href="https://www.google.com/maps/place/cloud9+resort+lonavala/data=!4m2!3m1!1s0x3be8036d92ca39c3:0xb1f563c3aa648187?sa=X&ved=1t:242&ictx=111" target="_blank" rel="noopener">4 km after Lion's Point, Village Jambhulne, Amby Valley City Road, Mulshi Taluka, Lonavala, Maharashtra 410401</a></li>
                 </ul>
             </div>
-        </div>
 
         <div class="container footer-bottom">
             <span>© 2026 Cloud 9 Hills Resort, Lonavala. All rights reserved.</span>

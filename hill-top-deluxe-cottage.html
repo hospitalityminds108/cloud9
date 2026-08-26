@@ -30,7 +30,7 @@
     </script>
 </head>
 <body>
-    <!-- ===== HEADER ===== -->
+      <!-- ===== HEADER ===== -->
     <header class="site-header" id="siteHeader">
         <div class="container header-inner">
             <a href="index.html" class="logo">
@@ -40,50 +40,63 @@
 
             <nav class="main-nav" aria-label="Primary">
                 <ul>
-                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <!-- 1. HOME -->
                     <li class="nav-item">
-                        <button class="nav-link" aria-haspopup="true" aria-expanded="false">Stay <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6"/></svg></button>
+                        <a href="index.html" class="nav-link active-page">Home</a>
+                    </li>
+
+                    <!-- 2. ABOUT -->
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">About</a>
+                    </li>
+
+                    <!-- 3. STAY → submenu: Villa · Cottages -->
+                    <li class="nav-item">
+                        <button class="nav-link" aria-haspopup="true" aria-expanded="false">
+                            Stay
+                            <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6"/></svg>
+                        </button>
                         <div class="dropdown" role="menu">
-                            <a href="stay.html" role="menuitem">Rooms &amp; Suites</a>
-                            <a href="stay.html#villas" role="menuitem">Villas</a>
+                            <a href="stay.html#villas" role="menuitem">Villa</a>
                             <a href="stay.html#cottages" role="menuitem">Cottages</a>
                         </div>
                     </li>
+
+                    <!-- 4. DINING -->
                     <li class="nav-item">
-                        <button class="nav-link" aria-haspopup="true" aria-expanded="false">Experiences <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6"/></svg></button>
+                        <a href="dining.html" class="nav-link">Dining</a>
+                    </li>
+
+                    <!-- 5. EVENTS → submenu: Offers -->
+                    <li class="nav-item">
+                        <button class="nav-link" aria-haspopup="true" aria-expanded="false">
+                            Events
+                            <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6"/></svg>
+                        </button>
                         <div class="dropdown" role="menu">
-                            <a href="index.html#dining" role="menuitem">Dining</a>
-                            <a href="index.html#experiences" role="menuitem">Infinity Pool</a>
-                            <a href="index.html#experiences" role="menuitem">Nature Experiences</a>
+                            <a href="events.html" role="menuitem">All Events</a>
+                            <a href="offers.html" role="menuitem">Offers</a>
                         </div>
                     </li>
+
+                    <!-- 6. EXPLORE -->
                     <li class="nav-item">
-                        <button class="nav-link" aria-haspopup="true" aria-expanded="false">Celebrations <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6"/></svg></button>
-                        <div class="dropdown" role="menu">
-                            <a href="#" role="menuitem">Weddings</a>
-                            <a href="#" role="menuitem">Events</a>
-                            <a href="#" role="menuitem">Corporate</a>
-                        </div>
+                        <a href="explore.html" class="nav-link">Explore</a>
                     </li>
+
+                    <!-- 7. CONTACT -->
                     <li class="nav-item">
-                        <button class="nav-link" aria-haspopup="true" aria-expanded="false">Explore <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6"/></svg></button>
-                        <div class="dropdown" role="menu">
-                            <a href="#" role="menuitem">Lonavala</a>
-                            <a href="#" role="menuitem">Attractions</a>
-                            <a href="#" role="menuitem">Gallery</a>
-                        </div>
+                        <a href="contact.html" class="nav-link">Contact</a>
                     </li>
-                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
 
             <div class="header-actions">
                 <a href="tel:+919819118832" class="icon-link" aria-label="Call Cloud 9 Hills Resort" data-track="call_click" data-track-loc="header">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3h4l2 5-2.5 1.5a11 11 0 0 0 5 5L16 12l5 2v4a2 2 0 0 1-2 2C10.5 20 4 13.5 4 5a2 2 0 0 1 2-2Z"/></svg>
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M6 3h4l2 5-2.5 1.5a11 11 0 0 0 5 5L16 12l5 2v4a2 2 0 0 1-2 2C10.5 20 4 13.5 4 5a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
                 </a>
                 <a href="https://wa.me/919819739444" class="icon-link" target="_blank" rel="noopener" aria-label="Message on WhatsApp" data-track="whatsapp_click" data-track-loc="header">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 20l1.3-4A8 8 0 1 1 9 19l-5 1Z"/></svg>
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M4 20l1.3-4A8 8 0 1 1 9 19l-5 1Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
                 </a>
                 <a href="https://www.swiftbook.io/inst/#home?propertyId=2647" class="btn btn-primary" data-track="book_now_click" data-track-loc="header">Book Your Stay</a>
             </div>
@@ -97,28 +110,35 @@
     <!-- ===== MOBILE NAV ===== -->
     <nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
         <ul>
-            <li><a href="index.html" class="mobile-nav-link">Home</a></li>
-            <li>
-                <div class="mobile-nav-link" data-accordion>Stay <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6"/></svg></div>
-                <div class="mobile-sub"><a href="stay.html">Rooms &amp; Suites</a><a href="stay.html#villas">Villas</a><a href="stay.html#cottages">Cottages</a></div>
-            </li>
-            <li>
-                <div class="mobile-nav-link" data-accordion>Experiences <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6"/></svg></div>
-                <div class="mobile-sub"><a href="index.html#dining">Dining</a><a href="index.html#experiences">Infinity Pool</a><a href="index.html#experiences">Nature Experiences</a></div>
-            </li>
-            <li>
-                <div class="mobile-nav-link" data-accordion>Celebrations <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6"/></svg></div>
-                <div class="mobile-sub"><a href="#">Weddings</a><a href="#">Events</a><a href="#">Corporate</a></div>
-            </li>
-            <li>
-                <div class="mobile-nav-link" data-accordion>Explore <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6"/></svg></div>
-                <div class="mobile-sub"><a href="#">Lonavala</a><a href="#">Attractions</a><a href="#">Gallery</a></div>
-            </li>
+            <li><a href="index.html" class="mobile-nav-link" style="color:var(--earth);">Home</a></li>
             <li><a href="about.html" class="mobile-nav-link">About</a></li>
+            <li>
+                <div class="mobile-nav-link" data-accordion>
+                    Stay
+                    <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6"/></svg>
+                </div>
+                <div class="mobile-sub">
+                    <a href="stay.html#villas">Villa</a>
+                    <a href="stay.html#cottages">Cottages</a>
+                </div>
+            </li>
+            <li><a href="dining.html" class="mobile-nav-link">Dining</a></li>
+            <li>
+                <div class="mobile-nav-link" data-accordion>
+                    Events
+                    <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6"/></svg>
+                </div>
+                <div class="mobile-sub">
+                    <a href="events.html">All Events</a>
+                    <a href="offers.html">Offers</a>
+                </div>
+            </li>
+            <li><a href="explore.html" class="mobile-nav-link">Explore</a></li>
             <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
         </ul>
         <a href="https://www.swiftbook.io/inst/#home?propertyId=2647" class="btn btn-accent" data-track="book_now_click" data-track-loc="mobile_nav">Book Now</a>
     </nav>
+
 
     <main>
 

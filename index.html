@@ -19,33 +19,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css">
-    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
 
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "Hotel",
-            "name": "Cloud 9 Hills Resort",
-            "description": "A premium luxury hilltop resort in Lonavala, Maharashtra, in the Western Ghats.",
-            "url": "https://www.cloud9hillsresort.com/",
-            "telephone": "+91-00000-00000",
-            "priceRange": "₹₹₹",
-            "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "Tiger Point Road",
-                "addressLocality": "Lonavala",
-                "addressRegion": "Maharashtra",
-                "postalCode": "410401",
-                "addressCountry": "IN"
-            },
-            "amenityFeature": [
-                { "@type": "LocationFeatureSpecification", "name": "Swimming Pool" },
-                { "@type": "LocationFeatureSpecification", "name": "Mountain View" },
-                { "@type": "LocationFeatureSpecification", "name": "Restaurant" },
-                { "@type": "LocationFeatureSpecification", "name": "Free WiFi" }
-            ]
-        }
+    <style>
+       
+    </style>
+
+    <script>
+
     </script>
 </head>
 <body>
@@ -54,49 +35,36 @@
     <header class="site-header" id="siteHeader">
         <div class="container header-inner">
             <a href="index.html" class="logo">
-    <!-- White logo (Main) -->
-    <img src="assets/logos.png" alt="Cloud 9 Hills Resort Logo" class="logo-img logo-main" />
-    <!-- Colored logo (Sticky) -->
-    <img src="assets/logoo.png" alt="Cloud 9 Hills Resort Logo" class="logo-img logo-sticky" />
-  
-</a>
+                <img src="assets/logos.png" alt="Cloud 9 Hills Resort Logo" class="logo-img logo-main" />
+                <img src="assets/logoo.png" alt="Cloud 9 Hills Resort Logo" class="logo-img logo-sticky" />
+            </a>
 
             <nav class="main-nav" aria-label="Primary">
                 <ul>
-                    <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
-                    <li class="nav-item">
-                        <button class="nav-link" aria-haspopup="true" aria-expanded="false">Stay <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6"/></svg></button>
-                        <div class="dropdown" role="menu">
-                            <a href="#" role="menuitem">Rooms &amp; Suites</a>
-                            <a href="#" role="menuitem">Amenities</a>
-                            <a href="#" role="menuitem">Offers</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <button class="nav-link" aria-haspopup="true" aria-expanded="false">Experiences <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6"/></svg></button>
-                        <div class="dropdown" role="menu">
-                            <a href="#" role="menuitem">Dining</a>
-                            <a href="#" role="menuitem">Infinity Pool</a>
-                            <a href="#" role="menuitem">Nature Experiences</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <button class="nav-link" aria-haspopup="true" aria-expanded="false">Celebrations <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6"/></svg></button>
-                        <div class="dropdown" role="menu">
-                            <a href="#" role="menuitem">Weddings</a>
-                            <a href="#" role="menuitem">Events</a>
-                            <a href="#" role="menuitem">Corporate</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <button class="nav-link" aria-haspopup="true" aria-expanded="false">Explore <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6"/></svg></button>
-                        <div class="dropdown" role="menu">
-                            <a href="#" role="menuitem">Lonavala</a>
-                            <a href="#" role="menuitem">Attractions</a>
-                            <a href="#" role="menuitem">Gallery</a>
-                        </div>
-                    </li>
+                    <li class="nav-item"><a href="index.html" class="nav-link active-page">Home</a></li>
                     <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item">
+                        <button class="nav-link" aria-haspopup="true" aria-expanded="false">
+                            Stay
+                            <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6"/></svg>
+                        </button>
+                        <div class="dropdown" role="menu">
+                            <a href="stay.html#villas" role="menuitem">Villa</a>
+                            <a href="stay.html#cottages" role="menuitem">Cottages</a>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a href="dining.html" class="nav-link">Dining</a></li>
+                    <li class="nav-item">
+                        <button class="nav-link" aria-haspopup="true" aria-expanded="false">
+                            Events
+                            <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6"/></svg>
+                        </button>
+                        <div class="dropdown" role="menu">
+                            <a href="events.html" role="menuitem">All Events</a>
+                            <a href="offers.html" role="menuitem">Offers</a>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a href="explore.html" class="nav-link">Explore</a></li>
                     <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
@@ -121,28 +89,35 @@
     <nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
         <ul>
             <li><a href="index.html" class="mobile-nav-link" style="color:var(--earth);">Home</a></li>
-            <li>
-                <div class="mobile-nav-link" data-accordion>Stay <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6"/></svg></div>
-                <div class="mobile-sub"><a href="#">Rooms &amp; Suites</a><a href="#">Amenities</a><a href="#">Offers</a></div>
-            </li>
-            <li>
-                <div class="mobile-nav-link" data-accordion>Experiences <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6"/></svg></div>
-                <div class="mobile-sub"><a href="#">Dining</a><a href="#">Infinity Pool</a><a href="#">Nature Experiences</a></div>
-            </li>
-            <li>
-                <div class="mobile-nav-link" data-accordion>Celebrations <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6"/></svg></div>
-                <div class="mobile-sub"><a href="#">Weddings</a><a href="#">Events</a><a href="#">Corporate</a></div>
-            </li>
-            <li>
-                <div class="mobile-nav-link" data-accordion>Explore <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6"/></svg></div>
-                <div class="mobile-sub"><a href="#">Lonavala</a><a href="#">Attractions</a><a href="#">Gallery</a></div>
-            </li>
             <li><a href="about.html" class="mobile-nav-link">About</a></li>
+            <li>
+                <div class="mobile-nav-link" data-accordion>
+                    Stay
+                    <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6"/></svg>
+                </div>
+                <div class="mobile-sub">
+                    <a href="stay.html#villas">Villa</a>
+                    <a href="stay.html#cottages">Cottages</a>
+                </div>
+            </li>
+            <li><a href="dining.html" class="mobile-nav-link">Dining</a></li>
+            <li>
+                <div class="mobile-nav-link" data-accordion>
+                    Events
+                    <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6"/></svg>
+                </div>
+                <div class="mobile-sub">
+                    <a href="events.html">All Events</a>
+                    <a href="offers.html">Offers</a>
+                </div>
+            </li>
+            <li><a href="explore.html" class="mobile-nav-link">Explore</a></li>
             <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
         </ul>
         <a href="https://www.swiftbook.io/inst/#home?propertyId=2647" class="btn btn-accent" data-track="book_now_click" data-track-loc="mobile_nav">Book Now</a>
     </nav>
 
+    <!-- ===== MAIN CONTENT ===== -->
     <main>
 
         <!-- ===== HERO ===== -->
@@ -150,9 +125,8 @@
             <div class="hero-scene hill-art tone-dawn" id="heroArt">
                 <video class="hero-video" id="heroVideo" autoplay muted loop playsinline poster="assets/image/khandala.png" aria-hidden="true" onerror="this.remove()">
                     <source src="assets/Cloud9.mp4" type="video/mp4" />
-                    <source src="assets/Cloud9.mp4" type="video/mp4" />
                 </video>
-                </div>
+            </div>
 
             <div class="container hero-content">
                 <p class="eyebrow">Welcome to Cloud 9</p>
@@ -170,7 +144,6 @@
                     <a href="https://wa.me/919819739444" target="_blank" rel="noopener" data-track="whatsapp_click" data-track-loc="hero"><svg viewBox="0 0 24 24" fill="none"><path d="M4 20l1.3-4A8 8 0 1 1 9 19l-5 1Z" stroke="currentColor" stroke-width="1.5"/></svg> WhatsApp</a>
                 </div>
             </div>
-
         </section>
 
         <!-- ===== INTRO ===== -->
@@ -179,15 +152,15 @@
                 <img class="ph-img" src="assets/background.png" alt="" loading="lazy" width="1983" height="793" onerror="this.remove()" />
             </div>
             <div class="container intro-grid">
-               <div class="intro-art reveal hill-art tone-forest">
-    <div class="slider-container" data-autoplay="4000">
-        <div class="slider-track">
-            <div class="slide active"><img class="ph-img" src="couple.jpeg" alt="Slide 1" loading="lazy" onerror="this.remove()" /></div>
-            <div class="slide"><img class="ph-img" src="assets/image/cottage.jpg" alt="Slide 2" loading="lazy" onerror="this.remove()" /></div>
-            <div class="slide"><img class="ph-img" src="assets/image/Conference.jpg" alt="Slide 3" loading="lazy" onerror="this.remove()" /></div>
-        </div>
-    </div>
-</div>
+                <div class="intro-art reveal hill-art tone-forest">
+                    <div class="slider-container" data-autoplay="4000">
+                        <div class="slider-track">
+                            <div class="slide active"><img class="ph-img" src="couple.jpeg" alt="Slide 1" loading="lazy" onerror="this.remove()" /></div>
+                            <div class="slide"><img class="ph-img" src="assets/image/cottage.jpg" alt="Slide 2" loading="lazy" onerror="this.remove()" /></div>
+                            <div class="slide"><img class="ph-img" src="assets/image/Conference.jpg" alt="Slide 3" loading="lazy" onerror="this.remove()" /></div>
+                        </div>
+                    </div>
+                </div>
                 <div class="intro-body reveal reveal-delay-1">
                     <p class="eyebrow">The Cloud 9 Experience</p>
                     <h2 class="section-title">A Different Kind<br />of Escape</h2>
@@ -205,138 +178,307 @@
 
         <!-- ===== EXPERIENCES ===== -->
         <section class="experiences on-dark" id="experiences">
-    <div class="container">
-        <!-- Header -->
-        <div class="exp-header reveal">
-            <div>
-                <p class="eyebrow light">Signature Moments</p>
-                <h2 class="section-title">Experiences Worth Remembering</h2>
-            </div>
-            <p class="section-lead">From misty mountain mornings to bonfire evenings, every hour at Cloud 9 is shaped by the hills around it.</p>
-        </div>
-
-        <!-- Auto-Slider Cards -->
-        <div class="exp-scroll reveal">
-    <!-- Card 1 -->
-   <article class="exp-card">
-    <div class="hill-art tone-dawn">
-        <!-- Native video works perfectly for autoplay, loop and mute -->
-        <video autoplay loop muted playsinline style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:1;">
-            <source src="assets/videos/1.mp4" type="video/mp4">
-            <img class="ph-img" src="assets/image/khandala.png" alt="" loading="lazy" />
-        </video>
-    </div>
-</article>
-    <!-- Card 2 -->
-     <article class="exp-card">
-    <div class="hill-art tone-dawn">
-        <!-- Native video works perfectly for autoplay, loop and mute -->
-        <video autoplay loop muted playsinline style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:1;">
-            <source src="assets/videos/2.mp4" type="video/mp4">
-            <img class="ph-img" src="assets/image/khandala.png" alt="" loading="lazy" />
-        </video>
-    </div>
-</article>
-    <!-- Card 3 -->
-       <article class="exp-card">
-    <div class="hill-art tone-dawn">
-        <!-- Native video works perfectly for autoplay, loop and mute -->
-        <video autoplay loop muted playsinline style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:1;">
-            <source src="assets/videos/3.mp4" type="video/mp4">
-            <img class="ph-img" src="assets/image/khandala.png" alt="" loading="lazy" />
-        </video>
-    </div>
-</article>
-    <!-- Card 4 -->
-       <article class="exp-card">
-    <div class="hill-art tone-dawn">
-        <!-- Native video works perfectly for autoplay, loop and mute -->
-        <video autoplay loop muted playsinline style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:1;">
-            <source src="assets/videos/4.mp4" type="video/mp4">
-            <img class="ph-img" src="assets/image/khandala.png" alt="" loading="lazy" />
-        </video>
-    </div>
-</article>
-    <!-- Card 5 -->
-       <article class="exp-card">
-    <div class="hill-art tone-dawn">
-        <!-- Native video works perfectly for autoplay, loop and mute -->
-        <video autoplay loop muted playsinline style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:1;">
-            <source src="assets/videos/5.mp4" type="video/mp4">
-            <img class="ph-img" src="assets/image/khandala.png" alt="" loading="lazy" />
-        </video>
-    </div>
-</article>
-    <!-- Card 6 -->
-       <article class="exp-card">
-    <div class="hill-art tone-dawn">
-        <!-- Native video works perfectly for autoplay, loop and mute -->
-        <video autoplay loop muted playsinline style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:1;">
-            <source src="assets/videos/6.mp4" type="video/mp4">
-            <img class="ph-img" src="assets/image/khandala.png" alt="" loading="lazy" />
-        </video>
-    </div>
-</article>
-</div>
-
-        <!-- NEW: Instagram Follow Button (Forced to a new line below the cards) -->
-        <div class="exp-follow-wrapper reveal">
-            <a href="https://www.instagram.com/cloud9hillsresortlonavala/" target="_blank" rel="noopener" class="btn btn-primary">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:18px;height:18px;margin-right:8px;"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M18 6h.01"/></svg>
-                Follow us on Instagram
-            </a>
-        </div>
-    </div>
-</section>
-
-        <!-- ===== ROOMS ===== -->
-        <section class="rooms" id="rooms">
             <div class="container">
-                <div class="reveal">
-                    <p class="eyebrow">Stay With Us</p>
-                    <h2 class="section-title">Stay Above the Ordinary</h2>
-                    <p class="section-lead">Four room categories, each framed by a different angle of the hills — from private cottages to a cliffside villa.</p>
+                <div class="exp-header reveal">
+                    <div>
+                        <p class="eyebrow light">Signature Moments</p>
+                        <h2 class="section-title">Experiences Worth Remembering</h2>
+                    </div>
+                    <p class="section-lead">From misty mountain mornings to bonfire evenings, every hour at Cloud 9 is shaped by the hills around it.</p>
                 </div>
 
-                <div class="rooms-grid">
-                    <article class="room-large reveal">
-                        <div class="hill-art tone-dawn"><img class="ph-img" src="assets/image/Duplex Master bedroom.jpg" alt="Cloud 9 Hills Resort — scenic view" loading="lazy" width="800" height="600" onerror="this.remove()"><svg viewBox="0 0 700 900" preserveAspectRatio="xMidYMax slice"><path d="M0 640 L150 540 L320 620 L500 500 L700 610 L700 900 L0 900 Z" fill="#7E9D63"/></svg></div>
-                        <div class="room-info">
-                            <h3 class="room-name">3 Bedroom Villa</h3>
-                            <div class="room-meta">
-                                <span><svg viewBox="0 0 24 24" fill="none"><path d="M3 12h18M3 12l3-4M3 12l3 4M21 12l-3-4M21 12l-3 4" stroke="currentColor" stroke-width="1.5"/></svg></span>
-                                <span><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.2" stroke="currentColor" stroke-width="1.5"/><path d="M5 20c1-4 4-6 7-6s6 2 7 6" stroke="currentColor" stroke-width="1.5"/></svg></span>
-                                <span>Private Plunge Pool · Panoramic Deck</span>
-                            </div>
-                            <div class="room-actions">
-                                <a href="#" class="btn-ghost light">Explore Room<svg viewBox="0 0 16 16" fill="none"><path d="M2 8h11M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.6"/></svg></a>
-                                <a href="https://www.swiftbook.io/inst/#home?propertyId=2647" class="btn btn-accent" data-track="book_now_click" data-track-loc="room_presidential">Book Now</a>
-                            </div>
+                <div class="exp-scroll reveal">
+                    <article class="exp-card">
+                        <div class="hill-art tone-dawn">
+                            <video autoplay loop muted playsinline style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:1;">
+                                <source src="assets/videos/1.mp4" type="video/mp4">
+                                <img class="ph-img" src="assets/image/khandala.png" alt="" loading="lazy" />
+                            </video>
                         </div>
                     </article>
+                    <article class="exp-card">
+                        <div class="hill-art tone-dawn">
+                            <video autoplay loop muted playsinline style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:1;">
+                                <source src="assets/videos/2.mp4" type="video/mp4">
+                                <img class="ph-img" src="assets/image/khandala.png" alt="" loading="lazy" />
+                            </video>
+                        </div>
+                    </article>
+                    <article class="exp-card">
+                        <div class="hill-art tone-dawn">
+                            <video autoplay loop muted playsinline style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:1;">
+                                <source src="assets/videos/3.mp4" type="video/mp4">
+                                <img class="ph-img" src="assets/image/khandala.png" alt="" loading="lazy" />
+                            </video>
+                        </div>
+                    </article>
+                    <article class="exp-card">
+                        <div class="hill-art tone-dawn">
+                            <video autoplay loop muted playsinline style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:1;">
+                                <source src="assets/videos/4.mp4" type="video/mp4">
+                                <img class="ph-img" src="assets/image/khandala.png" alt="" loading="lazy" />
+                            </video>
+                        </div>
+                    </article>
+                    <article class="exp-card">
+                        <div class="hill-art tone-dawn">
+                            <video autoplay loop muted playsinline style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:1;">
+                                <source src="assets/videos/5.mp4" type="video/mp4">
+                                <img class="ph-img" src="assets/image/khandala.png" alt="" loading="lazy" />
+                            </video>
+                        </div>
+                    </article>
+                    <article class="exp-card">
+                        <div class="hill-art tone-dawn">
+                            <video autoplay loop muted playsinline style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:1;">
+                                <source src="assets/videos/6.mp4" type="video/mp4">
+                                <img class="ph-img" src="assets/image/khandala.png" alt="" loading="lazy" />
+                            </video>
+                        </div>
+                    </article>
+                </div>
 
-                    <div class="room-stack">
-                        <article class="room-card reveal reveal-delay-1">
-                            <div class="hill-art tone-forest"><img class="ph-img" src="assets/image/Deluxe cottage.jpg" alt="Cloud 9 Hills Resort — scenic view" loading="lazy" width="800" height="600" onerror="this.remove()"><svg viewBox="0 0 700 500" preserveAspectRatio="xMidYMax slice"><path d="M0 320 L140 260 L300 310 L460 250 L700 320 L700 500 L0 500 Z" fill="#3D5E3E"/></svg></div>
-                            <div class="room-info">
-                                <h3 class="room-name">Deluxe Cottatge</h3>
-                                <div class="room-meta"><span></span><span></span><span>Balcony View</span></div>
-                                <div class="room-actions">
-                                    <a href="https://www.swiftbook.io/inst/#home?propertyId=2647" class="btn btn-outline-dark" data-track="book_now_click" data-track-loc="room_cloud_deck">Book Now</a>
-                                </div>
-                            </div>
-                        </article>
-                        <article class="room-card reveal reveal-delay-2">
-                            <div class="hill-art tone-monsoon"><img class="ph-img" src="assets/image/Duplex Bedroom.jpg" alt="Cloud 9 Hills Resort — scenic view" loading="lazy" width="800" height="600" onerror="this.remove()"><svg viewBox="0 0 700 500" preserveAspectRatio="xMidYMax slice"><path d="M0 340 L160 270 L340 320 L520 260 L700 330 L700 500 L0 500 Z" fill="#3F7A40"/></svg></div>
-                            <div class="room-info">
-                                <h3 class="room-name">Duplex Cottage</h3>
-                                <div class="room-meta"><span>580 sq.ft</span><span>3 Guests</span><span>Private Garden</span></div>
-                                <div class="room-actions">
-                                    <a href="https://www.swiftbook.io/inst/#home?propertyId=2647" class="btn btn-outline-dark" data-track="book_now_click" data-track-loc="room_forest_cottage">Book Now</a>
-                                </div>
-                            </div>
-                        </article>
+                <div class="exp-follow-wrapper reveal">
+                    <a href="https://www.instagram.com/cloud9hillsresortlonavala/" target="_blank" rel="noopener" class="btn btn-primary">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:18px;height:18px;margin-right:8px;"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M18 6h.01"/></svg>
+                        Follow us on Instagram
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== STAY SLIDER ===== -->
+        <section class="rooms" id="rooms">
+            <div class="container">
+                <div class="reveal" style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:20px;">
+                    <div>
+                        <p class="eyebrow">Stay With Us</p>
+                        <h2 class="section-title">Stay Above the Ordinary</h2>
+                        <p class="section-lead">Villas, cottages and suites — each framed by a different angle of the hills.</p>
                     </div>
+                    <div class="stay-counter">
+                        <span>7</span> Luxury Stays Available
+                    </div>
+                </div>
+
+                <div class="stay-slider-wrap reveal">
+                    <div class="stay-slider-track" id="staySliderTrack">
+
+                        <!-- SLIDE 1: 3 Bedroom Luxury Villa -->
+                        <div class="stay-slide active">
+                            <div class="stay-card-media">
+                                <div class="hill-art tone-dawn">
+                                    <img class="ph-img" src="assets/image/Duplex Master bedroom.jpg" alt="3 Bedroom Luxury Villa" loading="lazy" width="800" height="600" onerror="this.remove()" />
+                                </div>
+                                <span class="stay-tag">Signature Villa</span>
+                                <div class="stay-card-title">
+                                    <h3>3 Bedroom Luxury Villa</h3>
+                                    <div class="stay-card-badges">
+                                        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 18v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6"/><path d="M3 18h18M5 10V6h6v4"/></svg> 3 Beds</span>
+                                        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="8" r="3"/><path d="M2 20c0-3.5 3-6 7-6s7 2.5 7 6"/><circle cx="17" cy="9" r="2.4"/><path d="M16 14c2.6.3 4.5 2.3 5 5.7"/></svg> 6–8 Guests</span>
+                                        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 18l5-6 4 4 5-7 6 9" /></svg> Mountain View</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="stay-card-body">
+                                <span class="stay-feature-pill">Mountain-Facing Villa</span>
+                                <p>A private mountain-view villa built for families and groups who want space, privacy and the hills to themselves.</p>
+                                <div class="stay-card-actions">
+                                    <a href="3-bedroom-luxury-villa.html" class="btn-ghost">Explore<svg viewBox="0 0 16 16" fill="none"><path d="M2 8h11M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.6"/></svg></a>
+                                    <a href="https://www.swiftbook.io/inst/#home?propertyId=2647" class="btn btn-outline-dark" data-track="book_now_click" data-track-loc="stay_slider">Book Now</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SLIDE 2: 4 Bedroom Luxury Villa -->
+                        <div class="stay-slide">
+                            <div class="stay-card-media">
+                                <div class="hill-art tone-forest">
+                                    <img class="ph-img" src="assets/image/Duplex Bedroom.jpg" alt="4 Bedroom Luxury Villa" loading="lazy" width="800" height="600" onerror="this.remove()" />
+                                </div>
+                                <span class="stay-tag">Grand Villa</span>
+                                <div class="stay-card-title">
+                                    <h3>4 Bedroom Luxury Villa</h3>
+                                    <div class="stay-card-badges">
+                                        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 18v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6"/><path d="M3 18h18M5 10V6h6v4"/></svg> 4 Beds</span>
+                                        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="8" r="3"/><path d="M2 20c0-3.5 3-6 7-6s7 2.5 7 6"/><circle cx="17" cy="9" r="2.4"/><path d="M16 14c2.6.3 4.5 2.3 5 5.7"/></svg> 8–10 Guests</span>
+                                        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 18l5-6 4 4 5-7 6 9" /></svg> Panoramic View</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="stay-card-body">
+                                <span class="stay-feature-pill">Panoramic Mountain Views</span>
+                                <p>Cloud 9's largest private villa — four bedrooms, expansive shared spaces and panoramic views on every side.</p>
+                                <div class="stay-card-actions">
+                                    <a href="4-bedroom-luxury-villa.html" class="btn-ghost">Explore<svg viewBox="0 0 16 16" fill="none"><path d="M2 8h11M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.6"/></svg></a>
+                                    <a href="https://www.swiftbook.io/inst/#home?propertyId=2647" class="btn btn-outline-dark" data-track="book_now_click" data-track-loc="stay_slider">Book Now</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SLIDE 3: Deluxe Cottage -->
+                        <div class="stay-slide">
+                            <div class="stay-card-media">
+                                <div class="hill-art tone-forest">
+                                    <img class="ph-img" src="assets/image/Deluxe cottage.jpg" alt="Deluxe Cottage" loading="lazy" width="800" height="600" onerror="this.remove()" />
+                                </div>
+                                <span class="stay-tag">Cottage</span>
+                                <div class="stay-card-title">
+                                    <h3>Deluxe Cottage</h3>
+                                    <div class="stay-card-badges">
+                                        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 18v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6"/><path d="M3 18h18M5 10V6h6v4"/></svg> 1 Bed</span>
+                                        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="8" r="3"/><path d="M2 20c0-3.5 3-6 7-6s7 2.5 7 6"/><circle cx="17" cy="9" r="2.4"/><path d="M16 14c2.6.3 4.5 2.3 5 5.7"/></svg> 2–3 Guests</span>
+                                        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 18l5-6 4 4 5-7 6 9" /></svg> Garden View</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="stay-card-body">
+                                <span class="stay-feature-pill">Garden-Facing Room</span>
+                                <p>A cosy, garden-facing cottage — an easy, comfortable base for couples and small families.</p>
+                                <div class="stay-card-actions">
+                                    <a href="deluxe-cottage.html" class="btn-ghost">Explore<svg viewBox="0 0 16 16" fill="none"><path d="M2 8h11M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.6"/></svg></a>
+                                    <a href="https://www.swiftbook.io/inst/#home?propertyId=2647" class="btn btn-outline-dark" data-track="book_now_click" data-track-loc="stay_slider">Book Now</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SLIDE 4: Hill Top Deluxe Cottage -->
+                        <div class="stay-slide">
+                            <div class="stay-card-media">
+                                <div class="hill-art tone-dawn">
+                                    <img class="ph-img" src="assets/image/cottage.jpg" alt="Hill Top Deluxe Cottage" loading="lazy" width="800" height="600" onerror="this.remove()" />
+                                </div>
+                                <span class="stay-tag">Hill Top</span>
+                                <div class="stay-card-title">
+                                    <h3>Hill Top Deluxe Cottage</h3>
+                                    <div class="stay-card-badges">
+                                        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 18v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6"/><path d="M3 18h18M5 10V6h6v4"/></svg> 1 Bed</span>
+                                        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="8" r="3"/><path d="M2 20c0-3.5 3-6 7-6s7 2.5 7 6"/><circle cx="17" cy="9" r="2.4"/><path d="M16 14c2.6.3 4.5 2.3 5 5.7"/></svg> 2–4 Guests</span>
+                                        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 18l5-6 4 4 5-7 6 9" /></svg> Hill Top View</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="stay-card-body">
+                                <span class="stay-feature-pill">Elevated Hill Top Position</span>
+                                <p>Set slightly higher on the property, with an open mountain view straight from the balcony.</p>
+                                <div class="stay-card-actions">
+                                    <a href="hill-top-deluxe-cottage.html" class="btn-ghost">Explore<svg viewBox="0 0 16 16" fill="none"><path d="M2 8h11M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.6"/></svg></a>
+                                    <a href="https://www.swiftbook.io/inst/#home?propertyId=2647" class="btn btn-outline-dark" data-track="book_now_click" data-track-loc="stay_slider">Book Now</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SLIDE 5: Hill Top Suite -->
+                        <div class="stay-slide">
+                            <div class="stay-card-media">
+                                <div class="hill-art tone-monsoon">
+                                    <img class="ph-img" src="assets/image/khandala.png" alt="Hill Top Suite" loading="lazy" width="800" height="600" onerror="this.remove()" />
+                                </div>
+                                <span class="stay-tag">Suite</span>
+                                <div class="stay-card-title">
+                                    <h3>Hill Top Suite</h3>
+                                    <div class="stay-card-badges">
+                                        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 18v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6"/><path d="M3 18h18M5 10V6h6v4"/></svg> 1 Bed Suite</span>
+                                        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="8" r="3"/><path d="M2 20c0-3.5 3-6 7-6s7 2.5 7 6"/><circle cx="17" cy="9" r="2.4"/><path d="M16 14c2.6.3 4.5 2.3 5 5.7"/></svg> 2 Guests</span>
+                                        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 18l5-6 4 4 5-7 6 9" /></svg> Elevated View</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="stay-card-body">
+                                <span class="stay-feature-pill">Dedicated Sitting Area</span>
+                                <p>A refined suite with a larger sitting area, tucked into the quietest corner of the hill top.</p>
+                                <div class="stay-card-actions">
+                                    <a href="hill-top-suite.html" class="btn-ghost">Explore<svg viewBox="0 0 16 16" fill="none"><path d="M2 8h11M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.6"/></svg></a>
+                                    <a href="https://www.swiftbook.io/inst/#home?propertyId=2647" class="btn btn-outline-dark" data-track="book_now_click" data-track-loc="stay_slider">Book Now</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SLIDE 6: Family Deluxe Cottage -->
+                        <div class="stay-slide">
+                            <div class="stay-card-media">
+                                <div class="hill-art tone-dusk">
+                                    <img class="ph-img" src="assets/image/Deluxe cottage.jpg" alt="Family Deluxe Cottage" loading="lazy" width="800" height="600" onerror="this.remove()" />
+                                </div>
+                                <span class="stay-tag">Family Stay</span>
+                                <div class="stay-card-title">
+                                    <h3>Family Deluxe Cottage</h3>
+                                    <div class="stay-card-badges">
+                                        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 18v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6"/><path d="M3 18h18M5 10V6h6v4"/></svg> 2 Beds</span>
+                                        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="8" r="3"/><path d="M2 20c0-3.5 3-6 7-6s7 2.5 7 6"/><circle cx="17" cy="9" r="2.4"/><path d="M16 14c2.6.3 4.5 2.3 5 5.7"/></svg> 4–5 Guests</span>
+                                        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 18l5-6 4 4 5-7 6 9" /></svg> Valley View</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="stay-card-body">
+                                <span class="stay-feature-pill">Two Sleeping Areas</span>
+                                <p>Extra room to spread out — built for families travelling with kids or grandparents.</p>
+                                <div class="stay-card-actions">
+                                    <a href="family-deluxe-cottage.html" class="btn-ghost">Explore<svg viewBox="0 0 16 16" fill="none"><path d="M2 8h11M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.6"/></svg></a>
+                                    <a href="https://www.swiftbook.io/inst/#home?propertyId=2647" class="btn btn-outline-dark" data-track="book_now_click" data-track-loc="stay_slider">Book Now</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SLIDE 7: Aranya Honeymoon Suite -->
+                        <div class="stay-slide">
+                            <div class="stay-card-media">
+                                <div class="hill-art tone-dusk">
+                                    <img class="ph-img" src="couple.jpeg" alt="Aranya Honeymoon Suite" loading="lazy" width="800" height="600" onerror="this.remove()" />
+                                </div>
+                                <span class="stay-tag">Honeymoon</span>
+                                <div class="stay-card-title">
+                                    <h3>Aranya Honeymoon Suite</h3>
+                                    <div class="stay-card-badges">
+                                        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 18v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6"/><path d="M3 18h18M5 10V6h6v4"/></svg> 1 Bed Suite</span>
+                                        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="8" r="3"/><path d="M2 20c0-3.5 3-6 7-6s7 2.5 7 6"/><circle cx="17" cy="9" r="2.4"/><path d="M16 14c2.6.3 4.5 2.3 5 5.7"/></svg> 2 Guests</span>
+                                        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 18l5-6 4 4 5-7 6 9" /></svg> Forest View</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="stay-card-body">
+                                <span class="stay-feature-pill">Most Private Stay</span>
+                                <p>An intimate, forest-facing suite for couples — candlelit dinners and quiet balcony evenings included.</p>
+                                <div class="stay-card-actions">
+                                    <a href="aranya-honeymoon-suite.html" class="btn-ghost">Explore<svg viewBox="0 0 16 16" fill="none"><path d="M2 8h11M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.6"/></svg></a>
+                                    <a href="https://www.swiftbook.io/inst/#home?propertyId=2647" class="btn btn-outline-dark" data-track="book_now_click" data-track-loc="stay_slider">Book Now</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Slider Controls -->
+                <div class="stay-slider-controls reveal">
+                    <button class="stay-slider-arrow" id="staySliderPrev" aria-label="Previous slide">
+                        <svg viewBox="0 0 16 16" fill="none"><path d="M10 3L4 8l6 5" stroke="currentColor" stroke-width="1.6"/></svg>
+                    </button>
+                    <div class="stay-slider-dots">
+                        <button class="stay-slider-dot active" aria-label="Slide 1"></button>
+                        <button class="stay-slider-dot" aria-label="Slide 2"></button>
+                        <button class="stay-slider-dot" aria-label="Slide 3"></button>
+                        <button class="stay-slider-dot" aria-label="Slide 4"></button>
+                        <button class="stay-slider-dot" aria-label="Slide 5"></button>
+                        <button class="stay-slider-dot" aria-label="Slide 6"></button>
+                        <button class="stay-slider-dot" aria-label="Slide 7"></button>
+                    </div>
+                    <button class="stay-slider-arrow" id="staySliderNext" aria-label="Next slide">
+                        <svg viewBox="0 0 16 16" fill="none"><path d="M6 3l6 5-6 5" stroke="currentColor" stroke-width="1.6"/></svg>
+                    </button>
+                </div>
+
+                <!-- Progress bar -->
+                <div class="stay-slider-progress reveal">
+                    <div class="stay-slider-progress-bar" id="stayProgressBar"></div>
+                </div>
+
+                <!-- View All -->
+                <div class="stay-view-all reveal">
+                    <a href="stay.html" class="btn btn-primary">
+                        View All Stays
+                        <svg viewBox="0 0 16 16" fill="none"><path d="M2 8h11M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.6"/></svg>
+                    </a>
                 </div>
             </div>
         </section>
@@ -361,33 +503,30 @@
             </div>
         </section>
 
-      <!-- ===== DINING ===== -->
-<section class="dining" id="dining">
-    <div class="container dining-grid">
-        <!-- LEFT SIDE: Content -->
-        <div class="reveal reveal-delay-1">
-            <p class="eyebrow">Dine With a View</p>
-            <h2 class="section-title">Local Flavours,<br />Contemporary Comfort</h2>
-            <p class="section-lead">Seasonal menus built around Maharashtrian produce, served on decks that look straight into the valley — memorable evenings, unhurried mornings.</p>
-            <div class="dining-cats">
-                <span>Breakfast</span><span>All Day Dining</span><span>Romantic Dinner</span><span>High Tea</span><span>Bonfire Dining</span>
-            </div>
-            <a href="#" class="btn btn-outline-dark">Explore Dining</a>
-        </div>
+        <!-- ===== DINING ===== -->
+        <section class="dining" id="dining">
+            <div class="container dining-grid">
+                <div class="reveal reveal-delay-1">
+                    <p class="eyebrow">Dine With a View</p>
+                    <h2 class="section-title">Local Flavours,<br />Contemporary Comfort</h2>
+                    <p class="section-lead">Seasonal menus built around Maharashtrian produce, served on decks that look straight into the valley — memorable evenings, unhurried mornings.</p>
+                    <div class="dining-cats">
+                        <span>Breakfast</span><span>All Day Dining</span><span>Romantic Dinner</span><span>High Tea</span><span>Bonfire Dining</span>
+                    </div>
+                    <a href="#" class="btn btn-outline-dark">Explore Dining</a>
+                </div>
 
-        <!-- RIGHT SIDE: Auto Image Slider -->
-        <div class="dining-art reveal hill-art tone-dusk">
-            <div class="slider-container" data-autoplay="4500">
-                <div class="slider-track">
-                    <div class="slide active"><img class="ph-img" src="assets/image/Resturant.jpg" alt="Dining View 1" loading="lazy" onerror="this.remove()" /></div>
-                    <div class="slide"><img class="ph-img" src="assets/image/Candle light.jpg" alt="Dining View 2" loading="lazy" onerror="this.remove()" /></div>
-                    <div class="slide"><img class="ph-img" src="assets/image/scope.jpg" alt="Dining View 3" loading="lazy" onerror="this.remove()" /></div>
+                <div class="dining-art reveal hill-art tone-dusk">
+                    <div class="slider-container" data-autoplay="4500">
+                        <div class="slider-track">
+                            <div class="slide active"><img class="ph-img" src="assets/image/Resturant.jpg" alt="Dining View 1" loading="lazy" onerror="this.remove()" /></div>
+                            <div class="slide"><img class="ph-img" src="assets/image/Candle light.jpg" alt="Dining View 2" loading="lazy" onerror="this.remove()" /></div>
+                            <div class="slide"><img class="ph-img" src="assets/image/scope.jpg" alt="Dining View 3" loading="lazy" onerror="this.remove()" /></div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
-
+        </section>
 
         <!-- ===== MONSOON ===== -->
         <section class="monsoon hill-art tone-monsoon">
@@ -401,116 +540,71 @@
             </div>
         </section>
 
-        <!--  ===== AMENITIES ===== 
-        <section class="amenities" id="amenities">
+        <!-- ===== TESTIMONIALS ===== -->
+        <section class="testimonials" id="testimonials">
+            <div class="testi-bg" aria-hidden="true">
+                <img class="ph-img" src="back.png" alt="" loading="lazy" width="1983" height="793" onerror="this.remove()" />
+            </div>
+
             <div class="container">
-                <div class="reveal center" style="max-width:600px">
-                    <p class="eyebrow">On the Property</p>
-                    <h2 class="section-title">Everything You Need, Nothing You Don't</h2>
+                <div class="reveal center" style="max-width:520px">
+                    <p class="eyebrow" style="color:rgba(255,255,255,0.8);">Guest Stories</p>
+                    <h2 class="section-title" style="color:var(--white);">Loved by Those Who Visit</h2>
                 </div>
-                <div class="amenities-grid reveal">
-                    <div class="amenity-card"><div class="amenity-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M3 17c1.5 1 3 1 4.5 0s3-1 4.5 0 3 1 4.5 0 3-1 4.5 0M4 12V6a2 2 0 0 1 2-2h4l2 3h6a2 2 0 0 1 2 2v3" stroke="currentColor" stroke-width="1.4"/></svg></div><div class="name">Swimming Pool</div></div>
-                    <div class="amenity-card"><div class="amenity-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M2 18l5-6 4 4 5-7 6 9" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg></div><div class="name">Mountain View</div></div>
-                    <div class="amenity-card"><div class="amenity-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M5 4v16M19 4v16M5 10h14M8 4v6M12 4v6M16 4v6" stroke="currentColor" stroke-width="1.4"/></svg></div><div class="name">Restaurant</div></div>
-                    <div class="amenity-card"><div class="amenity-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="18" r="1" fill="currentColor"/><path d="M8.5 14.5a5 5 0 0 1 7 0M5.5 11a9 9 0 0 1 13 0M2.5 7.5a13 13 0 0 1 19 0" stroke="currentColor" stroke-width="1.4"/></svg></div><div class="name">Free Wi-Fi</div></div>
-                    <div class="amenity-card"><div class="amenity-icon"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="9" width="18" height="8" rx="1.5" stroke="currentColor" stroke-width="1.4"/><path d="M5 9V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v2" stroke="currentColor" stroke-width="1.4"/></svg></div><div class="name">Parking</div></div>
-                    <div class="amenity-card"><div class="amenity-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M6 10h12v9H6z" stroke="currentColor" stroke-width="1.4"/><path d="M9 10V6a3 3 0 0 1 6 0v4" stroke="currentColor" stroke-width="1.4"/></svg></div><div class="name">Room Service</div></div>
-                    <div class="amenity-card"><div class="amenity-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.4"/><path d="M9 9l6 6M15 9l-6 6" stroke="currentColor" stroke-width="1.4"/></svg></div><div class="name">Indoor Games</div></div>
-                    <div class="amenity-card"><div class="amenity-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l3 6 6 1-4.5 4.5 1 6-5.5-3-5.5 3 1-6L3 10l6-1 3-6z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg></div><div class="name">Outdoor Activities</div></div>
-                    <div class="amenity-card"><div class="amenity-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3c2 4-2 5-2 8a4 4 0 0 0 8 0c0-2-1-3-2-4 1 3-1 4-2 3 1-2 0-4-2-7z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg></div><div class="name">Bonfire</div></div>
-                    <div class="amenity-card"><div class="amenity-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 20V10l8-6 8 6v10" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9 20v-6h6v6" stroke="currentColor" stroke-width="1.4"/></svg></div><div class="name">Event Spaces</div></div>
+
+                <div class="testi-track-wrap reveal">
+                    <div class="quote-mark center" style="width:fit-content">"</div>
+
+                    <div class="testi-slide active">
+                        <div class="testi-stars">★★★★★</div>
+                        <p class="quote">We woke up to clouds moving through the valley below our balcony. Cloud 9 doesn't feel like a hotel — it feels like a private hilltop.</p>
+                        <div class="testi-name">Ananya &amp; Rohan Mehta</div>
+                        <div class="testi-role">Anniversary Stay</div>
+                    </div>
+                    <div class="testi-slide">
+                        <div class="testi-stars">★★★★★</div>
+                        <p class="quote">The monsoon evenings on the deck, with tea and mist rolling in, were the highlight of our trip from Mumbai.</p>
+                        <div class="testi-name">Karan Deshmukh</div>
+                        <div class="testi-role">Weekend Retreat</div>
+                    </div>
+                    <div class="testi-slide">
+                        <div class="testi-stars">★★★★★</div>
+                        <p class="quote">Our kids loved the bonfire evenings, and we loved the quiet. A rare resort that works for both.</p>
+                        <div class="testi-name">The Iyer Family</div>
+                        <div class="testi-role">Family Escape</div>
+                    </div>
+
+                    <div class="testi-controls">
+                        <button class="testi-arrow" id="testiPrev" aria-label="Previous testimonial"><svg viewBox="0 0 16 16" fill="none"><path d="M10 3L4 8l6 5" stroke="currentColor" stroke-width="1.6"/></svg></button>
+                        <div class="testi-dots" id="testiDots">
+                            <span class="testi-dot active"></span><span class="testi-dot"></span><span class="testi-dot"></span>
+                        </div>
+                        <button class="testi-arrow" id="testiNext" aria-label="Next testimonial"><svg viewBox="0 0 16 16" fill="none"><path d="M6 3l6 5-6 5" stroke="currentColor" stroke-width="1.6"/></svg></button>
+                    </div>
+                </div>
+
+                <div class="testi-ctas reveal reveal-delay-1">
+                    <a href="https://www.swiftbook.io/inst/#home?propertyId=2647" class="btn btn-white" data-track="book_now_click" data-track-loc="testimonials_cta">
+                        Book Your Stay
+                        <svg viewBox="0 0 16 16" fill="none"><path d="M2 8h11M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.6"/></svg>
+                    </a>
+                    <a href="https://www.tripadvisor.in/Hotel_Review-g608474-d1157903-Reviews-Cloud_9_Hills_Resort-Lonavala_Pune_District_Maharashtra.html" class="btn btn-outline" data-track="call_click" data-track-loc="testimonials_cta">
+                        Trip Advisor Review
+                        <!-- License: CC Attribution. Made by geakstr: https://github.com/geakstr/entypo-icons -->
+<svg width="20px" height="20px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M20 6.009h-2.829C15.211 4.675 12.813 4 10 4s-5.212.675-7.171 2.009H0c.428.42.827 1.34.993 2.04A4.954 4.954 0 0 0 0 11.008c0 2.757 2.243 5 5 5a4.97 4.97 0 0 0 3.423-1.375L10 17l1.577-2.366A4.97 4.97 0 0 0 15 16.01c2.757 0 5-2.243 5-5 0-1.112-.377-2.13-.993-2.96.166-.7.565-1.62.993-2.04zm-15 8.4c-1.875 0-3.4-1.525-3.4-3.4s1.525-3.4 3.4-3.4 3.4 1.525 3.4 3.4-1.525 3.4-3.4 3.4zm5-3.4a5.008 5.008 0 0 0-4.009-4.9C7.195 5.704 8.53 5.5 10 5.5s2.805.204 4.009.61A5.008 5.008 0 0 0 10 11.008zm5 3.4c-1.875 0-3.4-1.525-3.4-3.4s1.525-3.4 3.4-3.4 3.4 1.525 3.4 3.4-1.525 3.4-3.4 3.4zM5 8.86c-1.185 0-2.15.964-2.15 2.15s.965 2.15 2.15 2.15 2.15-.964 2.15-2.15-.965-2.15-2.15-2.15zm0 2.791a.65.65 0 1 1 0-1.3.65.65 0 0 1 0 1.3zm10-2.791c-1.185 0-2.15.964-2.15 2.15s.965 2.15 2.15 2.15 2.15-.964 2.15-2.15-.965-2.15-2.15-2.15zm0 2.791a.65.65 0 1 1 0-1.3.65.65 0 0 1 0 1.3z"/></svg>
+                    </a>
+                    <a href="https://www.google.com/travel/search?q=cloud%209%20hills%20resort%20lonavala%20reviews&g2lb=4899568%2C4899569%2C4965990%2C72471280%2C72560029%2C72573224%2C72647020%2C72686036%2C72803964%2C72882230%2C73064764%2C121529350%2C121608706%2C121738283%2C121762713&hl=en-IN&gl=in&ssta=1&ts=CAEaRwopEicyJTB4M2JlODAzNmQ5MmNhMzljMzoweGIxZjU2M2MzYWE2NDgxODcSGhIUCgcI6g8QCBgUEgcI6g8QCBgVGAEyAhAA&qs=CAEyFENnc0loNE9TMDdyNDJQcXhBUkFCOAJCCQmHgWSqw2P1sUIJCYeBZKrDY_Wx&ap=ugEHcmV2aWV3cw&ictx=111&ved=0CAAQ5JsGahcKEwio66e6366WAxUAAAAAHQAAAAAQAw" target="_blank" rel="noopener" class="btn btn-google" data-track="google_review_click" data-track-loc="testimonials_cta">
+                        Google Review
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="20" height="20">
+                            <path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"/>
+                            <path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"/>
+                            <path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"/>
+                            <path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"/>
+                        </svg>
+                    </a>
                 </div>
             </div>
         </section>
-
-        ===== EXPLORE LONAVALA ===== 
-        <section class="explore" id="explore">
-            <div class="container">
-                <div class="reveal">
-                    <p class="eyebrow">Beyond the Resort</p>
-                    <h2 class="section-title">Explore Lonavala</h2>
-                    <p class="section-lead">Ancient caves, hilltop forts and misty viewpoints — all within easy reach of Cloud 9.</p>
-                </div>
-                <div class="explore-grid reveal">
-                    <a class="place-card" href="google.com/maps/place/tiger+point+lonavala/data=!4m2!3m1!1s0x3be803ec63c748df:0xb440dcf326c3e04a?sa=X&ved=1t:155783&ictx=111"><div class="hill-art tone-dawn"><img class="ph-img" src="assets/image/tigerpoint.png" alt="Cloud 9 Hills Resort — scenic view" loading="lazy" width="800" height="600" onerror="this.remove()"></div><div class="place-info"><h4>Tiger Point</h4><div class="place-meta">6 km · 15 min drive</div><span class="btn-ghost">Explore<svg viewBox="0 0 16 16" fill="none"><path d="M2 8h11M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.6"/></svg></span></div></a>
-                    <a class="place-card" href="google.com/maps/place/rajmachi+location/data=!4m2!3m1!1s0x3bc17f4ca69e8d93:0xd605ae99a0b66402?sa=X&ved=1t:155783&ictx=111"><div class="hill-art tone-forest"><img class="ph-img" src="assets/image/RAJMACHI.png" alt="Cloud 9 Hills Resort — scenic view" loading="lazy" width="800" height="600" onerror="this.remove()"></div><div class="place-info"><h4>Rajmachi</h4><div class="place-meta">15 km · 40 min drive</div><span class="btn-ghost">Explore<svg viewBox="0 0 16 16" fill="none"><path d="M2 8h11M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.6"/></svg></span></div></a>
-                    <a class="place-card" href="#"><div class="hill-art tone-monsoon"><img class="ph-img" src="assets/image/bhushi dam.png" alt="Cloud 9 Hills Resort — scenic view" loading="lazy" width="800" height="600" onerror="this.remove()"></div><div class="place-info"><h4>Bhushi Dam</h4><div class="place-meta">4 km · 10 min drive</div><span class="btn-ghost">Explore<svg viewBox="0 0 16 16" fill="none"><path d="M2 8h11M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.6"/></svg></span></div></a>
-                    <a class="place-card" href="#"><div class="hill-art tone-dusk"><img class="ph-img" src="assets/image/karla caves.png" alt="Cloud 9 Hills Resort — scenic view" loading="lazy" width="800" height="600" onerror="this.remove()"></div><div class="place-info"><h4>Karla Caves</h4><div class="place-meta">12 km · 25 min drive</div><span class="btn-ghost">Explore<svg viewBox="0 0 16 16" fill="none"><path d="M2 8h11M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.6"/></svg></span></div></a>
-                    <a class="place-card" href="#"><div class="hill-art tone-forest"><img class="ph-img" src="assets/image/bhaja caves.png" alt="Cloud 9 Hills Resort — scenic view" loading="lazy" width="800" height="600" onerror="this.remove()"></div><div class="place-info"><h4>Bhaja Caves</h4><div class="place-meta">13 km · 28 min drive</div><span class="btn-ghost">Explore<svg viewBox="0 0 16 16" fill="none"><path d="M2 8h11M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.6"/></svg></span></div></a>
-                    <a class="place-card" href="#"><div class="hill-art tone-dawn"><img class="ph-img" src="assets/image/lohagad.png" alt="Cloud 9 Hills Resort — scenic view" loading="lazy" width="800" height="600" onerror="this.remove()"></div><div class="place-info"><h4>Lohagad Fort</h4><div class="place-meta">18 km · 45 min drive</div><span class="btn-ghost">Explore<svg viewBox="0 0 16 16" fill="none"><path d="M2 8h11M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.6"/></svg></span></div></a>
-                    <a class="place-card" href="#"><div class="hill-art tone-monsoon"><img class="ph-img" src="assets/image/khandala.png" alt="Cloud 9 Hills Resort — scenic view" loading="lazy" width="800" height="600" onerror="this.remove()"></div><div class="place-info"><h4>Khandala</h4><div class="place-meta">8 km · 18 min drive</div><span class="btn-ghost">Explore<svg viewBox="0 0 16 16" fill="none"><path d="M2 8h11M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.6"/></svg></span></div></a>
-                    <a class="place-card" href="#"><div class="hill-art tone-dusk"><img class="ph-img" src="assets/image/pawna lake.png" alt="Cloud 9 Hills Resort — scenic view" loading="lazy" width="800" height="600" onerror="this.remove()"></div><div class="place-info"><h4>Pawna Lake</h4><div class="place-meta">22 km · 50 min drive</div><span class="btn-ghost">Explore<svg viewBox="0 0 16 16" fill="none"><path d="M2 8h11M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.6"/></svg></span></div></a>
-                </div>
-            </div>
-        </section>-->
-
-
-   <!-- ===== TESTIMONIALS ===== -->
-<section class="testimonials" id="testimonials">
-    <!-- New background image block -->
-    <div class="testi-bg" aria-hidden="true">
-        <img class="ph-img" src="back.png" alt="" loading="lazy" width="1983" height="793" onerror="this.remove()" />
-    </div>
-
-    <div class="container">
-        <div class="reveal center" style="max-width:520px">
-            <p class="eyebrow" style="color:rgba(255,255,255,0.8);">Guest Stories</p>
-            <h2 class="section-title" style="color:var(--white);">Loved by Those Who Visit</h2>
-        </div>
-
-        <div class="testi-track-wrap reveal">
-            <div class="quote-mark center" style="width:fit-content">"</div>
-
-            <div class="testi-slide active">
-                <div class="testi-stars">★★★★★</div>
-                <p class="quote">We woke up to clouds moving through the valley below our balcony. Cloud 9 doesn't feel like a hotel — it feels like a private hilltop.</p>
-                <div class="testi-name">Ananya &amp; Rohan Mehta</div>
-                <div class="testi-role">Anniversary Stay</div>
-            </div>
-            <div class="testi-slide">
-                <div class="testi-stars">★★★★★</div>
-                <p class="quote">The monsoon evenings on the deck, with tea and mist rolling in, were the highlight of our trip from Mumbai.</p>
-                <div class="testi-name">Karan Deshmukh</div>
-                <div class="testi-role">Weekend Retreat</div>
-            </div>
-            <div class="testi-slide">
-                <div class="testi-stars">★★★★★</div>
-                <p class="quote">Our kids loved the bonfire evenings, and we loved the quiet. A rare resort that works for both.</p>
-                <div class="testi-name">The Iyer Family</div>
-                <div class="testi-role">Family Escape</div>
-            </div>
-
-            <div class="testi-controls">
-                <button class="testi-arrow" id="testiPrev" aria-label="Previous testimonial"><svg viewBox="0 0 16 16" fill="none"><path d="M10 3L4 8l6 5" stroke="currentColor" stroke-width="1.6"/></svg></button>
-                <div class="testi-dots" id="testiDots">
-                    <span class="testi-dot active"></span><span class="testi-dot"></span><span class="testi-dot"></span>
-                </div>
-                <button class="testi-arrow" id="testiNext" aria-label="Next testimonial"><svg viewBox="0 0 16 16" fill="none"><path d="M6 3l6 5-6 5" stroke="currentColor" stroke-width="1.6"/></svg></button>
-            </div>
-        </div>
-
-        <!-- ===== NEW BUTTON GROUP BELOW TESTIMONIALS ===== -->
-        <div class="testi-ctas reveal reveal-delay-1">
-            <a href="https://www.swiftbook.io/inst/#home?propertyId=2647" class="btn btn-white" data-track="book_now_click" data-track-loc="testimonials_cta">
-                Book Your Stay
-                <svg viewBox="0 0 16 16" fill="none"><path d="M2 8h11M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.6"/></svg>
-            </a>
-            <a href="tel:+919819118832" class="btn btn-outline" data-track="call_click" data-track-loc="testimonials_cta">
-                Call Now
-            </a>
-            <!-- Replace href="#" with your actual Google Review Link -->
-            <a href="https://www.google.com/travel/search?q=cloud%209%20hills%20resort%20lonavala%20reviews&g2lb=4899568%2C4899569%2C4965990%2C72471280%2C72560029%2C72573224%2C72647020%2C72686036%2C72803964%2C72882230%2C73064764%2C121529350%2C121608706%2C121738283%2C121762713&hl=en-IN&gl=in&ssta=1&ts=CAEaRwopEicyJTB4M2JlODAzNmQ5MmNhMzljMzoweGIxZjU2M2MzYWE2NDgxODcSGhIUCgcI6g8QCBgUEgcI6g8QCBgVGAEyAhAA&qs=CAEyFENnc0loNE9TMDdyNDJQcXhBUkFCOAJCCQmHgWSqw2P1sUIJCYeBZKrDY_Wx&ap=ugEHcmV2aWV3cw&ictx=111&ved=0CAAQ5JsGahcKEwio66e6366WAxUAAAAAHQAAAAAQAw" target="_blank" rel="noopener" class="btn btn-google" data-track="google_review_click" data-track-loc="testimonials_cta">
-                Google Review
-                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="20" height="20">
-            <path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"/>
-            <path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"/>
-            <path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"/>
-            <path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"/>
-                 </svg>    
-        </a>
-        </div>
-    </div>
-</section>
 
     </main>
 
@@ -523,7 +617,7 @@
             <div class="footer-brand">
                 <a href="index.html" class="logo">
                     <img src="assets/logos.png" alt="Cloud 9 Hills Resort Logo" class="logo-img" />
-                    </a>
+                </a>
                 <p>A luxury hilltop retreat above the clouds in the Western Ghats — where the pace of the mountains sets the pace of your stay.</p>
                 <div class="footer-social">
                     <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a>
@@ -534,12 +628,10 @@
             <div>
                 <h5>Quick Links</h5>
                 <ul class="footer-links">
-                    <li><a href="#rooms">Stay</a></li>
-                    <li><a href="#dining">Dining</a></li>
-                    <li><a href="#experiences">Experiences</a></li>
-                    <li><a href="#offers">Offers</a></li>
-                    <li><a href="#social">Gallery</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="stay.html">Stay</a></li>
+                    <li><a href="offers.html">Offers</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
             <div>
@@ -551,6 +643,7 @@
                     <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg><a href="https://www.google.com/maps/place/cloud9+resort+lonavala/data=!4m2!3m1!1s0x3be8036d92ca39c3:0xb1f563c3aa648187?sa=X&ved=1t:242&ictx=111" target="_blank" rel="noopener">4 km after Lion's Point, Village Jambhulne, Amby Valley City Road, Mulshi Taluka, Lonavala, Maharashtra 410401</a></li>
                 </ul>
             </div>
+        </div>
 
         <div class="container footer-bottom">
             <span>© 2026 Cloud 9 Hills Resort, Lonavala. All rights reserved.</span>
@@ -575,14 +668,12 @@
     <!-- ===== MOBILE STICKY BAR ===== -->
     <div class="mobile-sticky-bar">
         <ul>
-            <li><a href="tel:+9119819118832" data-track="call_click" data-track-loc="mobile_sticky"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3h4l2 5-2.5 1.5a11 11 0 0 0 5 5L16 12l5 2v4a2 2 0 0 1-2 2C10.5 20 4 13.5 4 5a2 2 0 0 1 2-2Z" /></svg>Call</a></li>
+            <li><a href="tel:+919819118832" data-track="call_click" data-track-loc="mobile_sticky"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3h4l2 5-2.5 1.5a11 11 0 0 0 5 5L16 12l5 2v4a2 2 0 0 1-2 2C10.5 20 4 13.5 4 5a2 2 0 0 1 2-2Z" /></svg>Call</a></li>
             <li><a href="https://wa.me/919819739444" data-track="whatsapp_click" data-track-loc="mobile_sticky"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20l1.3-4A8 8 0 1 1 9 19l-5 1Z" /></svg>WhatsApp</a></li>
-            <li><a href="#booking" data-track="book_now_click" data-track-loc="mobile_sticky"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="16" rx="2" /><path d="M8 3v4M16 3v4M3 10h18" /></svg>Book</a></li>
+            <li><a href="https://www.swiftbook.io/inst/#home?propertyId=2647" data-track="book_now_click" data-track-loc="mobile_sticky"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="16" rx="2" /><path d="M8 3v4M16 3v4M3 10h18" /></svg>Book</a></li>
         </ul>
     </div>
 
- 
-  
-
+    <script src="main.js" defer></script>
 </body>
 </html>
