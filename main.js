@@ -1457,3 +1457,53 @@ if (expScroll) {
     goTo(0);
     start();
 })();
+
+/* ============================================================
+   SIGNATURE BELT — pause on touch, respect reduced motion
+   ============================================================ */
+(function () {
+    var wrap = document.querySelector('.belt-wrap');
+    var track = document.getElementById('beltTrack');
+    if (!wrap || !track) return;
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        track.classList.add('no-anim');
+        return;
+    }
+
+    var resumeTimer;
+    wrap.addEventListener('touchstart', function () {
+        track.style.animationPlayState = 'paused';
+    }, { passive: true });
+    wrap.addEventListener('touchend', function () {
+        clearTimeout(resumeTimer);
+        resumeTimer = setTimeout(function () {
+            track.style.animationPlayState = 'running';
+        }, 1500);
+    }, { passive: true });
+})();
+
+/* ============================================================
+   AWARDS BELT — pause on touch, respect reduced motion
+   ============================================================ */
+(function () {
+    var wrap = document.querySelector('.awards-belt-wrap');
+    var track = document.getElementById('awardsTrack');
+    if (!wrap || !track) return;
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        track.style.animation = 'none';
+        return;
+    }
+
+    var resumeTimer;
+    wrap.addEventListener('touchstart', function () {
+        track.style.animationPlayState = 'paused';
+    }, { passive: true });
+    wrap.addEventListener('touchend', function () {
+        clearTimeout(resumeTimer);
+        resumeTimer = setTimeout(function () {
+            track.style.animationPlayState = 'running';
+        }, 1500);
+    }, { passive: true });
+})();
