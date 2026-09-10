@@ -3,19 +3,521 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gallery | Cloud 9 Hills Resort, Lonavala</title>
-    <meta name="description" content="Photo gallery of Cloud 9 Hills Resort, Lonavala — stunning views, luxury cottages, dining experiences, and monsoon moments." />
+    <title>Gallery | Cloud 9 Hills Resort — Lonavala</title>
+    <meta name="description" content="Explore Cloud 9 Hills Resort in pictures — hilltop villas, misty valley views, fine dining, bonfire evenings and monsoon mornings above the clouds in Lonavala, Maharashtra." />
     <link rel="canonical" href="https://www.cloud9hillsresort.com/gallery.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Cloud 9 Hills Resort" />
+    <meta property="og:title" content="Gallery | Cloud 9 Hills Resort" />
+    <meta property="og:description" content="A visual journey through Cloud 9 Hills Resort — villas, dining, events and the misty hills of Lonavala." />
+    <meta property="og:url" content="https://www.cloud9hillsresort.com/gallery.html" />
+    <meta property="og:image" content="https://www.cloud9hillsresort.com/assets/images/og-cover.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" href="/favicon/favicon.ico" sizes="any" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="style.css">
-    <script src="main.js" defer></script>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "ImageGallery",
+            "name": "Cloud 9 Hills Resort Gallery",
+            "url": "https://www.cloud9hillsresort.com/gallery.html",
+            "isPartOf": { "@type": "Hotel", "name": "Cloud 9 Hills Resort" }
+        }
+    </script>
+
+    <style>
+        /* ============================================================
+           GALLERY PAGE — scoped styles (uses site tokens from style.css)
+           ============================================================ */
+
+        /* ---------- Gallery Hero ---------- */
+        .gallery-hero {
+            position: relative;
+            height: 78vh;
+            min-height: 540px;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-end;
+        }
+        .gallery-hero-media {
+            position: absolute;
+            inset: -8% -2%;
+            z-index: 0;
+            background: #1f4520;
+            will-change: transform;
+        }
+        .gallery-hero-media img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 52%;
+        }
+        .gallery-hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            background:
+                linear-gradient(180deg, rgba(16,39,25,.35) 0%, rgba(16,39,25,.25) 40%, rgba(16,39,25,.92) 100%);
+        }
+        .gallery-hero-content {
+            position: relative;
+            z-index: 2;
+            padding-bottom: 72px;
+            color: var(--white);
+            width: 100%;
+        }
+        .gallery-hero-content .reveal {
+            opacity: 1;
+            transform: none;
+            animation: galleryHeroReveal .8s var(--ease) both;
+        }
+        .gallery-hero-content .reveal-delay-1 { animation-delay: .12s; }
+        .gallery-hero-content .reveal-delay-2 { animation-delay: .24s; }
+        .gallery-hero-content .reveal-delay-3 { animation-delay: .36s; }
+        @keyframes galleryHeroReveal {
+            from { opacity: 0; transform: translateY(22px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .gallery-hero-content .reveal {
+                animation: none;
+            }
+        }
+        .gallery-hero-content h1 {
+            font-family: var(--font-display);
+            font-size: clamp(40px, 6.2vw, 76px);
+            font-weight: 600;
+            color: var(--white);
+            margin: 0 0 16px;
+            max-width: 900px;
+        }
+        .gallery-hero-sub {
+            font-family: var(--font-body);
+            font-size: 16px;
+            font-weight: 300;
+            color: rgba(255,255,255,.85);
+            max-width: 560px;
+            line-height: 1.75;
+            margin: 0;
+        }
+        .gallery-hero-count {
+            display: flex;
+            gap: 40px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        .gallery-hero-count div strong {
+            display: block;
+            font-family: var(--font-display);
+            font-size: clamp(26px, 3vw, 34px);
+            font-weight: 600;
+            color: var(--white);
+        }
+        .gallery-hero-count div span {
+            font-family: var(--font-body);
+            font-size: 11px;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,.65);
+        }
+        .gallery-scroll-cue {
+            position: absolute;
+            right: 40px;
+            bottom: 40px;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            color: rgba(255,255,255,.7);
+        }
+        .gallery-scroll-cue span {
+            writing-mode: vertical-rl;
+            font-family: var(--font-body);
+            font-size: 10px;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+        }
+        .gallery-scroll-cue .cue-line {
+            width: 1px;
+            height: 46px;
+            background: rgba(255,255,255,.35);
+            position: relative;
+            overflow: hidden;
+        }
+        .gallery-scroll-cue .cue-line::after {
+            content: '';
+            position: absolute;
+            top: -100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--white);
+            animation: cueDrop 1.8s ease-in-out infinite;
+        }
+        @keyframes cueDrop {
+            0% { top: -100%; }
+            60% { top: 100%; }
+            100% { top: 100%; }
+        }
+        @media (max-width: 720px) {
+            .gallery-scroll-cue { display: none; }
+            .gallery-hero {
+                height: auto;
+                min-height: 680px;
+                align-items: stretch;
+            }
+            .gallery-hero-content {
+                align-self: stretch;
+                padding-top: 132px;
+                padding-bottom: 56px;
+            }
+            .gallery-hero-content h1 {
+                font-size: clamp(38px, 10vw, 52px);
+                line-height: 1.05;
+            }
+            .gallery-hero-sub {
+                font-size: 14px;
+                line-height: 1.65;
+            }
+            .gallery-hero-count {
+                gap: 22px 30px;
+                margin-top: 28px;
+            }
+        }
+
+        /* ---------- Filter bar ---------- */
+        .gallery-filter-section {
+            position: sticky;
+            top: 0;
+            z-index: 40;
+            background: rgba(245, 245, 242, .88);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border);
+            padding: 20px 0;
+        }
+        .gallery-filter-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .gallery-filter-tabs {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .filter-tab {
+            font-family: var(--font-body);
+            font-size: 12.5px;
+            font-weight: 600;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            color: var(--muted);
+            padding: 11px 22px;
+            border-radius: 999px;
+            border: 1px solid var(--border);
+            background: var(--white);
+            cursor: pointer;
+            transition: background .35s var(--ease), color .35s var(--ease), border-color .35s var(--ease), transform .3s var(--ease), box-shadow .35s var(--ease);
+            position: relative;
+        }
+        .filter-tab:hover {
+            color: var(--primary);
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+        .filter-tab.active {
+            background: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+            box-shadow: 0 14px 30px -14px rgba(47, 101, 48, .55);
+        }
+        .gallery-count-live {
+            font-family: var(--font-body);
+            font-size: 12px;
+            letter-spacing: .05em;
+            color: var(--muted);
+            white-space: nowrap;
+        }
+        .gallery-count-live strong { color: var(--primary); font-weight: 700; }
+        @media (max-width: 720px) {
+            .gallery-filter-inner { justify-content: flex-start; }
+            .gallery-filter-tabs { gap: 8px; }
+            .filter-tab { padding: 9px 16px; font-size: 11.5px; }
+        }
+
+        /* ---------- Bento grid ---------- */
+        .gallery-grid-section {
+            padding: 80px 0 120px;
+            background: var(--light-stone);
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: 190px;
+            gap: 22px;
+        }
+        .gallery-item {
+            position: relative;
+            grid-column: span 1;
+            grid-row: span 1;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            cursor: pointer;
+            opacity: 0;
+            background: var(--charcoal);
+            perspective: 900px;
+        }
+        .gallery-item.g-wide { grid-column: span 2; }
+        .gallery-item.g-tall { grid-row: span 2; }
+        .gallery-item.g-big { grid-column: span 2; grid-row: span 2; }
+
+        .gallery-item-inner {
+            position: absolute;
+            inset: 0;
+            transform-style: preserve-3d;
+            will-change: transform;
+        }
+        .gallery-item-media {
+            position: absolute;
+            inset: -6%;
+            overflow: hidden;
+        }
+        .gallery-item-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: scale(1.12);
+            transition: transform 1.1s var(--ease), filter .8s var(--ease);
+            filter: saturate(.94) brightness(.94);
+        }
+        .gallery-item:hover .gallery-item-media img {
+            transform: scale(1.22);
+            filter: saturate(1.08) brightness(1);
+        }
+        .gallery-item-shade {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(16,39,25,0) 35%, rgba(16,39,25,.75) 100%);
+            opacity: .75;
+            transition: opacity .5s var(--ease);
+        }
+        .gallery-item:hover .gallery-item-shade { opacity: .92; }
+
+        .gallery-item-glow {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgba(255,255,255,.22), transparent 60%);
+            opacity: 0;
+            transition: opacity .4s ease;
+            pointer-events: none;
+            mix-blend-mode: overlay;
+        }
+        .gallery-item:hover .gallery-item-glow { opacity: 1; }
+
+        .gallery-item-tag {
+            display: none;
+        }
+
+        .gallery-item-expand {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            z-index: 3;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255,255,255,.14);
+            border: 1px solid rgba(255,255,255,.4);
+            backdrop-filter: blur(6px);
+            display: grid;
+            place-items: center;
+            transform: scale(.6) rotate(-20deg);
+            opacity: 0;
+            transition: transform .5s var(--ease), opacity .5s var(--ease), background .3s ease;
+        }
+        .gallery-item-expand svg { width: 16px; height: 16px; color: var(--white); }
+        .gallery-item:hover .gallery-item-expand {
+            transform: scale(1) rotate(0deg);
+            opacity: 1;
+        }
+        .gallery-item-expand:hover { background: var(--white); }
+        .gallery-item-expand:hover svg { color: var(--primary); }
+
+        .gallery-item-caption {
+            display: none;
+        }
+        .gallery-item-caption h3,
+        .gallery-item-caption p,
+        .gallery-item-caption::before {
+            display: none !important;
+        }
+
+        .gallery-item.filtered-out {
+            display: none;
+        }
+
+        @media (max-width: 980px) {
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 220px; }
+            .gallery-item.g-big { grid-column: span 2; grid-row: span 2; }
+            .gallery-item.g-wide { grid-column: span 2; }
+        }
+        @media (max-width: 560px) {
+            .gallery-grid { grid-template-columns: 1fr; grid-auto-rows: 260px; gap: 16px; }
+            .gallery-item.g-wide, .gallery-item.g-big { grid-column: span 1; }
+            .gallery-item.g-tall, .gallery-item.g-big { grid-row: span 1; }
+            .gallery-item-tag, .gallery-item-expand, .gallery-item-caption p { opacity: 1; transform: none; max-height: 60px; }
+            .gallery-item-caption::before { transform: scaleX(1); }
+        }
+
+        /* ---------- Load more ---------- */
+        .gallery-loadmore {
+            display: flex;
+            justify-content: center;
+            margin-top: 56px;
+        }
+
+        /* ---------- CTA strip ---------- */
+        .gallery-cta {
+            position: relative;
+            padding: 100px 0;
+            overflow: hidden;
+            background: linear-gradient(180deg, #1F4520 0%, #16321a 100%);
+        }
+        .gallery-cta-inner {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .gallery-cta-inner .eyebrow { justify-content: center; }
+        .gallery-cta-inner h2 {
+            color: var(--white);
+            max-width: 640px;
+            margin: 0 auto 18px;
+        }
+        .gallery-cta-inner p {
+            color: rgba(255,255,255,.78);
+            max-width: 520px;
+            font-weight: 300;
+            margin: 0 auto 36px;
+        }
+        .gallery-cta-ctas { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
+        .gallery-cta-orb {
+            position: absolute;
+            width: 460px;
+            height: 460px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(126,157,99,.35), transparent 70%);
+            top: -160px;
+            right: -120px;
+            z-index: 1;
+            filter: blur(10px);
+        }
+
+        /* ---------- Lightbox ---------- */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            z-index: 999;
+            background: rgba(10, 18, 12, .96);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+        .lightbox.open {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+        .lightbox-stage {
+            position: relative;
+            width: min(1100px, 88vw);
+            height: min(76vh, 720px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .lightbox-frame {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: 0 60px 120px -40px rgba(0,0,0,.6);
+        }
+        .lightbox-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .lightbox-caption {
+            display: none;
+        }
+        .lightbox-close,
+        .lightbox-prev,
+        .lightbox-next {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255,255,255,.08);
+            border: 1px solid rgba(255,255,255,.25);
+            display: grid;
+            place-items: center;
+            color: var(--white);
+            transition: background .3s ease, transform .3s var(--ease), border-color .3s ease;
+            z-index: 5;
+        }
+        .lightbox-close:hover,
+        .lightbox-prev:hover,
+        .lightbox-next:hover {
+            background: var(--white);
+            color: var(--primary);
+            border-color: var(--white);
+        }
+        .lightbox-close svg, .lightbox-prev svg, .lightbox-next svg { width: 18px; height: 18px; }
+        .lightbox-close { top: -68px; right: 0; }
+        .lightbox-prev { left: -70px; top: 50%; transform: translateY(-50%); }
+        .lightbox-next { right: -70px; top: 50%; transform: translateY(-50%); }
+        .lightbox-prev:hover { transform: translateY(-50%) translateX(-4px); }
+        .lightbox-next:hover { transform: translateY(-50%) translateX(4px); }
+        .lightbox-counter {
+            position: absolute;
+            top: -68px;
+            left: 0;
+            font-family: var(--font-body);
+            font-size: 12px;
+            letter-spacing: .12em;
+            color: rgba(255,255,255,.65);
+        }
+        @media (max-width: 860px) {
+            .lightbox-stage { width: 92vw; height: 62vh; }
+            .lightbox-prev { left: 4px; }
+            .lightbox-next { right: 4px; }
+            .lightbox-close { top: 10px; right: 10px; background: rgba(0,0,0,.4); }
+            .lightbox-counter { top: 14px; left: 14px; }
+        }
+    </style>
 </head>
 <body>
-      <!-- ===== HEADER ===== -->
+
+    <!-- ===== HEADER ===== -->
     <header class="site-header" id="siteHeader">
         <div class="container header-inner">
             <a href="index.html" class="logo">
@@ -25,17 +527,8 @@
 
             <nav class="main-nav" aria-label="Primary">
                 <ul>
-                    <!-- 1. HOME -->
-                    <li class="nav-item">
-                        <a href="index.html" class="nav-link active-page">Home</a>
-                    </li>
-
-                    <!-- 2. ABOUT -->
-                    <li class="nav-item">
-                        <a href="about.html" class="nav-link">About</a>
-                    </li>
-
-                    <!-- 3. STAY → submenu: Villa · Cottages -->
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
                     <li class="nav-item">
                         <button class="nav-link" aria-haspopup="true" aria-expanded="false">
                             Stay
@@ -46,13 +539,7 @@
                             <a href="stay.html#cottages" role="menuitem">Cottages</a>
                         </div>
                     </li>
-
-                    <!-- 4. DINING -->
-                    <li class="nav-item">
-                        <a href="dining.html" class="nav-link">Dining</a>
-                    </li>
-
-                    <!-- 5. EVENTS → submenu: Offers -->
+                    <li class="nav-item"><a href="dining.html" class="nav-link">Dining</a></li>
                     <li class="nav-item">
                         <button class="nav-link" aria-haspopup="true" aria-expanded="false">
                             Events
@@ -63,16 +550,9 @@
                             <a href="offers.html" role="menuitem">Offers</a>
                         </div>
                     </li>
-
-                    <!-- 6. EXPLORE -->
-                    <li class="nav-item">
-                        <a href="explore.html" class="nav-link">Explore</a>
-                    </li>
-
-                    <!-- 7. CONTACT -->
-                    <li class="nav-item">
-                        <a href="contact.html" class="nav-link">Contact</a>
-                    </li>
+                    <li class="nav-item"><a href="explore.html" class="nav-link">Explore</a></li>
+                    <li class="nav-item"><a href="gallery.html" class="nav-link active-page">Gallery</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
 
@@ -95,7 +575,7 @@
     <!-- ===== MOBILE NAV ===== -->
     <nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
         <ul>
-            <li><a href="index.html" class="mobile-nav-link" style="color:var(--earth);">Home</a></li>
+            <li><a href="index.html" class="mobile-nav-link">Home</a></li>
             <li><a href="about.html" class="mobile-nav-link">About</a></li>
             <li>
                 <div class="mobile-nav-link" data-accordion>
@@ -119,190 +599,287 @@
                 </div>
             </li>
             <li><a href="explore.html" class="mobile-nav-link">Explore</a></li>
+            <li><a href="gallery.html" class="mobile-nav-link" style="color:var(--earth);">Gallery</a></li>
             <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
         </ul>
         <a href="https://www.swiftbook.io/inst/#home?propertyId=2647" class="btn btn-accent" data-track="book_now_click" data-track-loc="mobile_nav">Book Now</a>
     </nav>
 
-
     <main>
 
         <!-- ===== GALLERY HERO ===== -->
-        <section class="gallery-hero hill-art tone-dawn">
-            <img class="ph-img" src="assets/image/view.jpg" alt="Cloud 9 Hills Resort gallery" loading="lazy" width="1440" height="700" onerror="this.remove()" />
-            <div class="cloud-layer"><div class="cloud cloud--a"></div><div class="cloud cloud--c"></div></div>
-            <div class="container gallery-hero-content reveal">
-                <p class="eyebrow light"><span></span>Moments at Cloud 9</p>
-                <h1>Gallery</h1>
+                <section class="detail-hero" style="height:88vh;min-height:600px;">
+            <div class="slider-container" data-autoplay="4500">
+                <div class="slider-track">
+                    <div class="slide active"><img class="ph-img" src="assets/image/Conference.jpg" alt="Celebrations at Cloud 9 Hills Resort" loading="lazy" onerror="this.remove()" /></div>
+                    <div class="slide"><img class="ph-img" src="couple.jpeg" alt="Wedding at Cloud 9" loading="lazy" onerror="this.remove()" /></div>
+                </div>
+            </div>
+            <div class="container detail-hero-content">
+                <p class="eyebrow light"><span></span>Visual Journey</p>
+                <h1 data-split>A Gallery Above the Clouds</h1>
+                <div class="detail-hero-cta" style="margin-top:30px;">
+                    <a href="#enquire" class="btn btn-accent">Book Now<svg viewBox="0 0 16 16" fill="none"><path d="M2 8h11M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.6"/></svg></a>
+                    <a href="tel:+919819118832" class="btn btn-outline" data-track="call_click" data-track-loc="events_hero">Call Our Team</a>
+                </div>
             </div>
         </section>
 
         <!-- ===== FILTER BAR ===== -->
-        <section class="gallery-filter-bar">
-            <div class="container">
-                <div class="gallery-filter">
-                    <button class="gallery-filter-btn active" data-filter="all">All</button>
-                    <button class="gallery-filter-btn" data-filter="views">Views</button>
-                    <button class="gallery-filter-btn" data-filter="rooms">Rooms</button>
-                    <button class="gallery-filter-btn" data-filter="dining">Dining</button>
-                    <button class="gallery-filter-btn" data-filter="experiences">Experiences</button>
-                    <button class="gallery-filter-btn" data-filter="events">Events</button>
+        <section class="gallery-filter-section">
+            <div class="container gallery-filter-inner">
+                <div class="gallery-filter-tabs" id="galleryFilters">
+                    <button class="filter-tab active" data-filter="all">All</button>
+                    <button class="filter-tab" data-filter="stay">Villas &amp; Cottages</button>
+                    <button class="filter-tab" data-filter="dining">Dining</button>
+                    <button class="filter-tab" data-filter="events">Events</button>
+                    <button class="filter-tab" data-filter="nature">Nature &amp; Views</button>
+                    <button class="filter-tab" data-filter="experiences">Experiences</button>
                 </div>
+                <div class="gallery-count-live"><strong id="galleryVisibleCount">160</strong> photographs</div>
             </div>
         </section>
 
-        <!-- ===== MASONRY GALLERY ===== -->
-        <section class="gallery-masonry">
+        <!-- ===== BENTO GALLERY GRID ===== -->
+        <section class="gallery-grid-section">
             <div class="container">
                 <div class="gallery-grid" id="galleryGrid">
-                    <!-- Item 1 -->
-                    <div class="gallery-item reveal" data-category="views" style="grid-row: span 2;">
-                        <div class="hill-art tone-dawn">
-                            <img class="ph-img" src="assets/image/view.jpg" alt="Panoramic view" loading="lazy" onerror="this.remove()" />
-                            <div class="gallery-overlay">
-                                <span class="gallery-cat">Views</span>
-                                <h4>The Valley Below</h4>
+
+                    <div class="gallery-item g-big" data-cat="stay" data-index="0">
+                        <div class="gallery-item-inner">
+                            <div class="gallery-item-media"><img src="assets/image/cottage.jpg" alt="Private garden villa suite at Cloud 9 Hills Resort" loading="lazy" onerror="this.closest('.gallery-item').style.background='linear-gradient(180deg,#BCC9B3,#3D5238)'; this.remove();" /></div>
+                            <div class="gallery-item-shade"></div>
+                            <div class="gallery-item-glow"></div>
+                            <span class="gallery-item-tag">Stay</span>
+                            <button class="gallery-item-expand" aria-label="View full image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 3H3v5M16 3h5v5M3 16v5h5M21 16v5h-5"/></svg></button>
+                            <div class="gallery-item-caption">
+                                <h3>Garden Villa Suite</h3>
+                                <p>Private courtyard living, wrapped in hillside greens.</p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Item 2 -->
-                    <div class="gallery-item reveal" data-category="rooms">
-                        <div class="hill-art tone-forest">
-                            <img class="ph-img" src="assets/image/cottage.jpg" alt="Cottage exterior" loading="lazy" onerror="this.remove()" />
-                            <div class="gallery-overlay">
-                                <span class="gallery-cat">Rooms</span>
-                                <h4>Hill Top Cottage</h4>
+                    <div class="gallery-item g-tall" data-cat="nature" data-index="1">
+                        <div class="gallery-item-inner">
+                            <div class="gallery-item-media"><img src="assets/image/khandala.png" alt="Monsoon mist over the Khandala hills near Cloud 9" loading="lazy" onerror="this.closest('.gallery-item').style.background='linear-gradient(180deg,#9AAD96,#3D5238)'; this.remove();" /></div>
+                            <div class="gallery-item-shade"></div>
+                            <div class="gallery-item-glow"></div>
+                            <span class="gallery-item-tag">Nature</span>
+                            <button class="gallery-item-expand" aria-label="View full image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 3H3v5M16 3h5v5M3 16v5h5M21 16v5h-5"/></svg></button>
+                            <div class="gallery-item-caption">
+                                <h3>Monsoon Over Khandala</h3>
+                                <p>Clouds rolling low across the Western Ghats.</p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Item 3 -->
-                    <div class="gallery-item reveal" data-category="dining">
-                        <div class="hill-art tone-dusk">
-                            <img class="ph-img" src="assets/image/Resturant.jpg" alt="Restaurant dining" loading="lazy" onerror="this.remove()" />
-                            <div class="gallery-overlay">
-                                <span class="gallery-cat">Dining</span>
-                                <h4>The Valley View Restaurant</h4>
+                    <div class="gallery-item" data-cat="dining" data-index="2">
+                        <div class="gallery-item-inner">
+                            <div class="gallery-item-media"><img src="assets/image/Resturant.jpg" alt="Fine dining terrace at Cloud 9 Hills Resort" loading="lazy" onerror="this.closest('.gallery-item').style.background='linear-gradient(180deg,#E6D5C0,#6A7D62)'; this.remove();" /></div>
+                            <div class="gallery-item-shade"></div>
+                            <div class="gallery-item-glow"></div>
+                            <span class="gallery-item-tag">Dining</span>
+                            <button class="gallery-item-expand" aria-label="View full image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 3H3v5M16 3h5v5M3 16v5h5M21 16v5h-5"/></svg></button>
+                            <div class="gallery-item-caption">
+                                <h3>Fine Dining Terrace</h3>
+                                <p>Farm-forward plates with valley views.</p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Item 4 -->
-                    <div class="gallery-item reveal" data-category="experiences">
-                        <div class="hill-art tone-monsoon">
-                            <img class="ph-img" src="assets/image/Candle light.jpg" alt="Candle light dinner" loading="lazy" onerror="this.remove()" />
-                            <div class="gallery-overlay">
-                                <span class="gallery-cat">Experiences</span>
-                                <h4>Candlelit Evenings</h4>
+                    <div class="gallery-item" data-cat="events" data-index="3">
+                        <div class="gallery-item-inner">
+                            <div class="gallery-item-media"><img src="assets/image/Conference.jpg" alt="Grand conference hall at Cloud 9 Hills Resort" loading="lazy" onerror="this.closest('.gallery-item').style.background='linear-gradient(180deg,#D4DCC8,#1F4520)'; this.remove();" /></div>
+                            <div class="gallery-item-shade"></div>
+                            <div class="gallery-item-glow"></div>
+                            <span class="gallery-item-tag">Events</span>
+                            <button class="gallery-item-expand" aria-label="View full image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 3H3v5M16 3h5v5M3 16v5h5M21 16v5h-5"/></svg></button>
+                            <div class="gallery-item-caption">
+                                <h3>Grand Conference Hall</h3>
+                                <p>Retreats and celebrations above the clouds.</p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Item 5 -->
-                    <div class="gallery-item reveal" data-category="views">
-                        <div class="hill-art tone-forest">
-                            <img class="ph-img" src="assets/image/khandala.png" alt="Monsoon hills" loading="lazy" onerror="this.remove()" />
-                            <div class="gallery-overlay">
-                                <span class="gallery-cat">Views</span>
-                                <h4>Monsoon Magic</h4>
+                    <div class="gallery-item g-wide" data-cat="events" data-index="4">
+                        <div class="gallery-item-inner">
+                            <div class="gallery-item-media"><img src="assets/image/Candle light.jpg" alt="Candlelight bonfire evening at Cloud 9 Hills Resort" loading="lazy" onerror="this.closest('.gallery-item').style.background='linear-gradient(180deg,#C4AD93,#3D5238)'; this.remove();" /></div>
+                            <div class="gallery-item-shade"></div>
+                            <div class="gallery-item-glow"></div>
+                            <span class="gallery-item-tag">Events</span>
+                            <button class="gallery-item-expand" aria-label="View full image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 3H3v5M16 3h5v5M3 16v5h5M21 16v5h-5"/></svg></button>
+                            <div class="gallery-item-caption">
+                                <h3>Candlelight Bonfire Evenings</h3>
+                                <p>Warm fires and quiet conversation under the stars.</p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Item 6 -->
-                    <div class="gallery-item reveal" data-category="rooms" style="grid-row: span 2;">
-                        <div class="hill-art tone-dawn">
-                            <img class="ph-img" src="assets/image/Duplex Master bedroom.jpg" alt="Duplex bedroom" loading="lazy" onerror="this.remove()" />
-                            <div class="gallery-overlay">
-                                <span class="gallery-cat">Rooms</span>
-                                <h4>Duplex Bedroom</h4>
+                    <div class="gallery-item" data-cat="nature" data-index="5">
+                        <div class="gallery-item-inner">
+                            <div class="gallery-item-media"><img src="assets/background.png" alt="Clouds drifting over the Western Ghats at Cloud 9 Hills Resort" loading="lazy" onerror="this.closest('.gallery-item').style.background='linear-gradient(180deg,#A8B89E,#3D5238)'; this.remove();" /></div>
+                            <div class="gallery-item-shade"></div>
+                            <div class="gallery-item-glow"></div>
+                            <span class="gallery-item-tag">Nature</span>
+                            <button class="gallery-item-expand" aria-label="View full image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 3H3v5M16 3h5v5M3 16v5h5M21 16v5h-5"/></svg></button>
+                            <div class="gallery-item-caption">
+                                <h3>Clouds Above the Ghats</h3>
+                                <p>The view that gave the resort its name.</p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Item 7 -->
-                    <div class="gallery-item reveal" data-category="events">
-                        <div class="hill-art tone-dusk">
-                            <img class="ph-img" src="assets/image/Conference.jpg" alt="Conference room" loading="lazy" onerror="this.remove()" />
-                            <div class="gallery-overlay">
-                                <span class="gallery-cat">Events</span>
-                                <h4>Corporate Retreats</h4>
+                    <div class="gallery-item" data-cat="stay" data-index="6">
+                        <div class="gallery-item-inner">
+                            <div class="gallery-item-media"><img src="assets/image/cottage.jpg" alt="Private pool cottage at Cloud 9 Hills Resort" loading="lazy" onerror="this.closest('.gallery-item').style.background='linear-gradient(180deg,#BCC9B3,#3D5238)'; this.remove();" /></div>
+                            <div class="gallery-item-shade"></div>
+                            <div class="gallery-item-glow"></div>
+                            <span class="gallery-item-tag">Stay</span>
+                            <button class="gallery-item-expand" aria-label="View full image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 3H3v5M16 3h5v5M3 16v5h5M21 16v5h-5"/></svg></button>
+                            <div class="gallery-item-caption">
+                                <h3>Private Pool Cottage</h3>
+                                <p>Your own plunge pool, framed by the hills.</p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Item 8 -->
-                    <div class="gallery-item reveal" data-category="dining">
-                        <div class="hill-art tone-monsoon">
-                            <img class="ph-img" src="assets/image/scope.jpg" alt="Dining view" loading="lazy" onerror="this.remove()" />
-                            <div class="gallery-overlay">
-                                <span class="gallery-cat">Dining</span>
-                                <h4>Breakfast with a View</h4>
+                    <div class="gallery-item g-tall" data-cat="dining" data-index="7">
+                        <div class="gallery-item-inner">
+                            <div class="gallery-item-media"><img src="assets/image/Resturant.jpg" alt="Sunset dining at Cloud 9 Hills Resort" loading="lazy" onerror="this.closest('.gallery-item').style.background='linear-gradient(180deg,#E6D5C0,#6A7D62)'; this.remove();" /></div>
+                            <div class="gallery-item-shade"></div>
+                            <div class="gallery-item-glow"></div>
+                            <span class="gallery-item-tag">Dining</span>
+                            <button class="gallery-item-expand" aria-label="View full image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 3H3v5M16 3h5v5M3 16v5h5M21 16v5h-5"/></svg></button>
+                            <div class="gallery-item-caption">
+                                <h3>Sunset Dining</h3>
+                                <p>Golden hour, plated beautifully.</p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Item 9 -->
-                    <div class="gallery-item reveal" data-category="experiences">
-                        <div class="hill-art tone-forest">
-                            <img class="ph-img" src="couple.jpeg" alt="Couple experience" loading="lazy" onerror="this.remove()" />
-                            <div class="gallery-overlay">
-                                <span class="gallery-cat">Experiences</span>
-                                <h4>Romantic Escapes</h4>
+                    <div class="gallery-item" data-cat="nature" data-index="8">
+                        <div class="gallery-item-inner">
+                            <div class="gallery-item-media"><img src="assets/image/view.jpg" alt="Valley sunrise trail near Cloud 9 Hills Resort" loading="lazy" onerror="this.closest('.gallery-item').style.background='linear-gradient(180deg,#D4DCC8,#7A8D72)'; this.remove();" /></div>
+                            <div class="gallery-item-shade"></div>
+                            <div class="gallery-item-glow"></div>
+                            <span class="gallery-item-tag">Nature</span>
+                            <button class="gallery-item-expand" aria-label="View full image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 3H3v5M16 3h5v5M3 16v5h5M21 16v5h-5"/></svg></button>
+                            <div class="gallery-item-caption">
+                                <h3>Valley Sunrise Trail</h3>
+                                <p>Early mornings on the ridge, mist still settling.</p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Item 10 -->
-                    <div class="gallery-item reveal" data-category="views" style="grid-row: span 2;">
-                        <div class="hill-art tone-dusk">
-                            <img class="ph-img" src="assets/image/tigerpoint.png" alt="Tiger point view" loading="lazy" onerror="this.remove()" />
-                            <div class="gallery-overlay">
-                                <span class="gallery-cat">Views</span>
-                                <h4>Tiger Point</h4>
+                    <div class="gallery-item" data-cat="events" data-index="9">
+                        <div class="gallery-item-inner">
+                            <div class="gallery-item-media"><img src="assets/image/Conference.jpg" alt="Corporate retreat setup at Cloud 9 Hills Resort" loading="lazy" onerror="this.closest('.gallery-item').style.background='linear-gradient(180deg,#D4DCC8,#1F4520)'; this.remove();" /></div>
+                            <div class="gallery-item-shade"></div>
+                            <div class="gallery-item-glow"></div>
+                            <span class="gallery-item-tag">Events</span>
+                            <button class="gallery-item-expand" aria-label="View full image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 3H3v5M16 3h5v5M3 16v5h5M21 16v5h-5"/></svg></button>
+                            <div class="gallery-item-caption">
+                                <h3>Corporate Retreats</h3>
+                                <p>Offsites that trade boardrooms for hilltop air.</p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Item 11 -->
-                    <div class="gallery-item reveal" data-category="rooms">
-                        <div class="hill-art tone-forest">
-                            <img class="ph-img" src="assets/image/Deluxe cottage.jpg" alt="Deluxe cottage" loading="lazy" onerror="this.remove()" />
-                            <div class="gallery-overlay">
-                                <span class="gallery-cat">Rooms</span>
-                                <h4>Deluxe Cottage</h4>
+                    <div class="gallery-item g-wide" data-cat="stay" data-index="10">
+                        <div class="gallery-item-inner">
+                            <div class="gallery-item-media"><img src="assets/image/cottage.jpg" alt="Hillside cottage exterior at Cloud 9 Hills Resort" loading="lazy" onerror="this.closest('.gallery-item').style.background='linear-gradient(180deg,#BCC9B3,#3D5238)'; this.remove();" /></div>
+                            <div class="gallery-item-shade"></div>
+                            <div class="gallery-item-glow"></div>
+                            <span class="gallery-item-tag">Stay</span>
+                            <button class="gallery-item-expand" aria-label="View full image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 3H3v5M16 3h5v5M3 16v5h5M21 16v5h-5"/></svg></button>
+                            <div class="gallery-item-caption">
+                                <h3>Hillside Cottage</h3>
+                                <p>Timber, stone and glass tucked into the slope.</p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Item 12 -->
-                    <div class="gallery-item reveal" data-category="experiences">
-                        <div class="hill-art tone-monsoon">
-                            <img class="ph-img" src="assets/image/RAJMACHI.png" alt="Rajmachi trek" loading="lazy" onerror="this.remove()" />
-                            <div class="gallery-overlay">
-                                <span class="gallery-cat">Experiences</span>
-                                <h4>Trekking the Western Ghats</h4>
+                    <div class="gallery-item" data-cat="dining" data-index="11">
+                        <div class="gallery-item-inner">
+                            <div class="gallery-item-media"><img src="assets/image/Candle light.jpg" alt="Romantic candlelight dinner setup at Cloud 9 Hills Resort" loading="lazy" onerror="this.closest('.gallery-item').style.background='linear-gradient(180deg,#C4AD93,#3D5238)'; this.remove();" /></div>
+                            <div class="gallery-item-shade"></div>
+                            <div class="gallery-item-glow"></div>
+                            <span class="gallery-item-tag">Dining</span>
+                            <button class="gallery-item-expand" aria-label="View full image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 3H3v5M16 3h5v5M3 16v5h5M21 16v5h-5"/></svg></button>
+                            <div class="gallery-item-caption">
+                                <h3>Romantic Dinner Setup</h3>
+                                <p>A table for two, lit only by candlelight.</p>
                             </div>
                         </div>
                     </div>
+
+                    <div class="gallery-item" data-cat="nature" data-index="12">
+                        <div class="gallery-item-inner">
+                            <div class="gallery-item-media"><img src="assets/image/khandala.png" alt="Winter mist mornings near Cloud 9 Hills Resort" loading="lazy" onerror="this.closest('.gallery-item').style.background='linear-gradient(180deg,#9AAD96,#3D5238)'; this.remove();" /></div>
+                            <div class="gallery-item-shade"></div>
+                            <div class="gallery-item-glow"></div>
+                            <span class="gallery-item-tag">Nature</span>
+                            <button class="gallery-item-expand" aria-label="View full image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 3H3v5M16 3h5v5M3 16v5h5M21 16v5h-5"/></svg></button>
+                            <div class="gallery-item-caption">
+                                <h3>Winter Mist Mornings</h3>
+                                <p>Cool, crisp air and slow-moving cloud cover.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-cat="stay" data-index="13">
+                        <div class="gallery-item-inner">
+                            <div class="gallery-item-media"><img src="assets/image/view.jpg" alt="View from a villa balcony at Cloud 9 Hills Resort" loading="lazy" onerror="this.closest('.gallery-item').style.background='linear-gradient(180deg,#D4DCC8,#7A8D72)'; this.remove();" /></div>
+                            <div class="gallery-item-shade"></div>
+                            <div class="gallery-item-glow"></div>
+                            <span class="gallery-item-tag">Stay</span>
+                            <button class="gallery-item-expand" aria-label="View full image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 3H3v5M16 3h5v5M3 16v5h5M21 16v5h-5"/></svg></button>
+                            <div class="gallery-item-caption">
+                                <h3>Balcony Views</h3>
+                                <p>Wake up to hills instead of skylines.</p>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
 
-        <!-- ===== INSTAGRAM CTA ===== -->
-        <section class="gallery-insta">
-            <div class="container reveal">
-                <div class="gallery-insta-content">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M18 6h.01"/></svg>
-                    <h3>Follow us on Instagram</h3>
-                    <p>@cloud9hillsresortlonavala</p>
-                    <a href="https://www.instagram.com/cloud9hillsresortlonavala/" target="_blank" rel="noopener" class="btn btn-primary">Follow Us</a>
+        <!-- ===== CTA STRIP ===== -->
+        <section class="gallery-cta">
+            <div class="gallery-cta-orb" aria-hidden="true"></div>
+            <div class="container gallery-cta-inner">
+                <div class="eyebrow light reveal">Come See It Yourself</div>
+                <h2 class="reveal reveal-delay-1">Photos Only Tell Half the Story</h2>
+                <p class="reveal reveal-delay-2">The mist, the silence, the smell of rain on the hills — some things you have to experience above the clouds.</p>
+                <div class="gallery-cta-ctas reveal reveal-delay-3">
+                    <a href="https://www.swiftbook.io/inst/#home?propertyId=2647" class="btn btn-primary" data-track="book_now_click" data-track-loc="gallery_cta">
+                        Book Your Stay
+                        <svg viewBox="0 0 16 16" fill="none"><path d="M2 8h11M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.6"/></svg>
+                    </a>
+                    <a href="https://wa.me/919819739444" class="btn btn-outline" target="_blank" rel="noopener" data-track="whatsapp_click" data-track-loc="gallery_cta">Chat on WhatsApp</a>
                 </div>
             </div>
         </section>
 
     </main>
+
+    <!-- ===== LIGHTBOX ===== -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+        <div class="lightbox-stage">
+            <span class="lightbox-counter" id="lightboxCounter">01 / 14</span>
+            <button class="lightbox-close" id="lightboxClose" aria-label="Close viewer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+            <button class="lightbox-prev" id="lightboxPrev" aria-label="Previous image"><svg viewBox="0 0 16 16" fill="none"><path d="M10 3L4 8l6 5" stroke="currentColor" stroke-width="1.8"/></svg></button>
+            <button class="lightbox-next" id="lightboxNext" aria-label="Next image"><svg viewBox="0 0 16 16" fill="none"><path d="M6 3l6 5-6 5" stroke="currentColor" stroke-width="1.8"/></svg></button>
+            <div class="lightbox-frame">
+                <img id="lightboxImg" src="" alt="" />
+                <div class="lightbox-caption">
+                    <h3 id="lightboxTitle">Title</h3>
+                    <p id="lightboxTag">Category</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- ===== FOOTER ===== -->
     <footer class="site-footer">
@@ -325,10 +902,8 @@
                 <h5>Quick Links</h5>
                 <ul class="footer-links">
                     <li><a href="stay.html">Stay</a></li>
-                    <li><a href="dining.html">Dining</a></li>
-                    <li><a href="index.html#experiences">Experiences</a></li>
+                    <li><a href="offers.html">Offers</a></li>
                     <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="blog.html">Blog</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
@@ -372,28 +947,249 @@
         </ul>
     </div>
 
+    <script src="gallery-assets.js"></script>
+    <script src="main.js" defer></script>
+
+    <!-- GSAP for premium hover/parallax/scroll animation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
     <script>
-        // Gallery Filter
-        const galleryFilterBtns = document.querySelectorAll('.gallery-filter-btn');
-        const galleryItems = document.querySelectorAll('.gallery-item');
+    (function () {
+        'use strict';
 
-        galleryFilterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                galleryFilterBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                const filter = btn.dataset.filter;
+        var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-                galleryItems.forEach(item => {
-                    if (filter === 'all' || item.dataset.category === filter) {
-                        item.style.display = 'block';
-                        item.classList.add('reveal', 'in-view');
-                        setTimeout(() => { item.style.opacity = '1'; item.style.transform = 'translateY(0)'; }, 50);
-                    } else {
-                        item.style.display = 'none';
+        function ready(fn) {
+            if (document.readyState !== 'loading') fn();
+            else document.addEventListener('DOMContentLoaded', fn);
+        }
+
+        ready(function () {
+            var hasGSAP = typeof window.gsap !== 'undefined';
+            if (hasGSAP && window.ScrollTrigger) {
+                gsap.registerPlugin(ScrollTrigger);
+            }
+
+            /* ---------- Hero parallax ---------- */
+            var heroMedia = document.getElementById('heroParallax');
+            if (hasGSAP && heroMedia && !prefersReducedMotion) {
+                gsap.to(heroMedia, {
+                    yPercent: 18,
+                    ease: 'none',
+                    scrollTrigger: {
+                        trigger: '.gallery-hero',
+                        start: 'top top',
+                        end: 'bottom top',
+                        scrub: true
                     }
                 });
+                gsap.fromTo(heroMedia, { scale: 1.15 }, {
+                    scale: 1.02,
+                    ease: 'none',
+                    scrollTrigger: {
+                        trigger: '.gallery-hero',
+                        start: 'top top',
+                        end: 'bottom top',
+                        scrub: true
+                    }
+                });
+            }
+
+            /* ---------- Grid stagger reveal ---------- */
+            var items = Array.prototype.slice.call(document.querySelectorAll('.gallery-item'));
+            if (hasGSAP) {
+                if (prefersReducedMotion) {
+                    gsap.set(items, { opacity: 1, y: 0 });
+                } else {
+                    items.forEach(function (item, i) {
+                        gsap.fromTo(item,
+                            { opacity: 0, y: 46, scale: .96 },
+                            {
+                                opacity: 1, y: 0, scale: 1,
+                                duration: .85,
+                                ease: 'power3.out',
+                                delay: (i % 4) * 0.06,
+                                scrollTrigger: {
+                                    trigger: item,
+                                    start: 'top 92%',
+                                    toggleActions: 'play none none reverse'
+                                }
+                            }
+                        );
+                    });
+
+                    /* gentle continuous parallax drift on each image while scrolling */
+                    items.forEach(function (item) {
+                        var media = item.querySelector('.gallery-item-media');
+                        if (!media) return;
+                        gsap.to(media, {
+                            yPercent: 6,
+                            ease: 'none',
+                            scrollTrigger: {
+                                trigger: item,
+                                start: 'top bottom',
+                                end: 'bottom top',
+                                scrub: true
+                            }
+                        });
+                    });
+                }
+            } else {
+                items.forEach(function (item) { item.style.opacity = 1; });
+            }
+
+            /* ---------- Magnetic tilt + cursor glow on hover (desktop only) ---------- */
+            var isTouch = window.matchMedia('(hover: none)').matches;
+            if (!isTouch && !prefersReducedMotion) {
+                items.forEach(function (item) {
+                    var inner = item.querySelector('.gallery-item-inner');
+                    var glow = item.querySelector('.gallery-item-glow');
+
+                    item.addEventListener('mousemove', function (e) {
+                        var rect = item.getBoundingClientRect();
+                        var px = (e.clientX - rect.left) / rect.width;
+                        var py = (e.clientY - rect.top) / rect.height;
+
+                        if (glow) {
+                            glow.style.setProperty('--mx', (px * 100) + '%');
+                            glow.style.setProperty('--my', (py * 100) + '%');
+                        }
+
+                        if (hasGSAP && inner) {
+                            var rotX = (py - 0.5) * -8;
+                            var rotY = (px - 0.5) * 8;
+                            gsap.to(inner, {
+                                rotateX: rotX,
+                                rotateY: rotY,
+                                duration: .5,
+                                ease: 'power2.out',
+                                transformPerspective: 900
+                            });
+                        }
+                    });
+
+                    item.addEventListener('mouseleave', function () {
+                        if (hasGSAP && inner) {
+                            gsap.to(inner, { rotateX: 0, rotateY: 0, duration: .6, ease: 'power3.out' });
+                        }
+                    });
+                });
+            }
+
+            /* ---------- Filter tabs ---------- */
+            var filterTabs = document.querySelectorAll('.filter-tab');
+            var visibleCountEl = document.getElementById('galleryVisibleCount');
+
+            function applyFilter(cat) {
+                var visible = 0;
+                items.forEach(function (item) {
+                    var match = (cat === 'all') || (item.getAttribute('data-cat') === cat);
+                    if (match) {
+                        item.classList.remove('filtered-out');
+                        visible++;
+                        if (hasGSAP && !prefersReducedMotion) {
+                            gsap.fromTo(item, { opacity: 0, scale: .94 }, { opacity: 1, scale: 1, duration: .5, ease: 'power2.out' });
+                        }
+                    } else {
+                        item.classList.add('filtered-out');
+                    }
+                });
+                if (visibleCountEl) visibleCountEl.textContent = visible;
+            }
+
+            filterTabs.forEach(function (tab) {
+                tab.addEventListener('click', function () {
+                    filterTabs.forEach(function (t) { t.classList.remove('active'); });
+                    tab.classList.add('active');
+                    applyFilter(tab.getAttribute('data-filter'));
+                });
+            });
+
+            /* ---------- Lightbox ---------- */
+            var lightbox = document.getElementById('lightbox');
+            var lightboxImg = document.getElementById('lightboxImg');
+            var lightboxTitle = document.getElementById('lightboxTitle');
+            var lightboxTag = document.getElementById('lightboxTag');
+            var lightboxCounter = document.getElementById('lightboxCounter');
+            var lightboxClose = document.getElementById('lightboxClose');
+            var lightboxPrev = document.getElementById('lightboxPrev');
+            var lightboxNext = document.getElementById('lightboxNext');
+
+            var currentIndex = 0;
+
+            function getVisibleItems() {
+                return items.filter(function (item) { return !item.classList.contains('filtered-out'); });
+            }
+
+            function openLightbox(item) {
+                var visible = getVisibleItems();
+                currentIndex = visible.indexOf(item);
+                renderLightbox();
+                lightbox.classList.add('open');
+                document.body.style.overflow = 'hidden';
+                if (hasGSAP && !prefersReducedMotion) {
+                    gsap.fromTo('.lightbox-frame', { scale: .92, opacity: 0 }, { scale: 1, opacity: 1, duration: .5, ease: 'power3.out' });
+                }
+            }
+
+            function closeLightbox() {
+                lightbox.classList.remove('open');
+                document.body.style.overflow = '';
+            }
+
+            function renderLightbox() {
+                var visible = getVisibleItems();
+                if (!visible.length) return;
+                currentIndex = (currentIndex + visible.length) % visible.length;
+                var item = visible[currentIndex];
+                var img = item.querySelector('.gallery-item-media img');
+                var title = item.querySelector('.gallery-item-caption h3');
+                var tag = item.querySelector('.gallery-item-tag');
+
+                if (img) {
+                    lightboxImg.src = img.src;
+                    lightboxImg.alt = img.alt;
+                }
+                if (title) lightboxTitle.textContent = title.textContent;
+                if (tag) lightboxTag.textContent = tag.textContent;
+                lightboxCounter.textContent = String(currentIndex + 1).padStart(2, '0') + ' / ' + String(visible.length).padStart(2, '0');
+            }
+
+            function nextImage() {
+                currentIndex++;
+                renderLightbox();
+                if (hasGSAP && !prefersReducedMotion) {
+                    gsap.fromTo(lightboxImg, { opacity: 0, x: 24 }, { opacity: 1, x: 0, duration: .4, ease: 'power2.out' });
+                }
+            }
+            function prevImage() {
+                currentIndex--;
+                renderLightbox();
+                if (hasGSAP && !prefersReducedMotion) {
+                    gsap.fromTo(lightboxImg, { opacity: 0, x: -24 }, { opacity: 1, x: 0, duration: .4, ease: 'power2.out' });
+                }
+            }
+
+            items.forEach(function (item) {
+                item.addEventListener('click', function () { openLightbox(item); });
+            });
+
+            lightboxClose.addEventListener('click', closeLightbox);
+            lightboxNext.addEventListener('click', nextImage);
+            lightboxPrev.addEventListener('click', prevImage);
+            lightbox.addEventListener('click', function (e) {
+                if (e.target === lightbox) closeLightbox();
+            });
+            document.addEventListener('keydown', function (e) {
+                if (!lightbox.classList.contains('open')) return;
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowRight') nextImage();
+                if (e.key === 'ArrowLeft') prevImage();
             });
         });
+    })();
     </script>
+
 </body>
 </html>

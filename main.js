@@ -7,6 +7,59 @@
 
             var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+            // Replace legacy content artwork with the organized compressed image archive.
+            function refreshContentImages() {
+                var archive = 'Cloud 9 Compress Images/All Images/';
+                var legacy = /(?:assets\/image\/|^)(view\.jpg|khandala\.png|cottage\.jpg|Deluxe cottage\.jpg|Duplex Bedroom\.jpg|Duplex Master bedroom\.jpg|Conference\.jpg|Resturant\.jpg|scope\.jpg|Candle light\.jpg|couple\.jpeg|background\.png)$/i;
+                var images = document.querySelectorAll('img');
+
+                images.forEach(function(img) {
+                    var source = img.getAttribute('src') || '';
+                    var match = source.match(legacy);
+                    if (!match || img.closest('.site-header, .site-footer') && /logos?\.png|background\.png/i.test(source)) return;
+
+                    var alt = (img.getAttribute('alt') || '').toLowerCase();
+                    var replacement = 'View from cloud9.webp';
+
+                    if (alt.indexOf('restaurant') >= 0 || alt.indexOf('dining') >= 0 || alt.indexOf('breakfast') >= 0 || alt.indexOf('high tea') >= 0) {
+                        replacement = 'Restaurant/Resturant 4.webp';
+                    } else if (alt.indexOf('conference') >= 0 || alt.indexOf('corporate') >= 0 || alt.indexOf('event') >= 0 || alt.indexOf('retreat setup') >= 0) {
+                        replacement = 'Conference.webp';
+                    } else if (alt.indexOf('candle') >= 0 || alt.indexOf('bonfire') >= 0 || alt.indexOf('romantic') >= 0 || alt.indexOf('wedding') >= 0) {
+                        replacement = 'Candle light 1.webp';
+                    } else if (alt.indexOf('suite') >= 0 || alt.indexOf('honeymoon') >= 0) {
+                        replacement = 'Luxury Suite 2.webp';
+                    } else if (alt.indexOf('4 bedroom') >= 0 || alt.indexOf('four bedroom') >= 0) {
+                        replacement = '4 BHK/04 Bhk Living room 3.webp';
+                    } else if (alt.indexOf('3 bedroom') >= 0 || alt.indexOf('duplex') >= 0) {
+                        replacement = 'Duplex Master bedroom.webp';
+                    } else if (alt.indexOf('deluxe cottage') >= 0 && alt.indexOf('family') < 0) {
+                        replacement = 'Deluxe Cottage/Deluxe Cottage.webp';
+                    } else if (alt.indexOf('family') >= 0) {
+                        replacement = 'Family deluxe cott - 129.webp';
+                    } else if (alt.indexOf('hill top') >= 0 || alt.indexOf('cottage') >= 0) {
+                        replacement = 'Hill Top Deluxe Cott.webp';
+                    } else if (match[1].toLowerCase() === 'resturant.jpg') {
+                        replacement = 'Restaurant/Resturant 4.webp';
+                    } else if (match[1].toLowerCase() === 'conference.jpg') {
+                        replacement = 'Conference.webp';
+                    } else if (match[1].toLowerCase() === 'candle light.jpg') {
+                        replacement = 'Candle light 1.webp';
+                    } else if (match[1].toLowerCase() === 'couple.jpeg') {
+                        replacement = '1 bhk- Bedroom.webp';
+                    } else if (match[1].toLowerCase() === 'scope.jpg') {
+                        replacement = 'Coffee Sunset Point.webp';
+                    } else if (match[1].toLowerCase() === 'khandala.png') {
+                        replacement = 'View from cloud9 - 7.webp';
+                    }
+
+                    img.setAttribute('src', archive + replacement);
+                    img.setAttribute('data-archive-image', 'true');
+                });
+            }
+
+            refreshContentImages();
+
             // ===== CONFIG =====
             var CONFIG = {
                 GA_MEASUREMENT_ID: 'GA_MEASUREMENT_ID',
@@ -969,6 +1022,49 @@ if (expScroll) {
                 });
                 sliderWrap.addEventListener('mouseleave', function() {
                     resumeAutoplay();
+                });
+
+                var touchStartX = 0;
+                var touchStartY = 0;
+
+                sliderWrap.addEventListener('touchstart', function(event) {
+                    var touch = event.touches[0] || event.changedTouches[0];
+                    touchStartX = touch.clientX;
+                    touchStartY = touch.clientY;
+                    stopAutoplay();
+                }, { passive: true });
+
+                sliderWrap.addEventListener('touchend', function(event) {
+                    var touch = event.changedTouches[0] || event.touches[0];
+                    var endX = touch.clientX;
+                    var endY = touch.clientY;
+                    var diffX = endX - touchStartX;
+                    var diffY = endY - touchStartY;
+
+                    if (Math.abs(diffX) > 45 && Math.abs(diffX) > Math.abs(diffY)) {
+                        if (diffX < 0) nextSlide();
+                        else prevSlide();
+                    }
+
+                    startAutoplay();
+                }, { passive: true });
+
+                sliderWrap.addEventListener('pointerdown', function(event) {
+                    touchStartX = event.clientX;
+                    touchStartY = event.clientY;
+                    stopAutoplay();
+                });
+
+                sliderWrap.addEventListener('pointerup', function(event) {
+                    var diffX = event.clientX - touchStartX;
+                    var diffY = event.clientY - touchStartY;
+
+                    if (Math.abs(diffX) > 45 && Math.abs(diffX) > Math.abs(diffY)) {
+                        if (diffX < 0) nextSlide();
+                        else prevSlide();
+                    }
+
+                    startAutoplay();
                 });
             }
 
