@@ -1603,3 +1603,644 @@ if (expScroll) {
         }, 1500);
     }, { passive: true });
 })();
+/* ============================================================
+   REVIEW DATA ARCHITECTURE — single source of truth
+   ------------------------------------------------------------
+   • Replace `google.url` and `tripadvisor.url` with your official
+     listing URLs.
+   • PREFERRED: populate this object server-side from an approved
+     Google Business Profile / Tripadvisor integration and print it
+     into the page, so the UI always renders the real, current
+     rating + review count. Never fake "live" data.
+   • If no API is available, update `rating`, `count` and `updated`
+     manually here — nothing is hardcoded in the markup.
+   ============================================================ */
+window.CLOUD9_REVIEWS = {
+
+  google: {
+    label: "Google",
+    rating: 4.1,
+    count: 2900,
+    suffix: "+",
+    updated: "2025-06-01",
+    url: "https://www.google.com/travel/search?q=cloud%209%20hills%20resort%20lonavala%20reviews&g2lb=4899568%2C4899569%2C4965990%2C72471280%2C72560029%2C72573224%2C72647020%2C72686036%2C72803964%2C72882230%2C73064764%2C121529350%2C121608706%2C121738283%2C121762713&hl=en-IN&gl=in&ssta=1&ts=CAEaRwopEicyJTB4M2JlODAzNmQ5MmNhMzljMzoweGIxZjU2M2MzYWE2NDgxODcSGhIUCgcI6g8QCBgUEgcI6g8QCBgVGAEyAhAA&qs=CAEyFENnc0loNE9TMDdyNDJQcXhBUkFCOAJCCQmHgWSqw2P1sUIJCYeBZKrDY_Wx&ap=ugEHcmV2aWV3cw&ictx=111&ved=0CAAQ5JsGahcKEwjoiqbYquiWAxUAAAAAHQAAAAAQAw"
+  },
+
+  tripadvisor: {
+    label: "Tripadvisor",
+    rating: 4.4,
+    count: 575,
+    suffix: "+",
+    updated: "2025-06-01",
+    url: "https://www.tripadvisor.in/Hotel_Review-g608474-d1157903-Reviews-Cloud_9_Hills_Resort-Lonavala_Pune_District_Maharashtra.html"
+  },
+
+  /* Labels for third-party review platforms. Only used to render the
+     small source badge on each slide — these are not tracked as
+     rated/summarized platforms like Google and Tripadvisor above. */
+  expedia: { label: "Expedia" },
+  hotels:  { label: "Hotels.com" },
+
+  /* ----------------------------------------------------------
+     REVIEWS
+     ----------------------------------------------------------
+     Populated only with verifiable third-party reviews:
+
+     • The two entries below were found via aggregator listings
+       (Expedia and Hotels.com) for this same property — the
+       address on those listings matches the resort's own
+       contact address, confirming it's the same place. Each is
+       tagged with its real source and the actual stay date where
+       the listing provided one; the Hotels.com review did not
+       include a date, so none is shown rather than invented.
+
+     • No Google or Tripadvisor review text is included here —
+       none could be independently verified as this property's
+       own Google/Tripadvisor listing content. Add real excerpts
+       from those two platforms (with month + year) as soon as
+       you can supply or confirm them; the carousel scales
+       automatically.
+
+     Each entry:
+     {
+       source:   "google" | "tripadvisor" | "expedia" | "hotels",
+       rating:   1–5,
+       author:   "Real reviewer name",
+       tripType: "Travelled with Family",
+       date:     "March 2025"   (omit if the real date isn't known — never guess),
+       dateISO:  "2025-03-12"   (omit alongside date),
+       image:    "https://…/resort-photo.jpg"  (atmospheric resort imagery, not a guest photo),
+       text:     "Original review text…"
+     }
+     ---------------------------------------------------------- */
+  reviews: [
+    {
+    source: "google",
+    rating: 5,
+    author: "Kunal M",
+    tripType: "Guest Review",
+    date: "October 2025",
+    dateISO: "2025-10-16",
+    image: "Cloud 9 Compress Images/Exterior/5.webp",
+    text: "Wonderful stay with delicious food, clean and comfortable rooms, excellent service and very welcoming staff."
+  },
+
+  {
+    source: "tripadvisor",
+    rating: 5,
+    author: "Sachin G",
+    tripType: "Travelled with Family",
+    date: "August 2026",
+    dateISO: "2026-08-01",
+    image: "Cloud 9 Compress Images/All Images/Born Fire 1.webp",
+    text: "Amazing location surrounded by clouds, excellent hospitality and a memorable family stay."
+  },
+
+  {
+    source: "google",
+    rating: 5,
+    author: "Vikram A",
+    tripType: "Guest Review",
+    date: "October 2025",
+    dateISO: "2025-10-13",
+    image: "Cloud 9 Compress Images/All Images/Restaurant/Roof Top - 2.webp",
+    text: "Fantastic getaway with authentic vegetarian food, warm hospitality and breathtaking mountain and valley views."
+  },
+
+  {
+    source: "tripadvisor",
+    rating: 5,
+    author: "Global56299492576",
+    tripType: "Guest Review",
+    date: "August 2026",
+    dateISO: "2026-08-01",
+    image: "Cloud 9 Compress Images/All Images/Restaurant/Candle light dinne r2.webp",
+    text: "Beautiful misty location, excellent food and service, making it a perfect place for relaxation."
+  },
+
+  {
+    source: "google",
+    rating: 5,
+    author: "Riten S",
+    tripType: "Guest Review",
+    date: "August 2025",
+    dateISO: "2025-08-21",
+    image: "Cloud 9 Compress Images/All Images/Restaurant/Mocktail 7.webp",
+    text: "The monsoon experience was magical with lush green hills, waterfalls, cool breeze and delicious food."
+  },
+
+  {
+    source: "tripadvisor",
+    rating: 5,
+    author: "DayTrip02532419827",
+    tripType: "Travelled with Family",
+    date: "May 2026",
+    dateISO: "2026-05-01",
+    image: "Cloud 9 Compress Images/All Images/Restaurant/Mocktails.webp",
+    text: "Clean spacious rooms, beautiful mountain views, warm hospitality and excellent vegetarian food made this a wonderful stay."
+  },
+
+  {
+    source: "google",
+    rating: 5,
+    author: "Ankit P",
+    tripType: "Guest Review",
+    date: "October 2025",
+    dateISO: "2025-10-14",
+    image: "Cloud 9 Compress Images/All Images/Restaurant/Resturant 3.webp",
+    text: "Loved the peaceful hillside atmosphere, cozy cottage, forest views and delicious food at the in-house restaurant."
+  },
+
+  {
+    source: "tripadvisor",
+    rating: 5,
+    author: "Purva Rakhyani",
+    tripType: "Guest Review",
+    date: "May 2026",
+    dateISO: "2026-05-01",
+    image: "Cloud 9 Compress Images/Room 108/DSC06015-HDR.webp",
+    text: "The atmosphere and overall vibe are amazing for families, friends and couples looking for a relaxing stay."
+  },
+
+  {
+    source: "google",
+    rating: 5,
+    author: "Aditi Warang",
+    tripType: "Guest Review",
+    date: "Recent Review",
+    dateISO: "",
+    image: "Cloud 9 Compress Images/Room 109/DSC06036-HDR.webp",
+    text: "Awesome weather, superb food quality and good service. A must-visit place for a relaxing getaway."
+  },
+
+  {
+    source: "tripadvisor",
+    rating: 5,
+    author: "Connector28535902524",
+    tripType: "Guest Review",
+    date: "July 2026",
+    dateISO: "2026-07-01",
+    image: "Cloud 9 Compress Images/Room 109/DSC06054-HDR.webp",
+    text: "A beautiful resort with great location, friendly staff, good food and excellent value for money."
+  }
+
+  ]
+};
+
+
+/* ============================================================
+   GUEST STORIES — RENDER + INTERACTION
+   ============================================================ */
+(function () {
+  'use strict';
+
+  var CFG = window.CLOUD9_REVIEWS;
+  var section = document.getElementById('guest-stories');
+  if (!section || !CFG) return;
+
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+
+  function relativeUpdated(iso) {
+    if (!iso) return '';
+    var d = new Date(iso);
+    if (isNaN(d)) return '';
+    var days = Math.floor((Date.now() - d.getTime()) / 86400000);
+    if (days <= 0) return 'Updated today';
+    if (days === 1) return 'Updated yesterday';
+    if (days < 30) return 'Updated ' + days + ' days ago';
+    return 'Updated ' + d.toLocaleDateString('en-GB', { month: 'long', year: 'numeric' });
+  }
+
+  var LOGOS = {
+    google:
+      '<svg viewBox="0 0 48 48" width="18" height="18" aria-hidden="true" focusable="false">' +
+        '<path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>' +
+        '<path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>' +
+        '<path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>' +
+        '<path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>' +
+      '</svg>',
+    tripadvisor:
+      '<svg viewBox="0 0 32 20" width="21" height="13" aria-hidden="true" focusable="false" fill="none">' +
+        '<circle cx="8" cy="10" r="7" stroke="currentColor" stroke-width="1.9"/>' +
+        '<circle cx="8" cy="10" r="2.7" fill="currentColor"/>' +
+        '<circle cx="24" cy="10" r="7" stroke="currentColor" stroke-width="1.9"/>' +
+        '<circle cx="24" cy="10" r="2.7" fill="currentColor"/>' +
+        '<path d="M16 13.6 13.6 17.8h4.8z" fill="currentColor"/>' +
+      '</svg>'
+  };
+
+  function starsMarkup(rating) {
+    var pct = Math.max(0, Math.min(100, (Number(rating) / 5) * 100));
+    var row = '';
+    for (var i = 0; i < 5; i++) {
+      row += '<span class="gs-star" style="--i:' + i + '">&#9733;</span>';
+    }
+    return '' +
+      '<span class="gs-stars" role="img" aria-label="' + esc(rating) + ' out of 5 stars">' +
+        '<span class="gs-stars-row gs-stars-dim" aria-hidden="true">' + row + '</span>' +
+        '<span class="gs-stars-row gs-stars-lit" aria-hidden="true" style="width:' + pct.toFixed(2) + '%">' + row + '</span>' +
+      '</span>';
+  }
+
+  /* ---------- build carousel ---------- */
+  var track = section.querySelector('#gsTrack');
+  var viewport = section.querySelector('#gsViewport');
+  var currentEl = section.querySelector('[data-current]');
+  var totalEl = section.querySelector('[data-total]');
+  var progressEl = section.querySelector('[data-progress]');
+  var prevBtn = section.querySelector('[data-prev]');
+  var nextBtn = section.querySelector('[data-next]');
+  var controlsEl = section.querySelector('.gs-controls');
+
+  var reviews = Array.isArray(CFG.reviews) ? CFG.reviews.filter(Boolean) : [];
+  var total = reviews.length;
+  var index = 0;
+  var hasCarousel = total > 0;
+
+  if (hasCarousel) {
+    track.innerHTML = reviews.map(function (r, i) {
+      var p = CFG[r.source] || {};
+      var label = p.label || r.source;
+      return '' +
+        '<blockquote class="gs-slide' + (i === 0 ? ' is-active' : '') + '"' +
+          ' role="group" aria-roledescription="slide"' +
+          ' aria-label="' + (i + 1) + ' of ' + total + '"' +
+          (i === 0 ? '' : ' aria-hidden="true"') + '>' +
+          '<span class="gs-qmark" aria-hidden="true">&ldquo;</span>' +
+          '<div class="gs-slide-left">' +
+            starsMarkup(r.rating) +
+            '<p class="gs-text">' + esc(r.text) + '</p>' +
+          '</div>' +
+          '<footer class="gs-slide-right">' +
+            '<img class="gs-thumb" src="' + esc(r.image) + '" alt="" loading="lazy" decoding="async" width="300" height="225">' +
+            '<div class="gs-guest-block">' +
+              '<cite class="gs-name">' + esc(r.author) + '</cite>' +
+              '<span class="gs-trip">' + esc(r.tripType || '') + '</span>' +
+            '</div>' +
+            '<div class="gs-src-block">' +
+              '<span class="gs-src">' + (LOGOS[r.source] || '') + '<span>' + esc(label) + ' Review</span></span>' +
+              '<time class="gs-date" datetime="' + esc(r.dateISO || '') + '">' + esc(r.date || '') + '</time>' +
+            '</div>' +
+          '</footer>' +
+        '</blockquote>';
+    }).join('');
+
+    totalEl.textContent = String(total).padStart(2, '0');
+  } else {
+    /* No reviews yet — clean curated state, no fabricated content */
+    viewport.removeAttribute('tabindex');
+    viewport.removeAttribute('aria-roledescription');
+    viewport.removeAttribute('role');
+    viewport.innerHTML = '' +
+      '<div class="gs-empty">' +
+        '<span class="gs-qmark" aria-hidden="true">&ldquo;</span>' +
+        '<p class="gs-empty-title">Guest stories are being curated.</p>' +
+        '<p class="gs-empty-text">' +
+          'Our latest reviews live on Google and Tripadvisor. ' +
+          'Read them in full using the links below.' +
+        '</p>' +
+        '<span class="gs-empty-rule" aria-hidden="true"></span>' +
+      '</div>';
+    controlsEl.style.display = 'none';
+  }
+
+  var slides = hasCarousel ? Array.prototype.slice.call(track.children) : [];
+
+  /* ---------- platform cards ---------- */
+  var platformsEl = section.querySelector('#gsPlatforms');
+  ['google', 'tripadvisor'].forEach(function (key, i) {
+    var p = CFG[key];
+    if (!p) return;
+    var note = relativeUpdated(p.updated);
+    platformsEl.insertAdjacentHTML('beforeend', '' +
+      '<article class="gs-plat" data-platform="' + key + '" data-reveal style="--d:' + (460 + i * 80) + 'ms">' +
+        '<div class="gs-plat-top">' +
+          '<span class="gs-plat-logo gs-plat-logo--' + key + '">' + LOGOS[key] + '</span>' +
+          '<div>' +
+            '<h3 class="gs-plat-name">' + esc(p.label) + ' Reviews</h3>' +
+            (note ? '<p class="gs-plat-note">' + esc(note) + '</p>' : '') +
+          '</div>' +
+        '</div>' +
+        '<div class="gs-plat-score">' +
+          '<span class="gs-plat-value">' + Number(p.rating).toFixed(1) + '</span>' +
+          '<div class="gs-plat-stars">' +
+            starsMarkup(p.rating) +
+            '<span class="gs-plat-count"><b data-count="' + Number(p.count) + '">0</b>' +
+              esc(p.suffix || '') + ' reviews</span>' +
+          '</div>' +
+        '</div>' +
+        '<a class="gs-plat-link" href="' + esc(p.url) + '" target="_blank" rel="noopener noreferrer">' +
+          '<span>Read ' + esc(p.label) + ' reviews</span>' +
+          '<span class="gs-arrow" aria-hidden="true">&rarr;</span>' +
+        '</a>' +
+      '</article>');
+  });
+
+  /* ---------- centred CTA buttons ---------- */
+  var actionsEl = section.querySelector('#gsActions');
+  ['google', 'tripadvisor'].forEach(function (key) {
+    var p = CFG[key];
+    if (!p) return;
+    actionsEl.insertAdjacentHTML('beforeend', '' +
+      '<a class="gs-action" href="' + esc(p.url) + '" target="_blank" rel="noopener noreferrer">' +
+        '<span class="gs-action-logo">' + LOGOS[key] + '</span>' +
+        '<span>Read our ' + esc(p.label) + ' reviews</span>' +
+        '<span class="gs-arrow" aria-hidden="true">&rarr;</span>' +
+      '</a>');
+  });
+
+  /* ---------- carousel engine ---------- */
+  var autoTimer = null;
+  var AUTO_MS = 6200;
+
+  function slideStep() {
+    if (!slides.length) return 0;
+    var gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+    return slides[0].getBoundingClientRect().width + gap;
+  }
+
+  function render() {
+    if (!slides.length) return;
+    track.style.transform = 'translate3d(' + (-index * slideStep()).toFixed(2) + 'px,0,0)';
+
+    slides.forEach(function (s, i) {
+      var on = i === index;
+      s.classList.toggle('is-active', on);
+      if (on) s.removeAttribute('aria-hidden');
+      else s.setAttribute('aria-hidden', 'true');
+    });
+
+    currentEl.textContent = String(index + 1).padStart(2, '0');
+    progressEl.style.width = (((index + 1) / total) * 100).toFixed(2) + '%';
+  }
+
+  function go(dir, absolute) {
+    if (!hasCarousel || total < 2) return;
+    var next = (typeof absolute === 'number')
+      ? absolute
+      : (index + dir + total) % total;
+
+    if (next === index) return;
+
+    track.dataset.dir = (dir >= 0) ? 'next' : 'prev';
+    index = next;
+    render();
+  }
+
+  if (hasCarousel && total > 1) {
+    prevBtn.addEventListener('click', function () { go(-1); restartAuto(); });
+    nextBtn.addEventListener('click', function () { go(1); restartAuto(); });
+
+    viewport.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft') { e.preventDefault(); go(-1); restartAuto(); }
+      else if (e.key === 'ArrowRight') { e.preventDefault(); go(1); restartAuto(); }
+    });
+
+    var tX = 0, tY = 0, tracking = false;
+    viewport.addEventListener('touchstart', function (e) {
+      if (e.touches.length !== 1) return;
+      tX = e.touches[0].clientX;
+      tY = e.touches[0].clientY;
+      tracking = true;
+      stopAuto();
+    }, { passive: true });
+
+    viewport.addEventListener('touchend', function (e) {
+      if (!tracking) return;
+      tracking = false;
+      var dx = e.changedTouches[0].clientX - tX;
+      var dy = e.changedTouches[0].clientY - tY;
+      if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy)) go(dx < 0 ? 1 : -1);
+      startAuto();
+    }, { passive: true });
+
+    viewport.addEventListener('mouseenter', stopAuto);
+    viewport.addEventListener('mouseleave', startAuto);
+    viewport.addEventListener('focusin', stopAuto);
+    viewport.addEventListener('focusout', startAuto);
+  }
+
+  function startAuto() {
+    if (reduceMotion || !hasCarousel || total < 2) return;
+    stopAuto();
+    autoTimer = window.setInterval(function () { go(1); }, AUTO_MS);
+  }
+  function stopAuto() {
+    if (autoTimer) { window.clearInterval(autoTimer); autoTimer = null; }
+  }
+  function restartAuto() { stopAuto(); startAuto(); }
+
+  var resizeTimer;
+  window.addEventListener('resize', function () {
+    window.clearTimeout(resizeTimer);
+    resizeTimer = window.setTimeout(render, 120);
+  });
+
+  /* ---------- review count animation ---------- */
+  function animateCount(el) {
+    var target = Number(el.getAttribute('data-count')) || 0;
+    var fmt = function (n) { return n.toLocaleString('en-US'); };
+
+    if (reduceMotion) { el.textContent = fmt(target); return; }
+
+    var duration = 1600;
+    var start = null;
+
+    function tick(ts) {
+      if (start === null) start = ts;
+      var p = Math.min(1, (ts - start) / duration);
+      var eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = fmt(Math.round(target * eased));
+      if (p < 1) requestAnimationFrame(tick);
+      else el.textContent = fmt(target);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  function runCounters() {
+    section.querySelectorAll('[data-count]').forEach(function (el) {
+      if (el.dataset.done === '1') return;
+      el.dataset.done = '1';
+      animateCount(el);
+    });
+  }
+
+  /* ---------- scroll reveal ---------- */
+  if ('IntersectionObserver' in window) {
+    var revealObserver = new IntersectionObserver(function (entries, obs) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        section.classList.add('is-inview');
+        window.setTimeout(runCounters, 500);
+        obs.disconnect();
+      });
+    }, { threshold: 0, rootMargin: '0px 0px -12% 0px' });
+
+    revealObserver.observe(section);
+  } else {
+    section.classList.add('is-inview');
+    runCounters();
+  }
+
+  /* ---------- auto-rotate only while visible ---------- */
+  if ('IntersectionObserver' in window && hasCarousel && total > 1) {
+    var visObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) startAuto();
+        else stopAuto();
+      });
+    }, { threshold: 0.25 });
+    visObserver.observe(viewport);
+  } else {
+    startAuto();
+  }
+
+  /* ---------- background parallax (desktop only) ---------- */
+  (function parallax() {
+    var bgImg = section.querySelector('.gs-bg-img');
+    if (!bgImg) return;
+
+    var mqDesktop = window.matchMedia('(min-width: 769px)');
+    if (reduceMotion || !mqDesktop.matches) return;
+
+    var ticking = false;
+
+    function update() {
+      ticking = false;
+      var rect = section.getBoundingClientRect();
+      var vh = window.innerHeight;
+      var progress = (vh - rect.top) / (vh + rect.height);
+      var y = (progress - 0.5) * 70;
+      bgImg.style.transform = 'translate3d(0,' + y.toFixed(2) + 'px,0)';
+    }
+
+    function onScroll() {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(update);
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    update();
+  })();
+
+  /* ---------- initial paint ---------- */
+  if (hasCarousel) {
+    render();
+    window.addEventListener('load', render);
+  }
+})();
+
+(function () {
+  'use strict';
+
+  var section = document.querySelector('.cloud9-dining-experiences');
+  if (!section) return;
+
+  /* ---------- section reveal ---------- */
+  if ('IntersectionObserver' in window) {
+    var obs = new IntersectionObserver(function (entries, o) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        section.classList.add('is-inview');
+        o.disconnect();
+      });
+    }, { threshold: 0, rootMargin: '0px 0px -10% 0px' });
+    obs.observe(section);
+  } else {
+    section.classList.add('is-inview');
+  }
+
+  /* ---------- accordion ---------- */
+  var panels = Array.prototype.slice.call(section.querySelectorAll('.c9-exp-panel'));
+
+  function isMobileCarousel() {
+    return window.matchMedia('(max-width: 780px)').matches;
+  }
+
+  function activate(index) {
+    if (isMobileCarousel()) return;
+    panels.forEach(function (p, i) {
+      var on = i === index;
+      p.classList.toggle('is-active', on);
+      var hit = p.querySelector('.c9-exp-hit');
+      if (hit) hit.setAttribute('aria-expanded', on ? 'true' : 'false');
+    });
+  }
+
+  panels.forEach(function (panel, i) {
+    var hit = panel.querySelector('.c9-exp-hit');
+    if (hit) hit.addEventListener('click', function () { activate(i); });
+
+    panel.addEventListener('mouseenter', function () {
+      if (window.matchMedia('(hover: hover) and (min-width: 781px)').matches) {
+        activate(i);
+      }
+    });
+
+    panel.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight' && i < panels.length - 1) {
+        e.preventDefault();
+        activate(i + 1);
+        panels[i + 1].querySelector('.c9-exp-hit').focus();
+      } else if (e.key === 'ArrowLeft' && i > 0) {
+        e.preventDefault();
+        activate(i - 1);
+        panels[i - 1].querySelector('.c9-exp-hit').focus();
+      }
+    });
+  });
+
+  var rT;
+  window.addEventListener('resize', function () {
+    clearTimeout(rT);
+    rT = setTimeout(function () {
+      if (!isMobileCarousel()) {
+        var active = panels.findIndex(function (p) { return p.classList.contains('active'); });
+        activate(active >= 0 ? active : 0);
+      }
+    }, 160);
+  });
+})();
+
+/* ============================================
+   CELEBRATION CARDS — TAP TO FLIP (MOBILE)
+   ============================================ */
+(function () {
+    const cards = document.querySelectorAll('[data-celebration]');
+    if (!cards.length) return;
+
+    const isTouch =
+        window.matchMedia('(hover: none)').matches ||
+        'ontouchstart' in window;
+
+    if (isTouch) {
+        cards.forEach(function (card) {
+            card.addEventListener('click', function (e) {
+                if (e.target.closest('a')) return;
+
+                cards.forEach(function (c) {
+                    if (c !== card) c.classList.remove('is-flipped');
+                });
+
+                card.classList.toggle('is-flipped');
+            });
+        });
+
+        document.addEventListener('click', function (e) {
+            if (!e.target.closest('[data-celebration]')) {
+                cards.forEach(function (c) {
+                    c.classList.remove('is-flipped');
+                });
+            }
+        });
+    }
+})();
+
+

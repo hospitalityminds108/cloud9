@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Facilities | Cloud 9 Hills Resort, Lonavala</title>
+    <meta name="description" content="Explore the facilities at Cloud 9 Hills Resort, Lonavala — swimming pool, spa, indoor &amp; outdoor games, an on-site temple and more, set in the Western Ghats." />
+    <link rel="canonical" href="https://www.cloud9hillsresort.com/facilities.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Cloud 9 Hills Resort" />
+    <meta property="og:title" content="Facilities | Cloud 9 Hills Resort" />
+    <meta property="og:description" content="Swimming pool, spa, games, temple and more at Cloud 9 Hills Resort." />
+    <meta property="og:url" content="https://www.cloud9hillsresort.com/facilities.html" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/favicon/favicon.ico" sizes="any" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+    <style>
+        /* ===== Facilities page — scoped, reuses site tokens ===== */
+        .fac-intro { padding:100px 0 40px; }
+        .fac-intro-grid { display:grid; grid-template-columns:0.85fr 1.15fr; gap:64px; align-items:center; }
+        .fac-intro-text p.eyebrow { margin-bottom:14px; }
+        .fac-intro-text h2 { font-family:var(--font-display); font-size:clamp(30px,3.4vw,44px); color:var(--primary); line-height:1.18; margin-bottom:18px; }
+        .fac-intro-text p.lead { color:var(--muted); font-size:16px; font-weight:300; max-width:46ch; }
+        .fac-intro-media { position:relative; border-radius:var(--radius-lg); overflow:hidden; aspect-ratio:4/5; }
+        .fac-intro-media img { width:100%; height:100%; object-fit:cover; }
+
+        /* --- Essentials: alternating full-width rows --- */
+        .fac-essentials { padding:60px 0; }
+        .fac-row { display:grid; grid-template-columns:1.1fr 0.9fr; gap:70px; align-items:center; padding:70px 0; border-top:1px solid var(--border); }
+        .fac-row:first-child { border-top:none; }
+        .fac-row.reverse { grid-template-columns:0.9fr 1.1fr; }
+        .fac-row.reverse .fac-row-media { order:2; }
+        .fac-row.reverse .fac-row-text { order:1; }
+        .fac-row-media { position:relative; border-radius:var(--radius-lg); overflow:hidden; aspect-ratio:5/4; }
+        .fac-row-media img { width:100%; height:100%; object-fit:cover; transition:transform 1.1s var(--ease); }
+        .fac-row-media:hover img { transform:scale(1.05); }
+        .fac-row-index { font-family:var(--font-display); font-style:italic; font-size:15px; color:var(--accent); margin-bottom:10px; display:block; }
+        .fac-row-text h3 { font-family:var(--font-display); font-size:clamp(26px,2.6vw,36px); color:var(--primary); margin-bottom:16px; line-height:1.2; }
+        .fac-row-text p { color:var(--muted); font-size:15.5px; font-weight:300; max-width:42ch; }
+        .fac-row-text .fac-confirm { display:block; margin-top:14px; font-size:13px; color:var(--earth); font-style:italic; }
+
+        /* --- More to Do: asymmetric mosaic --- */
+        .fac-mosaic-wrap { padding:60px 0 100px; }
+        .fac-mosaic { display:grid; grid-template-columns:repeat(4, 1fr); grid-auto-rows:190px; gap:20px; margin-top:44px; }
+        .fac-tile { position:relative; border-radius:var(--radius-md); overflow:hidden; }
+        .fac-tile img { width:100%; height:100%; object-fit:cover; transition:transform .8s var(--ease); }
+        .fac-tile:hover img { transform:scale(1.08); }
+        .fac-tile--lg { grid-column:span 2; grid-row:span 2; }
+        .fac-tile--sm { grid-column:span 2; grid-row:span 1; }
+        .fac-tile-caption { position:absolute; left:0; right:0; bottom:0; padding:22px; background:linear-gradient(0deg, rgba(20,20,10,.72), transparent 70%); }
+        .fac-tile-caption h4 { font-family:var(--font-display); color:var(--white); font-size:20px; font-weight:500; }
+        .fac-tile--lg .fac-tile-caption h4 { font-size:26px; }
+        .fac-tile-caption p { color:rgba(255,255,255,.82); font-size:13px; margin-top:4px; max-width:34ch; }
+
+        /* --- Coming soon: deliberately different, muted --- */
+        .fac-soon { padding:70px 0 110px; background:var(--white); }
+        .fac-soon-head { max-width:560px; margin-bottom:36px; }
+        .fac-soon-head h3 { font-family:var(--font-display); font-size:clamp(24px,2.4vw,30px); color:var(--primary); margin-bottom:10px; }
+        .fac-soon-head p { color:var(--muted); font-size:15px; font-weight:300; }
+        .fac-soon-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+        .fac-soon-card { border:1px dashed var(--border); border-radius:var(--radius-md); padding:32px; display:flex; flex-direction:column; gap:10px; }
+        .fac-soon-card h4 { font-family:var(--font-display); font-size:19px; color:var(--charcoal); }
+        .fac-soon-card p { color:var(--muted); font-size:14px; font-weight:300; }
+        .fac-soon-card span.fac-tag { align-self:flex-start; font-size:11px; letter-spacing:.02em; color:var(--earth); border:1px solid var(--border); border-radius:999px; padding:4px 12px; }
+
+        @media (max-width: 900px) {
+            .fac-intro-grid { grid-template-columns:1fr; gap:32px; }
+            .fac-intro-media { order:-1; aspect-ratio:16/10; }
+            .fac-row, .fac-row.reverse { grid-template-columns:1fr; gap:24px; padding:44px 0; }
+            .fac-row.reverse .fac-row-media, .fac-row.reverse .fac-row-text { order:initial; }
+            .fac-mosaic { grid-template-columns:repeat(2, 1fr); grid-auto-rows:180px; }
+            .fac-tile--lg { grid-column:span 2; grid-row:span 1; aspect-ratio:16/10; height:auto; }
+            .fac-soon-grid { grid-template-columns:1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- ===== HEADER ===== -->
+    <header class="site-header" id="siteHeader">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">
+                <img src="assets/logos.png" alt="Cloud 9 Hills Resort Logo" class="logo-img logo-main" />
+                <img src="assets/logoo.png" alt="Cloud 9 Hills Resort Logo" class="logo-img logo-sticky" />
+            </a>
+            <nav class="main-nav" aria-label="Primary">
+                <ul>
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item">
+                        <button class="nav-link" aria-haspopup="true" aria-expanded="false">
+                           <a href="rooms-stay.html">Stay</a>
+                            <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6"/></svg>
+                        </button>
+                        <div class="dropdown" role="menu">                            <a href="stay.html#villas" role="menuitem">Villas</a>                            <a href="stay.html#suites" role="menuitem">Suites</a>                            <a href="stay.html#cottages" role="menuitem">Cottages</a>                        </div>
+                    </li>
+                    <li class="nav-item"><a href="facilities.html" class="nav-link">Facilities</a></li>
+                    <li class="nav-item"><a href="facilities.html" class="nav-link active-page">Facilities</a></li>
+                    <li class="nav-item">
+                        <button class="nav-link" aria-haspopup="true" aria-expanded="false">
+                            Events
+                            <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6"/></svg>
+                        </button>
+                        <div class="dropdown" role="menu"><a href="events.html" role="menuitem">All Events</a><a href="offers.html" role="menuitem">Offers</a></div>
+                    </li>
+                    <li class="nav-item"><a href="explore.html" class="nav-link">Explore</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="tel:+919819118832" class="icon-link" aria-label="Call Cloud 9 Hills Resort" data-track="call_click" data-track-loc="header">
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M6 3h4l2 5-2.5 1.5a11 11 0 0 0 5 5L16 12l5 2v4a2 2 0 0 1-2 2C10.5 20 4 13.5 4 5a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                </a>
+                <a href="https://wa.me/919819739444" class="icon-link" target="_blank" rel="noopener" aria-label="Message on WhatsApp" data-track="whatsapp_click" data-track-loc="header">
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M4 20l1.3-4A8 8 0 1 1 9 19l-5 1Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                </a>
+                <a href="https://www.swiftbook.io/inst/#home?propertyId=2647" class="btn btn-primary" data-track="book_now_click" data-track-loc="header">Book Your Stay</a>
+            </div>
+            <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ===== MOBILE NAV ===== -->
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
+        <ul>
+            <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+            <li><a href="about.html" class="mobile-nav-link">About</a></li>
+            <li>
+                <div class="mobile-nav-link" data-accordion>
+                    Stay
+                    <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6"/></svg>
+                </div>
+                <div class="mobile-sub"><a href="stay.html#villas">Villas</a><a href="stay.html#suites">Suites</a><a href="stay.html#cottages">Cottages</a></div>
+            </li>
+            <li><a href="facilities.html" class="mobile-nav-link">Facilities</a></li>
+            <li><a href="facilities.html" class="mobile-nav-link" style="color:var(--earth);">Facilities</a></li>
+            <li>
+                <div class="mobile-nav-link" data-accordion>
+                    Events
+                    <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6"/></svg>
+                </div>
+                <div class="mobile-sub"><a href="events.html">All Events</a><a href="offers.html">Offers</a></div>
+            </li>
+            <li><a href="explore.html" class="mobile-nav-link">Explore</a></li>
+            <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+        </ul>
+        <a href="https://www.swiftbook.io/inst/#home?propertyId=2647" class="btn btn-accent" data-track="book_now_click" data-track-loc="mobile_nav">Book Now</a>
+    </nav>
+
+    <main>
+        <!-- ===== HERO ===== -->
+        <section class="detail-hero" style="min-height:72vh;">
+            <div class="slider-container" data-autoplay="5000">
+                <div class="slider-track">
+                    <div class="slide active"><img class="ph-img" src="Cloud 9 Compress Images/All Images/Swimming Pool/Swimming pool 3.webp" alt="Swimming pool at Cloud 9 Hills Resort" loading="lazy" onerror="this.remove()" /></div>
+                    <div class="slide"><img class="ph-img" src="Cloud 9 Compress Images/All Images/SPA 3.webp" alt="Spa at Cloud 9 Hills Resort" loading="lazy" onerror="this.remove()" /></div>
+                </div>
+            </div>
+            <div class="container detail-hero-content">
+                <p class="eyebrow light"><span></span>On-Property</p>
+                <h1>Facilities</h1>
+                <p class="detail-hero-sub">Everything to fill the hours between hill views — a pool, a spa, games, an on-site temple and more.</p>
+            </div>
+        </section>
+
+        <!-- ===== INTRO — asymmetric, not centered ===== -->
+        <section class="fac-intro">
+            <div class="container fac-intro-grid">
+                <div class="fac-intro-text reveal">
+                    <p class="eyebrow">What's On-Site</p>
+                    <h2>Built Around the Same Hills That Surround Every Stay</h2>
+                    <p class="lead">Whether you'd rather stay active or simply unwind, Cloud 9's facilities sit a short walk from wherever you're staying — no need to leave the property to fill an afternoon.</p>
+                </div>
+                <div class="fac-intro-media clip-reveal reveal">
+                    <img src="Cloud 9 Compress Images/All Images/Game Zone 2.webp" alt="Games area at Cloud 9 Hills Resort" loading="lazy" onerror="this.remove()" />
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== ESSENTIALS — alternating editorial rows ===== -->
+        <section class="fac-essentials">
+            <div class="container">
+
+                <div class="fac-row">
+                    <div class="fac-row-media clip-reveal reveal">
+                        <img src="Cloud 9 Compress Images/All Images/Swimming Pool/Swimming Pool.webp" alt="Swimming pool at Cloud 9 Hills Resort" loading="lazy" onerror="this.remove()" />
+                    </div>
+                    <div class="fac-row-text reveal">
+                        <span class="fac-row-index">The Pool</span>
+                        <h3>Swimming Pool</h3>
+                        <p>An on-site swimming pool for guests to cool off and relax between hill walks — open to everyone staying at the resort.</p>
+                    </div>
+                </div>
+
+                <div class="fac-row reverse">
+                    <div class="fac-row-media clip-reveal reveal">
+                        <img src="Cloud 9 Compress Images/All Images/SPA 4.webp" alt="Spa at Cloud 9 Hills Resort" loading="lazy" onerror="this.remove()" />
+                    </div>
+                    <div class="fac-row-text reveal">
+                        <span class="fac-row-index">Unwind</span>
+                        <h3>Spa</h3>
+                        <p>On-site spa treatments for guests looking to slow down during their stay.</p>
+                        <span class="fac-confirm">[CONFIRM: treatment types, timings, booking process]</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===== MORE TO DO — asymmetric mosaic, not uniform cards ===== -->
+        <section class="fac-mosaic-wrap">
+            <div class="container">
+                <div class="reveal" style="max-width:560px;">
+                    <p class="eyebrow">Also On-Site</p>
+                    <h2 class="section-title">More to Do</h2>
+                </div>
+                <div class="fac-mosaic">
+                    <div class="fac-tile fac-tile--lg reveal">
+                        <img src="Cloud 9 Compress Images/All Images/Game Zone 1.webp" alt="Indoor and outdoor games at Cloud 9 Hills Resort" loading="lazy" onerror="this.remove()" />
+                        <div class="fac-tile-caption">
+                            <h4>Indoor &amp; Outdoor Games</h4>
+                            <p>A dedicated games zone for guests of all ages. [CONFIRM: specific games available]</p>
+                        </div>
+                    </div>
+                    <div class="fac-tile fac-tile--sm reveal">
+                        <img src="Cloud 9 Compress Images/All Images/Mandir.webp" alt="On-site temple at Cloud 9 Hills Resort" loading="lazy" onerror="this.remove()" />
+                        <div class="fac-tile-caption"><h4>On-Site Temple</h4></div>
+                    </div>
+                    <div class="fac-tile fac-tile--sm reveal">
+                        <img src="Cloud 9 Compress Images/All Images/Born Fire 1.webp" alt="Bonfire at Cloud 9 Hills Resort" loading="lazy" onerror="this.remove()" />
+                        <div class="fac-tile-caption"><h4>Bonfire</h4></div>
+                    </div>
+                    <div class="fac-tile fac-tile--sm reveal" style="grid-column:span 4;">
+                        <img src="Cloud 9 Compress Images/All Images/Coffee Sunset Point.webp" alt="Sunset viewpoint at Cloud 9 Hills Resort" loading="lazy" onerror="this.remove()" />
+                        <div class="fac-tile-caption">
+                            <h4>Sunset Point</h4>
+                            <p>An on-property viewpoint over the surrounding hills. [CONFIRM: refreshments offered, timing]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== COMING SOON — deliberately distinct treatment ===== -->
+        <section class="fac-soon">
+            <div class="container">
+                <div class="fac-soon-head reveal">
+                    <h3>Two More, Once We Have the Details</h3>
+                    <p>These are real facilities but not yet documented — send photos and a few details and they'll get the same treatment as everything above.</p>
+                </div>
+                <div class="fac-soon-grid">
+                    <div class="fac-soon-card reveal">
+                        <span class="fac-tag">Needs Confirmation</span>
+                        <h4>Trek in the Forest</h4>
+                        <p>[CONFIRM: guided or self-guided, distance/duration, on-property or nearby, photos to add]</p>
+                    </div>
+                    <div class="fac-soon-card reveal">
+                        <span class="fac-tag">Needs Confirmation</span>
+                        <h4>Cycling</h4>
+                        <p>[CONFIRM: cycles provided or bring-your-own, route/trail details, photos to add]</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CTA ===== -->
+        <section class="monsoon hill-art tone-monsoon">
+            <img class="ph-img" src="assets/image/khandala.png" alt="Cloud 9 Hills Resort in the monsoon" loading="lazy" width="1440" height="700" onerror="this.remove()" />
+            <div class="cloud-layer"><div class="cloud cloud--a"></div><div class="cloud cloud--b"></div></div>
+            <div class="container monsoon-content reveal">
+                <p class="eyebrow light"><span></span>Plan Your Stay</p>
+                <h2>Come Play in the Hills</h2>
+                <a href="contact.html" class="btn btn-accent" data-track="book_now_click" data-track-loc="facilities_cta">Enquire Now</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+        <div class="footer-bg" aria-hidden="true">
+            <img class="ph-img" src="assets/background.png" alt="Misty hills of the Western Ghats surrounding Cloud 9 Hills Resort" loading="lazy" width="1440" height="500" onerror="this.remove()" />
+        </div>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <img src="assets/logos.png" alt="Cloud 9 Hills Resort Logo" class="logo-img" />
+                </a>
+                <p>A luxury hilltop retreat above the clouds in the Western Ghats — where the pace of the mountains sets the pace of your stay.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a>
+                    <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 9h3V6h-3a4 4 0 0 0-4 4v2H8v3h2v6h3v-6h3l1-3h-4v-2a1 1 0 0 1 1-1z"/></svg></a>
+                    <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="3"/><path d="M10 9l6 3-6 3z"/></svg></a>
+                </div>
+            </div>
+            <div>
+                <h5>Quick Links</h5>
+                <ul class="footer-links">
+                    <li><a href="rooms-stay.html">Rooms &amp; Stay</a></li>
+                    <li><a href="facilities.html">Facilities</a></li>
+                    <li><a href="index.html#dining">Dining</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5>Contact</h5>
+                <ul class="footer-contact">
+                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3h4l2 5-2.5 1.5a11 11 0 0 0 5 5L16 12l5 2v4a2 2 0 0 1-2 2C10.5 20 4 13.5 4 5a2 2 0 0 1 2-2Z"/></svg><a href="tel:+919819118832" data-track="call_click" data-track-loc="footer">+91 98191 18832</a></li>
+                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 20l1.3-4A8 8 0 1 1 9 19l-5 1Z"/></svg><a href="https://wa.me/919819739444" data-track="whatsapp_click" data-track-loc="footer">WhatsApp Us</a></li>
+                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16v16H4z"/><path d="M4 4l8 8 8-8"/></svg><a href="mailto:cloud9hillsresort@gmail.com">cloud9hillsresort@gmail.com</a></li>
+                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg><a href="https://www.google.com/maps/place/cloud9+resort+lonavala/data=!4m2!3m1!1s0x3be8036d92ca39c3:0xb1f563c3aa648187?sa=X&ved=1t:242&ictx=111" target="_blank" rel="noopener">4 km after Lion's Point, Village Jambhulne, Amby Valley City Road, Mulshi Taluka, Lonavala, Maharashtra 410401</a></li>
+                </ul>
+            </div>
+        <div class="container footer-bottom">
+            <span>© 2026 Cloud 9 Hills Resort, Lonavala. All rights reserved.</span>
+            <span>Privacy Policy · Terms of Stay</span>
+        </div>
+    </footer>
+
+    <!-- ===== FLOATING CTAs ===== -->
+    <div class="float-ctas">
+        <a href="https://wa.me/919819739444" class="float-btn float-whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp us" data-track="whatsapp_click" data-track-loc="floating">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20l1.3-4A8 8 0 1 1 9 19l-5 1Z" /></svg>
+        </a>
+        <a href="tel:+919819118832" class="float-btn float-call" aria-label="Call the resort" data-track="call_click" data-track-loc="floating">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3h4l2 5-2.5 1.5a11 11 0 0 0 5 5L16 12l5 2v4a2 2 0 0 1-2 2C10.5 20 4 13.5 4 5a2 2 0 0 1 2-2Z" /></svg>
+        </a>
+    </div>
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <svg viewBox="0 0 16 16" fill="none"><path d="M8 13V3M3 8l5-5 5 5" stroke="currentColor" stroke-width="1.6" /></svg>
+    </button>
+    <div class="mobile-sticky-bar">
+        <ul>
+            <li><a href="tel:+919819118832" data-track="call_click" data-track-loc="mobile_sticky"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3h4l2 5-2.5 1.5a11 11 0 0 0 5 5L16 12l5 2v4a2 2 0 0 1-2 2C10.5 20 4 13.5 4 5a2 2 0 0 1 2-2Z" /></svg>Call</a></li>
+            <li><a href="https://wa.me/919819739444" data-track="whatsapp_click" data-track-loc="mobile_sticky"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20l1.3-4A8 8 0 1 1 9 19l-5 1Z" /></svg>WhatsApp</a></li>
+            <li><a href="https://www.swiftbook.io/inst/#home?propertyId=2647" data-track="book_now_click" data-track-loc="mobile_sticky"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="16" rx="2" /><path d="M8 3v4M16 3v4M3 10h18" /></svg>Book</a></li>
+        </ul>
+    </div>
+</body>
+</html>
+
+
