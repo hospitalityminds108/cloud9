@@ -406,6 +406,8 @@
             right: 0;
             z-index: 100;
             padding: 26px 0;
+            background: linear-gradient(180deg, rgba(14, 20, 17, .52) 0%, rgba(14, 20, 17, .18) 55%, rgba(14, 20, 17, 0) 100%);
+            backdrop-filter: blur(8px);
             transition: background .4s var(--ease), padding .4s var(--ease), box-shadow .4s var(--ease), border-color .4s var(--ease);
             border-bottom: 1px solid transparent;
         }
@@ -691,11 +693,18 @@
             position: absolute;
             inset: 0;
         }
+        .hero-scene::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(12, 17, 14, .22);
+            z-index: 1;
+        }
         .hero-scene::after {
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(180deg, rgba(31, 69, 32, .55) 0%, rgba(31, 69, 32, .25) 40%, rgba(31, 69, 32, .75) 100%);
+            background: linear-gradient(180deg, rgba(15, 25, 19, .72) 0%, rgba(15, 25, 19, .25) 38%, rgba(15, 25, 19, .78) 100%);
             z-index: 2;
         }
         .hero-video {
