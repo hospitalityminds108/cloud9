@@ -82,7 +82,7 @@ p{font-size:15px;color:#586058}
 .reveal{opacity:0;transform:translateY(35px);transition:opacity .8s ease,transform .8s ease}.reveal.show{opacity:1;transform:none}
 @media(max-width:980px){.main-nav{display:none}.header-actions .icon-link{display:none}.header-actions{margin-left:auto}.hamburger{display:block}.mobile-nav{position:fixed;z-index:999;top:0;right:-100%;width:min(380px,88%);height:100vh;background:var(--cream);padding:100px 30px 30px;display:block;transition:.4s;box-shadow:-20px 0 50px rgba(0,0,0,.12)}.mobile-nav.open{right:0}.mobile-nav ul{list-style:none}.mobile-nav a,.mobile-nav .mobile-nav-link{display:block;padding:14px 0;border-bottom:1px solid var(--line);color:var(--forest)}.mobile-nav .btn{margin-top:25px;width:100%}.intro-grid,.spiritual-grid{grid-template-columns:1fr;gap:45px}.intro-art,.spiritual-media{height:500px}.amenities{grid-template-columns:repeat(2,1fr)}.destination-grid{grid-template-columns:1fr 1fr;grid-auto-rows:250px}.destination-card:nth-child(1){grid-row:span 1}.footer-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:620px){:root{--container:min(100% - 28px,1180px)}.detail-hero{min-height:620px}.detail-hero-content h1{font-size:54px}.section{padding:85px 0}.stats-grid{grid-template-columns:1fr;gap:25px}.stat{border-right:0;border-bottom:1px solid rgba(255,255,255,.2);padding-bottom:20px}.amenities{grid-template-columns:1fr}.destination-head{display:block}.destination-head p{margin-top:20px}.destination-grid{display:grid;grid-template-columns:1fr;grid-auto-rows:260px}.destination-card:nth-child(n){grid-row:auto;border-radius:34px 8px 34px 8px}.spiritual-media,.intro-art{height:390px}.map-wrap{min-height:360px;border-radius:45px 10px 45px 10px}.footer-grid{grid-template-columns:1fr;gap:35px}.footer-bottom{display:block}.footer-bottom span{display:block;margin-top:8px}}
-</style>
+/* UX pass: 44px tap targets on phones */@media(max-width:768px){.header-actions .btn{white-space:nowrap}.hamburger{min-width:44px;min-height:44px;display:inline-flex;flex-direction:column;align-items:center;justify-content:center}.footer-contact a,.footer-links a{display:inline-block;padding:11px 0;margin:-11px 0}}@media(max-width:600px){.header-actions .btn{display:none}}</style>
 </head>
 <body>
 
@@ -102,14 +102,15 @@ p{font-size:15px;color:#586058}
                         </button>
                         <div class="dropdown" role="menu"><a href="stay.html#villas" role="menuitem">Villas</a><a href="stay.html#suites" role="menuitem">Suites</a><a href="stay.html#cottages" role="menuitem">Cottages</a></div>
                     </li>
-                    <li class="nav-item"><a href="offers.html" class="nav-link">Offers</a></li>
+                    <li class="nav-item"><a href="weddings.html" class="nav-link">Weddings</a></li>
                     <li class="nav-item">
                         <button class="nav-link" aria-haspopup="true" aria-expanded="false">
                             Events
                             <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6"/></svg>
                         </button>
-                        <div class="dropdown" role="menu"><a href="weddings.html" role="menuitem">Weddings</a><a href="corporate-mice.html" role="menuitem">Corporate &amp; MICE</a><a href="celebrations.html" role="menuitem">Celebrations</a><a href="yoga-meditation.html" role="menuitem">Yoga &amp; Meditation</a><a href="spiritual-gathering.html" role="menuitem">Spiritual Gathering</a></div>
-                    </li>
+                        <div class="dropdown" role="menu"><a href="corporate-mice.html" role="menuitem">Corporate &amp; MICE</a><a href="celebrations.html" role="menuitem">Celebrations</a><a href="yoga-meditation.html" role="menuitem">Yoga &amp; Meditation</a><a href="spiritual-gathering.html" role="menuitem">Spiritual Gathering</a></div>
+                    </li><li class="nav-item"><a href="offers.html" class="nav-link">Offers</a></li>
+                    
                     <li class="nav-item"><a href="dining.html" class="nav-link">Dining</a></li>
                     <li class="nav-item"><a href="facilities.html" class="nav-link">Facilities</a></li>
                     <li class="nav-item"><a href="explore.html" class="nav-link">Nearby</a></li>
@@ -117,22 +118,36 @@ p{font-size:15px;color:#586058}
                 </ul>
             </nav>
     <div class="header-actions">
-      <a href="tel:+919819118832" class="icon-link" aria-label="Call"><svg viewBox="0 0 24 24" fill="none"><path d="M6 3h4l2 5-2.5 1.5a11 11 0 0 0 5 5L16 12l5 2v4a2 2 0 0 1-2 2C10.5 20 4 13.5 4 5a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.5"/></svg></a>
-      <a href="https://wa.me/919819739444" class="icon-link" target="_blank"  aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none"><path d="M4 20l1.3-4A8 8 0 1 1 9 19l-5 1Z" stroke="currentColor" stroke-width="1.5"/></svg></a>
       <a href="https://www.swiftbook.io/inst/#home?propertyId=2647" class="btn btn-primary">Book Your Stay</a>
     </div>
     <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
 </header>
 
-<nav class="mobile-nav" id="mobileNav">
-  <ul>
-    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
-    <li><a href="stay.html">Stay</a></li><li><a href="facilities.html">Facilities</a></li>
-    <li><a href="weddings.html">Events</a></li><li><a href="explore.html">Explore</a></li><li><a href="contact.html">Contact</a></li>
-  </ul>
-  <a href="https://www.swiftbook.io/inst/#home?propertyId=2647" class="btn btn-accent">Book Now</a>
-</nav>
+<nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
+        <ul>
+            <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+            <li>
+                <div class="mobile-nav-link" data-accordion>
+                    Stay
+                    <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6"/></svg>
+                </div>
+                <div class="mobile-sub"><a href="stay.html#villas">Villas</a><a href="stay.html#suites">Suites</a><a href="stay.html#cottages">Cottages</a></div>
+            </li>
+            <li><a href="offers.html" class="mobile-nav-link">Offers</a></li>
+            <li>
+                <div class="mobile-nav-link" data-accordion>
+                    Events
+                    <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6"/></svg>
+                </div>
+            </li>
+            <li><a href="dining.html" class="mobile-nav-link">Dining</a></li>
+            <li><a href="facilities.html" class="mobile-nav-link">Facilities</a></li>
+            <li><a href="explore.html" class="mobile-nav-link">Nearby</a></li>
+            <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+        </ul>
+        <a href="https://www.swiftbook.io/inst/#home?propertyId=2647" class="btn btn-accent" data-track="book_now_click" data-track-loc="mobile_nav">Book Now</a>
+    </nav>
 
 <main>
 
@@ -261,14 +276,14 @@ p{font-size:15px;color:#586058}
     <div class="footer-brand">
       <a href="index.html"><img src="assets/logos.png" alt="Cloud 9 Hills Resort Logo"></a>
       <p>A luxury hilltop retreat above the clouds in the Western Ghats — where the pace of the mountains sets the pace of your stay.</p>
-      <div class="footer-social"><a href="https://www.instagram.com/cloud9hillsresortlonavala/" aria-label="Instagram">IG</a><a href="#" aria-label="Facebook">FB</a><a href="#" aria-label="YouTube">YT</a></div>
+      <div class="footer-social"><a href="https://www.instagram.com/cloud9hillsresortlonavala/" aria-label="Instagram" target="_blank" rel="noopener">IG</a></div>
     </div>
-    <div><h5>Quick Links</h5><ul class="footer-links"><li><a href="stay.html">Stay</a></li><li><a href="facilities.html">Dining</a></li><li><a href="explore.html">Experiences</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div><h5>Quick Links</h5><ul class="footer-links"><li><a href="stay.html">Stay</a></li><li><a href="dining.html">Dining</a></li><li><a href="explore.html">Experiences</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
     <div><h5>Contact</h5><ul class="footer-contact">
       <li>☎ <a href="tel:+919819118832">+91 98191 18832</a></li>
       <li>◉ <a href="https://wa.me/919819739444">WhatsApp Us</a></li>
       <li>✉ <a href="mailto:cloud9hillsresort@gmail.com">cloud9hillsresort@gmail.com</a></li>
-      <li>⌖ <a href="https://www.google.com/maps/place/cloud9+resort+lonavala/" target="_blank" >4 km after Lion's Point, Village Jambhulne, Amby Valley City Road, Mulshi Taluka, Lonavala, Maharashtra 410401</a></li>
+      <li>⌖ <a href="https://www.google.com/maps/place/cloud9+resort+lonavala/" target="_blank" rel="noopener">4 km after Lion's Point, Village Jambhulne, Amby Valley City Road, Mulshi Taluka, Lonavala, Maharashtra 410401</a></li>
     </ul></div>
   </div>
   <div class="container footer-bottom"><span>© 2026 Cloud 9 Hills Resort, Lonavala. All rights reserved.</span><span>Privacy Policy · Terms of Stay</span></div>

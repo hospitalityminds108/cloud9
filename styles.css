@@ -3495,3 +3495,93 @@
     font-family: var(--font-body); font-size: 13.5px; color: var(--muted);
 }
 .explore-map-note svg { width: 26px; height: 26px; color: var(--primary); flex-shrink: 0; }
+
+/* Mirrored from style.css (this file loads after it on explore.html) */
+/* ============================================================
+   MOBILE TAP TARGETS (UX pass)
+   Enlarges the touch area of small links and controls to ~44px on
+   phones without changing the visual layout: extra padding is
+   cancelled out by an equal negative margin.
+   ============================================================ */
+@media (max-width: 768px) {
+    .hero-quick a,
+    .gs-plat-link,
+    .footer-contact a,
+    .detail-breadcrumb a,
+    .explore-card-cta,
+    .stay-card-actions .btn-ghost {
+        padding-top: 11px;
+        padding-bottom: 11px;
+        margin-top: -11px;
+        margin-bottom: -11px;
+    }
+    /* slider dots keep their 8px look but get a 24px hit area */
+    .stay-slider-dot {
+        box-sizing: content-box;
+        padding: 8px;
+        margin: 0 -4px;
+        background-clip: content-box;
+    }
+    .stay-slider-dot.active { background-clip: content-box; border-radius: 13px; } /* 13 - 8px padding = original 5px pill radius */
+    .stay-slider-dots { gap: 0; }
+}
+
+
+/* ============================================================
+   HERO READABILITY (UX pass)
+   One overlay system for every hero so the header, eyebrow,
+   headline and buttons stay legible on any photo.
+   ============================================================ */
+
+/* 1. Header scrim: soft fade behind the transparent nav; hidden once the header turns solid */
+.site-header::before {
+    content: '';
+    position: absolute;
+    left: 0; right: 0; top: 0;
+    height: 180px;
+    background: linear-gradient(180deg, rgba(12, 28, 16, .62) 0%, rgba(12, 28, 16, .3) 48%, rgba(12, 28, 16, 0) 100%);
+    pointer-events: none;
+    z-index: -1;
+    transition: opacity .4s var(--ease);
+}
+.site-header.scrolled::before { opacity: 0; }
+.site-header:not(.scrolled) .nav-link,
+.site-header:not(.scrolled) .logo { text-shadow: 0 1px 10px rgba(0, 0, 0, .35); }
+.site-header:not(.scrolled) .logo-img { filter: drop-shadow(0 1px 6px rgba(0, 0, 0, .3)); }
+.site-header:not(.scrolled) .hamburger span { box-shadow: 0 1px 5px rgba(0, 0, 0, .35); }
+
+/* 2. Inner-page heroes (rooms, stay, contact, explore, events, offers, blog, gallery) */
+.detail-hero::after {
+    background:
+        linear-gradient(90deg, rgba(12, 28, 16, .55) 0%, rgba(12, 28, 16, .2) 42%, rgba(12, 28, 16, 0) 72%),
+        linear-gradient(180deg, rgba(12, 28, 16, .3) 0%, rgba(12, 28, 16, .06) 22%, rgba(12, 28, 16, .16) 50%, rgba(12, 28, 16, .9) 100%);
+}
+/* .detail-hero-content also carries .container but its padding shorthand removed the side gutter */
+.detail-hero-content { padding-left: 32px; padding-right: 32px; }
+.detail-hero-content h1,
+.detail-hero-sub,
+.detail-hero-content .eyebrow,
+.detail-breadcrumb { text-shadow: 0 2px 18px rgba(0, 0, 0, .35); }
+.detail-hero-content .eyebrow.light { color: rgba(255, 255, 255, .92); }
+.detail-hero-content .eyebrow.light::before { background: rgba(255, 255, 255, .7); }
+
+/* 3. Home hero: centred copy gets a soft vignette behind it */
+.hero-scene::after {
+    background:
+        radial-gradient(ellipse 62% 55% at 50% 50%, rgba(20, 46, 21, .42) 0%, rgba(20, 46, 21, 0) 72%),
+        linear-gradient(180deg, rgba(20, 46, 21, .5) 0%, rgba(20, 46, 21, .2) 36%, rgba(20, 46, 21, .28) 66%, rgba(20, 46, 21, .78) 100%);
+}
+.hero-content h1, .hero-content p, .hero-content .eyebrow, .hero-quick a { text-shadow: 0 2px 18px rgba(0, 0, 0, .3); }
+
+@media (max-width: 720px) {
+    .detail-hero-content { padding-left: 20px; padding-right: 20px; padding-bottom: 44px; }
+    /* text covers the lower half on phones: darken more of the image */
+    .detail-hero::after {
+        background: linear-gradient(180deg, rgba(12, 28, 16, .32) 0%, rgba(12, 28, 16, .08) 20%, rgba(12, 28, 16, .45) 46%, rgba(12, 28, 16, .93) 100%);
+    }
+    /* keep hero buttons clear of the floating WhatsApp / call buttons */
+    .detail-hero-cta { padding-right: 60px; }
+    .detail-hero-sub { padding-right: 56px; }
+    .detail-hero-content h1 { padding-right: 48px; }
+    .detail-breadcrumb { flex-wrap: wrap; row-gap: 4px; }
+}

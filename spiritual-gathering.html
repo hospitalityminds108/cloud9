@@ -28,11 +28,10 @@
     <script src="main.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-    <script src="assets/js/c9-reels-data.js" defer></script>
-    <script src="assets/js/c9-reels.js" defer></script>
     <script src="assets/js/c9-inner.js" defer></script>
 </head>
 <body data-c9x-nav="events">
+    <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true" focusable="false"><defs> <symbol id="i-cycle" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"> <circle cx="12" cy="31" r="8"/><circle cx="36" cy="31" r="8"/> <path d="M12 31l7-13h11l6 13M19 18l6 13h-13M25 31l5-13M16 14h6M30 18l-2-5h4"/> </symbol> <symbol id="i-trek" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"> <path d="M4 40l12-18 7 9 6-8 15 17z"/> <path d="M16 22l3 4 3-2"/> <path d="M10 40c4-3 7-2 10-5s6-3 8-1 6 3 10 6" stroke-dasharray="2 3"/> <circle cx="33" cy="9" r="2.5"/><path d="M33 12v6M30 15h6"/> </symbol> <symbol id="i-swim" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"> <circle cx="33" cy="13" r="3"/> <path d="M10 26l9-9 6 5 5-3"/> <path d="M4 32c3 0 3-2 6-2s3 2 6 2 3-2 6-2 3 2 6 2 3-2 6-2 3 2 6 2 3-2 4-2"/> <path d="M4 39c3 0 3-2 6-2s3 2 6 2 3-2 6-2 3 2 6 2 3-2 6-2 3 2 6 2 3-2 4-2"/> </symbol> <symbol id="i-outdoor" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"> <circle cx="24" cy="24" r="15"/> <path d="M24 9v30M9 24h30M13.5 13.5c5 4 5 17 0 21M34.5 13.5c-5 4-5 17 0 21"/> </symbol> <symbol id="i-indoor" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"> <rect x="6" y="14" width="36" height="22" rx="3"/> <path d="M6 25h36M24 14v22"/> <circle cx="15" cy="20" r="1.6"/><circle cx="33" cy="30" r="1.6"/> <path d="M12 36v5M36 36v5"/> </symbol> <symbol id="i-bonfire" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"> <path d="M24 8c2 6 9 9 9 17a9 9 0 0 1-18 0c0-4 2-6 4-8 0 3 1 5 3 6-1-6 0-11 2-15z"/> <path d="M24 26c1 2 3 3 3 5a3 3 0 0 1-6 0c0-2 2-3 3-5z"/> <path d="M8 42l32-6M40 42L8 36"/> </symbol> <symbol id="i-parking" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"> <rect x="8" y="6" width="32" height="36" rx="8"/> <path d="M19 34V14h7a6 6 0 0 1 0 12h-7"/> </symbol> <symbol id="i-wifi" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"> <path d="M6 19a26 26 0 0 1 36 0M12 25.5a17 17 0 0 1 24 0M18 32a8 8 0 0 1 12 0"/> <circle cx="24" cy="38" r="1.8"/> </symbol> <symbol id="i-access" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"> <circle cx="22" cy="8" r="3"/> <path d="M22 13v12h10l4 10 4-1.5"/> <path d="M22 18h8"/> <path d="M17 21a10 10 0 1 0 13 12"/> </symbol> <symbol id="i-banquet" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"> <path d="M6 20L24 8l18 12"/> <path d="M10 20v20M38 20v20M6 40h36"/> <path d="M17 40v-8a7 7 0 0 1 14 0v8"/> <path d="M18 20h12"/> </symbol> <symbol id="i-dining" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"> <path d="M8 32a16 16 0 0 1 32 0z"/> <path d="M4 36h40M24 13v3"/> <circle cx="24" cy="11" r="2"/> </symbol> <symbol id="i-conference" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"> <rect x="8" y="8" width="32" height="20" rx="2"/> <path d="M24 28v6M16 40l8-6 8 6M14 16h12M14 21h20"/> </symbol> <symbol id="i-stay" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"> <path d="M6 22L24 9l18 13"/> <path d="M10 19v21h28V19"/> <path d="M20 40V29h8v11"/> </symbol> <symbol id="i-lotus" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"> <path d="M24 10c5 5 5 15 0 22-5-7-5-17 0-22z"/> <path d="M24 32c-4-6-11-9-17-8 1 6 8 9 17 8zM24 32c4-6 11-9 17-8-1 6-8 9-17 8z"/> <path d="M10 38h28"/> </symbol> <symbol id="i-sun" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"> <path d="M12 32a12 12 0 0 1 24 0"/> <path d="M4 32h40M24 10v5M9 17l3.5 3.5M39 17l-3.5 3.5"/> <path d="M10 39h28" stroke-dasharray="2 4"/> </symbol> <symbol id="i-temple" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"> <path d="M24 4v4M20 8h8"/> <path d="M24 8c-4 4-9 8-9 14h18c0-6-5-10-9-14z"/> <path d="M11 22h26M13 22v18M35 22v18M8 40h32"/> <path d="M20 40v-9a4 4 0 0 1 8 0v9"/> </symbol> <symbol id="i-diya" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"> <path d="M24 10c3 4 4 7 4 9a4 4 0 0 1-8 0c0-2 1-5 4-9z"/> <path d="M8 28c4 7 10 10 16 10s12-3 16-10z"/> <path d="M18 42h12"/> </symbol> <symbol id="i-rings" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"> <circle cx="18" cy="29" r="10"/><circle cx="30" cy="29" r="10"/> <path d="M26 13l4-5 4 5-4 3z"/> </symbol> <symbol id="i-celebrate" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"> <path d="M8 42l8-22 12 12z"/> <path d="M22 16c2-3 2-6 0-9M30 22c4-1 7 0 10 3M27 12l3-3M36 16l4-1M34 7v3"/> </symbol> <symbol id="i-spa" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"> <path d="M6 30c6 0 8 6 18 6s12-6 18-6"/> <path d="M24 30c-6-4-8-10-6-18 5 3 7 9 6 18zM24 30c6-4 8-10 6-18-5 3-7 9-6 18z"/> </symbol> </defs></svg>
     <!-- ===== HEADER (shared, unchanged) ===== -->
     <header class="site-header" id="siteHeader">
         <div class="container header-inner">
@@ -51,14 +50,15 @@
                         </button>
                         <div class="dropdown" role="menu"><a href="stay.html#villas" role="menuitem">Villas</a><a href="stay.html#suites" role="menuitem">Suites</a><a href="stay.html#cottages" role="menuitem">Cottages</a></div>
                     </li>
-                    <li class="nav-item"><a href="offers.html" class="nav-link">Offers</a></li>
+                    <li class="nav-item"><a href="weddings.html" class="nav-link">Weddings</a></li>
                     <li class="nav-item">
                         <button class="nav-link" aria-haspopup="true" aria-expanded="false">
                             Events
                             <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6"/></svg>
                         </button>
-                        <div class="dropdown" role="menu"><a href="weddings.html" role="menuitem">Weddings</a><a href="corporate-mice.html" role="menuitem">Corporate &amp; MICE</a><a href="celebrations.html" role="menuitem">Celebrations</a><a href="yoga-meditation.html" role="menuitem">Yoga &amp; Meditation</a><a href="spiritual-gathering.html" role="menuitem">Spiritual Gathering</a></div>
-                    </li>
+                        <div class="dropdown" role="menu"><a href="corporate-mice.html" role="menuitem">Corporate &amp; MICE</a><a href="celebrations.html" role="menuitem">Celebrations</a><a href="yoga-meditation.html" role="menuitem">Yoga &amp; Meditation</a><a href="spiritual-gathering.html" role="menuitem">Spiritual Gathering</a></div>
+                    </li><li class="nav-item"><a href="offers.html" class="nav-link">Offers</a></li>
+                    
                     <li class="nav-item"><a href="dining.html" class="nav-link">Dining</a></li>
                     <li class="nav-item"><a href="facilities.html" class="nav-link">Facilities</a></li>
                     <li class="nav-item"><a href="explore.html" class="nav-link">Nearby</a></li>
@@ -67,12 +67,6 @@
             </nav>
 
             <div class="header-actions">
-                <a href="tel:+919819118832" class="icon-link" aria-label="Call Cloud 9 Hills Resort" data-track="call_click" data-track-loc="header">
-                    <svg viewBox="0 0 24 24" fill="none"><path d="M6 3h4l2 5-2.5 1.5a11 11 0 0 0 5 5L16 12l5 2v4a2 2 0 0 1-2 2C10.5 20 4 13.5 4 5a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
-                </a>
-                <a href="https://wa.me/919819739444" class="icon-link" target="_blank"  aria-label="Message on WhatsApp" data-track="whatsapp_click" data-track-loc="header">
-                    <svg viewBox="0 0 24 24" fill="none"><path d="M4 20l1.3-4A8 8 0 1 1 9 19l-5 1Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
-                </a>
                 <a href="https://www.swiftbook.io/inst/#home?propertyId=2647" class="btn btn-primary" data-track="book_now_click" data-track-loc="header">Book Your Stay</a>
             </div>
 
@@ -100,7 +94,6 @@
                     Events
                     <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6"/></svg>
                 </div>
-                <div class="mobile-sub"><a href="weddings.html">Weddings</a><a href="corporate-mice.html">Corporate &amp; MICE</a><a href="celebrations.html">Celebrations</a><a href="yoga-meditation.html">Yoga &amp; Meditation</a><a href="spiritual-gathering.html">Spiritual Gathering</a></div>
             </li>
             <li><a href="dining.html" class="mobile-nav-link">Dining</a></li>
             <li><a href="facilities.html" class="mobile-nav-link">Facilities</a></li>
@@ -152,9 +145,9 @@
                         <h2 class="c9x-h2" id="s-temple-title">A temple <em>within the resort</em></h2>
                         <p class="c9x-lede">Begin the day with a quiet prayer at the mandir, or return to it at dusk as the lamps come on over the valley — a few steps from your room.</p>
                         <ul class="c9x-facts">
-                            <li><svg class="c9x-ico" aria-hidden="true" focusable="false"><use href="assets/inner/c9-icons.svg#i-temple"/></svg>On-site temple</li>
-                            <li><svg class="c9x-ico" aria-hidden="true" focusable="false"><use href="assets/inner/c9-icons.svg#i-lotus"/></svg>Buddha garden</li>
-                            <li><svg class="c9x-ico" aria-hidden="true" focusable="false"><use href="assets/inner/c9-icons.svg#i-diya"/></svg>Peaceful morning &amp; evening hours</li>
+                            <li><svg class="c9x-ico" aria-hidden="true" focusable="false"><use href="#i-temple"/></svg>On-site temple</li>
+                            <li><svg class="c9x-ico" aria-hidden="true" focusable="false"><use href="#i-lotus"/></svg>Buddha garden</li>
+                            <li><svg class="c9x-ico" aria-hidden="true" focusable="false"><use href="#i-diya"/></svg>Peaceful morning &amp; evening hours</li>
                         </ul>
                     </div>
                 </div>
@@ -200,10 +193,6 @@
             </div>
         </section>
 
-        <!-- ===== REELS ===== -->
-        <section class="c9x-sec c9x-sec--sand" id="reels" aria-label="Sacred Moments">
-            <reels-section category="spiritual-reels" heading="Sacred Moments" eyebrow="Reels" lede="Morning prayers, quiet gardens and the caves nearby."></reels-section>
-        </section>
 
         <!-- ===== CTA ===== -->
         <section class="c9x-cta" aria-labelledby="c9x-cta-title">
@@ -229,9 +218,7 @@
                 </a>
                 <p>A luxury hilltop retreat above the clouds in the Western Ghats — where the pace of the mountains sets the pace of your stay.</p>
                 <div class="footer-social">
-                    <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a>
-                    <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 9h3V6h-3a4 4 0 0 0-4 4v2H8v3h2v6h3v-6h3l1-3h-4v-2a1 1 0 0 1 1-1z"/></svg></a>
-                    <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="3"/><path d="M10 9l6 3-6 3z"/></svg></a>
+                    <a href="https://www.instagram.com/cloud9hillsresortlonavala/" aria-label="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a>
                 </div>
             </div>
             <div>
@@ -252,7 +239,7 @@
                     <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3h4l2 5-2.5 1.5a11 11 0 0 0 5 5L16 12l5 2v4a2 2 0 0 1-2 2C10.5 20 4 13.5 4 5a2 2 0 0 1 2-2Z"/></svg><a href="tel:+919819118832" data-track="call_click" data-track-loc="footer">+91 98191 18832</a></li>
                     <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 20l1.3-4A8 8 0 1 1 9 19l-5 1Z"/></svg><a href="https://wa.me/919819739444" data-track="whatsapp_click" data-track-loc="footer">WhatsApp Us</a></li>
                     <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16v16H4z"/><path d="M4 4l8 8 8-8"/></svg><a href="mailto:cloud9hillsresort@gmail.com">cloud9hillsresort@gmail.com</a></li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg><a href="https://www.google.com/maps/place/cloud9+resort+lonavala/data=!4m2!3m1!1s0x3be8036d92ca39c3:0xb1f563c3aa648187?sa=X&ved=1t:242&ictx=111" target="_blank" >4 km after Lion's Point, Village Jambhulne, Amby Valley City Road, Mulshi Taluka, Lonavala, Maharashtra 410401</a></li>
+                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg><a href="https://www.google.com/maps/place/cloud9+resort+lonavala/data=!4m2!3m1!1s0x3be8036d92ca39c3:0xb1f563c3aa648187?sa=X&ved=1t:242&ictx=111" target="_blank" rel="noopener">4 km after Lion's Point, Village Jambhulne, Amby Valley City Road, Mulshi Taluka, Lonavala, Maharashtra 410401</a></li>
                 </ul>
             </div>
         </div>
@@ -265,7 +252,7 @@
 
     <!-- ===== FLOATING CTAs ===== -->
     <div class="float-ctas">
-        <a href="https://wa.me/919819739444" class="float-btn float-whatsapp" target="_blank"  aria-label="WhatsApp us" data-track="whatsapp_click" data-track-loc="floating">
+        <a href="https://wa.me/919819739444" class="float-btn float-whatsapp" target="_blank"  aria-label="WhatsApp us" data-track="whatsapp_click" data-track-loc="floating" rel="noopener">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20l1.3-4A8 8 0 1 1 9 19l-5 1Z" /></svg>
         </a>
         <a href="tel:+919819118832" class="float-btn float-call" aria-label="Call the resort" data-track="call_click" data-track-loc="floating">
