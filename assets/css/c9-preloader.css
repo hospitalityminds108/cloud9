@@ -1,0 +1,188 @@
+/* =========================================================================
+   CLOUD 9 — once-per-session preloader
+   A dawn-in-the-hills scene (pure SVG + CSS, no video file) that resolves
+   into the Cloud 9 logo, then lifts away to reveal the page.
+   Everything is namespaced .c9pl-* / html.c9pl-on, so it cannot affect pages.
+   Markup is injected by assets/js/c9-preloader.js.
+   ========================================================================= */
+
+/* Instant cover while the scene is being inserted — avoids a flash of the page */
+html.c9pl-on { overflow: hidden; }
+html.c9pl-on::before {
+  content: '';
+  position: fixed; inset: 0;
+  z-index: 2147483000;
+  background: #0d2114;
+}
+
+.c9pl {
+  --pl-ease: cubic-bezier(.16, .84, .24, 1);
+  position: fixed; inset: 0;
+  z-index: 2147483001;
+  overflow: hidden;
+  background: #0d2114;
+  color: #fff;
+  clip-path: inset(0 0 0 0);
+  transition: clip-path 1s cubic-bezier(.77, 0, .18, 1);
+  -webkit-font-smoothing: antialiased;
+}
+.c9pl * { box-sizing: border-box; }
+
+/* ---------- scene ---------- */
+.c9pl__scene {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  display: block;
+  transform-origin: 50% 70%;
+  animation: c9plPush 5.2s linear both;        /* slow camera push-in */
+}
+@keyframes c9plPush { from { transform: scale(1.02); } to { transform: scale(1.1); } }
+
+.c9pl__sky { animation: c9plFade 1.2s ease-out both; }
+.c9pl__stars { animation: c9plStars 2.6s ease-out both; }
+@keyframes c9plStars { 0% { opacity: 0; } 20% { opacity: .9; } 100% { opacity: 0; } }
+
+.c9pl__sun { transform-box: fill-box; transform-origin: center; animation: c9plSun 3.4s var(--pl-ease) both; }
+@keyframes c9plSun { from { transform: translateY(170px); opacity: 0; } 30% { opacity: 1; } to { transform: translateY(0); opacity: 1; } }
+
+/* hill layers rise at different speeds = parallax */
+.c9pl__hill { animation: c9plRise 2.2s var(--pl-ease) both; }
+.c9pl__hill--1 { --y: 70px;  animation-delay: .05s; }
+.c9pl__hill--2 { --y: 110px; animation-delay: .15s; }
+.c9pl__hill--3 { --y: 160px; animation-delay: .28s; }
+.c9pl__hill--4 { --y: 220px; animation-delay: .42s; }
+.c9pl__hill--5 { --y: 290px; animation-delay: .58s; }
+@keyframes c9plRise { from { transform: translateY(var(--y, 120px)); opacity: 0; } 35% { opacity: 1; } to { transform: translateY(0); opacity: 1; } }
+
+/* drifting mist + clouds */
+.c9pl__mist { animation: c9plDrift 9s linear both, c9plFade 1.6s ease-out both; }
+.c9pl__mist--b { animation-duration: 12s, 1.6s; animation-direction: reverse, normal; }
+@keyframes c9plDrift { from { transform: translateX(-90px); } to { transform: translateX(90px); } }
+.c9pl__cloud { --o: .16; opacity: 0; animation: c9plCloud 9s linear both, c9plCloudIn 1.6s ease-out .3s both; }
+@keyframes c9plCloudIn { from { opacity: 0; } to { opacity: var(--o); } }
+.c9pl__cloud--b { --o: .11; animation-duration: 13s, 1.6s; }
+.c9pl__cloud--c { --o: .08; animation-duration: 16s, 1.6s; }
+@keyframes c9plCloud { from { transform: translateX(-60px); } to { transform: translateX(120px); } }
+
+/* birds */
+.c9pl__birds { animation: c9plBirds 6.5s linear .5s both; }
+@keyframes c9plBirds { from { transform: translate(-80px, 30px); opacity: 0; } 12% { opacity: .75; } 85% { opacity: .75; } to { transform: translate(520px, -70px); opacity: 0; } }
+.c9pl__birds path { transform-box: fill-box; transform-origin: center; animation: c9plFlap .5s ease-in-out infinite alternate; }
+.c9pl__birds path:nth-child(2) { animation-delay: .15s; }
+.c9pl__birds path:nth-child(3) { animation-delay: .3s; }
+@keyframes c9plFlap { from { transform: scaleY(1); } to { transform: scaleY(.45); } }
+
+/* resort: windows light up one by one */
+.c9pl__win { opacity: 0; animation: c9plLight .5s ease-out both; }
+.c9pl__win:nth-of-type(1) { animation-delay: 1.35s; }
+.c9pl__win:nth-of-type(2) { animation-delay: 1.5s; }
+.c9pl__win:nth-of-type(3) { animation-delay: 1.62s; }
+.c9pl__win:nth-of-type(4) { animation-delay: 1.75s; }
+.c9pl__win:nth-of-type(5) { animation-delay: 1.86s; }
+.c9pl__win:nth-of-type(6) { animation-delay: 1.98s; }
+.c9pl__win:nth-of-type(7) { animation-delay: 2.08s; }
+.c9pl__win:nth-of-type(8) { animation-delay: 2.2s; }
+@keyframes c9plLight { from { opacity: 0; } 60% { opacity: 1; } 80% { opacity: .75; } to { opacity: 1; } }
+
+/* soft vignette + veil that settles behind the logo */
+.c9pl__veil {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(70% 62% at 50% 46%, rgba(9, 24, 14, .86) 0%, rgba(9, 24, 14, .62) 45%, rgba(9, 24, 14, .34) 100%),
+    linear-gradient(180deg, rgba(9, 24, 14, .45) 0%, rgba(9, 24, 14, .1) 45%, rgba(9, 24, 14, .5) 100%);
+  opacity: 0;
+  animation: c9plFade 1.4s ease-out 1.45s both;
+}
+@keyframes c9plFade { from { opacity: 0; } to { opacity: 1; } }
+
+/* ---------- logo ---------- */
+.c9pl__brand {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 24px;
+  text-align: center;
+  transform: translateY(-3%);
+}
+.c9pl__logo {
+  width: min(460px, 68vw);
+  height: auto;
+  display: block;
+  opacity: 0;
+  filter: drop-shadow(0 6px 26px rgba(0, 0, 0, .35));
+  animation: c9plLogo 1.5s var(--pl-ease) 1.75s both;
+}
+@keyframes c9plLogo {
+  from { opacity: 0; transform: translateY(18px) scale(.94); filter: blur(8px) drop-shadow(0 6px 26px rgba(0, 0, 0, .35)); }
+  to   { opacity: 1; transform: none; filter: blur(0) drop-shadow(0 6px 26px rgba(0, 0, 0, .35)); }
+}
+.c9pl__rule {
+  width: 140px; height: 1px;
+  margin: 2px 0 18px;
+  background: linear-gradient(90deg, rgba(230, 213, 192, 0), #E6D5C0 50%, rgba(230, 213, 192, 0));
+  transform: scaleX(0);
+  animation: c9plRule 1.1s var(--pl-ease) 2.35s both;
+}
+@keyframes c9plRule { to { transform: scaleX(1); } }
+.c9pl__tag {
+  margin: 0;
+  font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+  font-size: clamp(10px, 1.1vw, 12px);
+  font-weight: 500;
+  letter-spacing: .46em;
+  text-indent: .46em;
+  text-transform: uppercase;
+  color: #E6D5C0;
+  opacity: 0;
+  animation: c9plTag 1.1s var(--pl-ease) 2.55s both;
+}
+@keyframes c9plTag { from { opacity: 0; letter-spacing: .7em; } to { opacity: .95; letter-spacing: .46em; } }
+
+/* progress hairline */
+.c9pl__bar {
+  position: absolute; left: 50%; bottom: clamp(36px, 7vh, 64px);
+  width: min(180px, 40vw); height: 2px;
+  margin-left: calc(min(180px, 40vw) / -2);
+  background: rgba(230, 213, 192, .18);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.c9pl__bar i {
+  display: block; height: 100%;
+  background: #B89B72;
+  transform-origin: left;
+  transform: scaleX(0);
+  animation: c9plBar 3.6s cubic-bezier(.3, .1, .2, 1) .1s both;
+}
+@keyframes c9plBar { to { transform: scaleX(1); } }
+
+/* skip */
+.c9pl__skip {
+  position: absolute; right: clamp(16px, 3vw, 32px); bottom: clamp(26px, 6vh, 54px);
+  padding: 10px 14px;
+  font: 500 10.5px/1 'Montserrat', Helvetica, Arial, sans-serif;
+  letter-spacing: .28em; text-transform: uppercase;
+  color: rgba(230, 213, 192, .75);
+  background: none; border: 0; cursor: pointer;
+  opacity: 0;
+  animation: c9plFade .8s ease-out 1.2s both;
+}
+.c9pl__skip:hover, .c9pl__skip:focus-visible { color: #fff; outline: none; }
+
+/* ---------- exit: the scene lifts away ---------- */
+.c9pl.is-out { clip-path: inset(0 0 100% 0); pointer-events: none; }
+.c9pl.is-out .c9pl__brand { transition: transform 1s cubic-bezier(.77, 0, .18, 1), opacity .5s ease; transform: translateY(-14%); opacity: 0; }
+
+/* ---------- small screens ---------- */
+@media (max-width: 600px) {
+  .c9pl__logo { width: min(300px, 76vw); }
+  .c9pl__skip { right: 50%; transform: translateX(50%); bottom: 14px; }
+}
+
+/* ---------- reduced motion: no moving scene, just a calm logo fade ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .c9pl, .c9pl * { animation: none !important; transition: opacity .3s ease !important; }
+  .c9pl__logo, .c9pl__tag, .c9pl__veil, .c9pl__skip, .c9pl__win { opacity: 1 !important; }
+  .c9pl__rule { transform: none !important; }
+  .c9pl__bar { display: none; }
+  .c9pl.is-out { clip-path: none; opacity: 0; }
+}

@@ -17,14 +17,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css">
     <script src="main.js" defer></script>
+    <!-- Once-per-session preloader (dawn in the hills → Cloud 9 logo) -->
+    <link rel="stylesheet" href="assets/css/c9-preloader.css">
+    <script src="assets/js/c9-preloader.js"></script>
 </head>
 <body class="has-custom-cursor">
       <!-- ===== HEADER ===== -->
     <header class="site-header" id="siteHeader">
         <div class="container header-inner">
             <a href="index.html" class="logo">
-                <img src="assets/logos.png" alt="Cloud 9 Hills Resort Logo" class="logo-img logo-main" />
-                <img src="assets/logoo.png" alt="Cloud 9 Hills Resort Logo" class="logo-img logo-sticky" />
+                <img src="assets/logos.webp" alt="Cloud 9 Hills Resort Logo" class="logo-img logo-main" />
+                <img src="assets/logoo.webp" alt="Cloud 9 Hills Resort Logo" class="logo-img logo-sticky" />
             </a>
 
             <nav class="main-nav" aria-label="Primary">
@@ -98,7 +101,7 @@
         <section class="detail-hero">
             <div class="slider-container" data-autoplay="4500">
                 <div class="slider-track">
-                    <div class="slide active"><img class="ph-img" src="assets/img/all-images-view-from-duplex-1-1600.webp" srcset="assets/img/all-images-view-from-duplex-1-800.webp 800w, assets/img/all-images-view-from-duplex-1-1600.webp 1600w, assets/img/all-images-view-from-duplex-1-2400.webp 2400w" sizes="100vw" alt="Cloud 9 Hills Resort journal" loading="lazy" onerror="this.remove()" /></div>
+                    <div class="slide active"><img class="ph-img" src="assets/img/all-images-view-from-duplex-1-1600.webp" srcset="assets/img/all-images-view-from-duplex-1-800.webp 800w, assets/img/all-images-view-from-duplex-1-1600.webp 1600w, assets/img/all-images-view-from-duplex-1-2400.webp 2400w" sizes="100vw" alt="Cloud 9 Hills Resort journal" loading="eager" fetchpriority="high" onerror="this.remove()" /></div>
                     <div class="slide"><img class="ph-img" src="assets/img/assets-image-lohagad-1600.webp" srcset="assets/img/assets-image-lohagad-800.webp 800w, assets/img/assets-image-lohagad-1408.webp 1408w, assets/img/assets-image-lohagad-1600.webp 1600w" sizes="100vw" alt="Misty Sahyadri hills near Lonavala" loading="lazy" onerror="this.remove()" /></div>
                 </div>
             </div>
@@ -227,7 +230,7 @@
         <div class="container footer-grid">
             <div class="footer-brand">
                 <a href="index.html" class="logo">
-                    <img src="assets/logos.png" alt="Cloud 9 Hills Resort Logo" class="logo-img" />
+                    <img src="assets/logos.webp" alt="Cloud 9 Hills Resort Logo" class="logo-img" />
                 </a>
                 <p>A luxury hilltop retreat above the clouds in the Western Ghats — where the pace of the mountains sets the pace of your stay.</p>
                 <div class="footer-social">

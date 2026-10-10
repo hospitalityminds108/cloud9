@@ -36,14 +36,17 @@
         }
         .enquiry-form-wrap button { width: 100%; border: none; cursor: pointer; margin-top: 6px; }
     </style>
+    <!-- Once-per-session preloader (dawn in the hills → Cloud 9 logo) -->
+    <link rel="stylesheet" href="assets/css/c9-preloader.css">
+    <script src="assets/js/c9-preloader.js"></script>
 </head>
 <body class="has-custom-cursor">
       <!-- ===== HEADER ===== -->
     <header class="site-header" id="siteHeader">
         <div class="container header-inner">
             <a href="index.html" class="logo">
-                <img src="assets/logos.png" alt="Cloud 9 Hills Resort Logo" class="logo-img logo-main" />
-                <img src="assets/logoo.png" alt="Cloud 9 Hills Resort Logo" class="logo-img logo-sticky" />
+                <img src="assets/logos.webp" alt="Cloud 9 Hills Resort Logo" class="logo-img logo-main" />
+                <img src="assets/logoo.webp" alt="Cloud 9 Hills Resort Logo" class="logo-img logo-sticky" />
             </a>
 
             <nav class="main-nav" aria-label="Primary">
@@ -117,7 +120,7 @@
         <section class="detail-hero" style="height:88vh;min-height:600px;">
             <div class="slider-container" data-autoplay="4500">
                 <div class="slider-track">
-                    <div class="slide active"><img class="ph-img" src="assets/img/wedding-kar-9932-1600.webp" srcset="assets/img/wedding-kar-9932-800.webp 800w, assets/img/wedding-kar-9932-1600.webp 1600w, assets/img/wedding-kar-9932-2400.webp 2400w" sizes="100vw" alt="Celebrations at Cloud 9 Hills Resort" loading="lazy" onerror="this.remove()" /></div>
+                    <div class="slide active"><img class="ph-img" src="assets/img/wedding-kar-9932-1600.webp" srcset="assets/img/wedding-kar-9932-800.webp 800w, assets/img/wedding-kar-9932-1600.webp 1600w, assets/img/wedding-kar-9932-2400.webp 2400w" sizes="100vw" alt="Celebrations at Cloud 9 Hills Resort" loading="eager" fetchpriority="high" onerror="this.remove()" /></div>
                     <div class="slide"><img class="ph-img" src="assets/img/wedding-kar-0009-1600.webp" srcset="assets/img/wedding-kar-0009-800.webp 800w, assets/img/wedding-kar-0009-1600.webp 1600w, assets/img/wedding-kar-0009-2400.webp 2400w" sizes="100vw" alt="Wedding at Cloud 9" loading="lazy" onerror="this.remove()" /></div>
                 </div>
             </div>
@@ -278,7 +281,7 @@
         <div class="container footer-grid">
             <div class="footer-brand">
                 <a href="index.html" class="logo">
-                    <img src="assets/logos.png" alt="Cloud 9 Hills Resort Logo" class="logo-img" />
+                    <img src="assets/logos.webp" alt="Cloud 9 Hills Resort Logo" class="logo-img" />
                 </a>
                 <p>A luxury hilltop retreat above the clouds in the Western Ghats — where the pace of the mountains sets the pace of your stay.</p>
                 <div class="footer-social">
