@@ -1273,6 +1273,9 @@ if (expScroll) {
             var inDesktopHeader = a.closest('.main-nav') || a.closest('.header-actions');
             if (inDesktopHeader) return;
 
+            // Room / stay pages always open in the same tab
+            if (/(^|\/)(stay|[346]-bedroom-luxury-villa|aranya-honeymoon-suite|deluxe-cottage|deluxe-suite|family-deluxe-cottage|hill-top-deluxe-cottage|hill-top-suite|premium-suite)\.html/i.test(href)) return;
+
             // Avoid duplicate target attr
             if (a.getAttribute('target')) return;
 
@@ -1452,7 +1455,7 @@ if (expScroll) {
     /* ---------- INIT ---------- */
     function init() {
         setActiveNav();
-        makeInternalLinksOpenNewTab();
+        // Internal links stay in the same tab (makeInternalLinksOpenNewTab is no longer called)
         enhanceForms();
         mobileNavPolish();
     }
