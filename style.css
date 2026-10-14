@@ -7946,3 +7946,36 @@ form .btn-primary {
     .detail-hero-content h1 { padding-right: 48px; }
     .detail-breadcrumb { flex-wrap: wrap; row-gap: 4px; }
 }
+
+/* ============================================================
+   BRIGHT CARD PHOTOS - stronger scrim so the card title stays readable.
+   Opt-in: add "is-bright" to .acc-card-media / .stay-card-media.
+   ============================================================ */
+.acc-card-media.is-bright::after,
+.stay-card-media.is-bright::after {
+    background: linear-gradient(180deg, rgba(16, 39, 25, 0) 28%, rgba(16, 39, 25, .58) 62%, rgba(16, 39, 25, .9));
+}
+.acc-card-media.is-bright .acc-card-title h3,
+.stay-card-media.is-bright .stay-card-title h3 {
+    text-shadow: 0 1px 10px rgba(10, 26, 16, .55);
+}
+
+/* ============================================================
+   4-PHOTO ROOM GALLERY - keep two columns of two.
+   Column balancing could otherwise flip to 1-2-1 at some widths
+   (sub-pixel height differences between photos).
+   ============================================================ */
+.detail-gallery figure:nth-child(2):nth-last-child(3) {
+    break-after: column;
+}
+
+/* ============================================================
+   7-PHOTO ROOM GALLERY - fill the three desktop columns 3-2-2
+   (default column filling gives 3-3-1). Phones keep two columns.
+   ============================================================ */
+@media (min-width: 761px) {
+    .detail-gallery figure:nth-child(3):nth-last-child(5),
+    .detail-gallery figure:nth-child(5):nth-last-child(3) {
+        break-after: column;
+    }
+}

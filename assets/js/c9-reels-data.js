@@ -43,7 +43,6 @@ window.C9_REELS = {
   'yoga-reels': [
     { tag: 'Sunrise', title: 'First light on the ridge', poster: 'assets/img/all-images-view-from-hill-top-dc-800.webp', src: '' },
     { tag: 'Stillness', title: 'The Buddha garden', poster: 'assets/img/all-images-gautam-buddha-images-800.webp', src: '' },
-    { tag: 'Restore', title: 'An hour at the spa', poster: 'assets/img/all-images-spa-3-800.webp', src: '' },
     { tag: 'Slow evenings', title: 'Tea at the sunset point', poster: 'assets/img/all-images-coffee-sunset-point-800.webp', src: '' }
   ],
   'spiritual-reels': [

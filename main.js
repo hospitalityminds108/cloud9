@@ -817,14 +817,9 @@ if (expScroll) {
 
                 currentIndex = index;
 
-                var offset = 0;
-                var gap = 28;
-                var slideWidth = getSlideWidth();
-
-                // Calculate offset
-                for (var i = 0; i < index; i++) {
-                    offset += slideWidth + gap;
-                }
+                // Offset = real position of the target slide. The CSS gap changes per
+                // breakpoint (24px / 16px), so measuring avoids the drift a fixed gap caused.
+                var offset = slides[index].offsetLeft - slides[0].offsetLeft;
 
                 // Apply transform
                 if (animate) {
