@@ -2,19 +2,111 @@
   "headers": [
     {
       "source": "/assets/img/(.*)",
-      "headers": [{ "key": "Cache-Control", "value": "public, max-age=2592000, stale-while-revalidate=86400" }]
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=2592000, stale-while-revalidate=86400"
+        }
+      ]
     },
     {
       "source": "/assets/videos/(.*)",
-      "headers": [{ "key": "Cache-Control", "value": "public, max-age=2592000, stale-while-revalidate=86400" }]
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=2592000, stale-while-revalidate=86400"
+        }
+      ]
     },
     {
       "source": "/(.*)\\.(webp|png|jpg|jpeg|svg|ico|mp4|woff2)",
-      "headers": [{ "key": "Cache-Control", "value": "public, max-age=604800, stale-while-revalidate=86400" }]
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=604800, stale-while-revalidate=86400"
+        }
+      ]
     },
     {
       "source": "/(.*)\\.(css|js)",
-      "headers": [{ "key": "Cache-Control", "value": "public, max-age=3600, stale-while-revalidate=86400" }]
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, stale-while-revalidate=86400"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/index.php",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/cottages.php",
+      "destination": "/stay.html",
+      "permanent": true
+    },
+    {
+      "source": "/bunglows.php",
+      "destination": "/stay.html",
+      "permanent": true
+    },
+    {
+      "source": "/villas.php",
+      "destination": "/stay.html",
+      "permanent": true
+    },
+    {
+      "source": "/spa.php",
+      "destination": "/stay.html",
+      "permanent": true
+    },
+    {
+      "source": "/deals.php",
+      "destination": "/offers.html",
+      "permanent": true
+    },
+    {
+      "source": "/meetings.php",
+      "destination": "/corporate-mice.html",
+      "permanent": true
+    },
+    {
+      "source": "/weddings.php",
+      "destination": "/weddings.html",
+      "permanent": true
+    },
+    {
+      "source": "/picnics.php",
+      "destination": "/explore.html",
+      "permanent": true
+    },
+    {
+      "source": "/yoga.php",
+      "destination": "/yoga-meditation.html",
+      "permanent": true
+    },
+    {
+      "source": "/reservation.php",
+      "destination": "/contact.html",
+      "permanent": true
+    },
+    {
+      "source": "/gallery.php",
+      "destination": "/gallery.html",
+      "permanent": true
+    },
+    {
+      "source": "/contact-us.php",
+      "destination": "/contact.html",
+      "permanent": true
+    },
+    {
+      "source": "/dining.php",
+      "destination": "/dining.html",
+      "permanent": true
     }
   ]
 }
