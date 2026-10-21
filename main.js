@@ -444,17 +444,39 @@ sliders.forEach(slider => {
 const expScroll = document.querySelector('.exp-scroll');
 if (expScroll) {
     let scrollPos = 0;
-    const scrollSpeed = 1; // Adjust for speed (pixels per frame)
-    
+    let paused = false;
+    let resumeTimer = null;
+    const scrollSpeed = 1; // pixels per frame
+    const isTouch = window.matchMedia('(hover: none), (pointer: coarse)').matches;
+
+    // Stop auto-scroll while the user is touching/dragging/scrolling, resume afterwards
+    function pauseAuto() {
+        paused = true;
+        clearTimeout(resumeTimer);
+    }
+    function resumeAuto(delay) {
+        clearTimeout(resumeTimer);
+        resumeTimer = setTimeout(function () {
+            scrollPos = expScroll.scrollLeft;
+            paused = false;
+        }, delay);
+    }
+    ['touchstart', 'pointerdown', 'wheel'].forEach(function (ev) {
+        expScroll.addEventListener(ev, pauseAuto, { passive: true });
+    });
+    ['touchend', 'touchcancel', 'pointerup'].forEach(function (ev) {
+        expScroll.addEventListener(ev, function () { resumeAuto(4000); }, { passive: true });
+    });
+    expScroll.addEventListener('wheel', function () { resumeAuto(4000); }, { passive: true });
+
     function autoScrollReels() {
-        // Check if not hovered
-        if (!expScroll.matches(':hover')) {
+        if (!paused && !isTouch && !expScroll.matches(':hover')) {
             scrollPos += scrollSpeed;
             const maxScroll = expScroll.scrollWidth - expScroll.clientWidth;
             if (scrollPos >= maxScroll) {
                 scrollPos = 0;
             }
-            expScroll.scrollTo({ left: scrollPos, behavior: 'smooth' });
+            expScroll.scrollLeft = scrollPos;
         }
         requestAnimationFrame(autoScrollReels);
     }
@@ -1620,7 +1642,7 @@ window.CLOUD9_REVIEWS = {
     rating: 4.1,
     count: 2900,
     suffix: "+",
-    updated: "2025-06-01",
+    updated: "2026-09-01",
     url: "https://www.google.com/travel/search?q=cloud%209%20hills%20resort%20lonavala%20reviews&g2lb=4899568%2C4899569%2C4965990%2C72471280%2C72560029%2C72573224%2C72647020%2C72686036%2C72803964%2C72882230%2C73064764%2C121529350%2C121608706%2C121738283%2C121762713&hl=en-IN&gl=in&ssta=1&ts=CAEaRwopEicyJTB4M2JlODAzNmQ5MmNhMzljMzoweGIxZjU2M2MzYWE2NDgxODcSGhIUCgcI6g8QCBgUEgcI6g8QCBgVGAEyAhAA&qs=CAEyFENnc0loNE9TMDdyNDJQcXhBUkFCOAJCCQmHgWSqw2P1sUIJCYeBZKrDY_Wx&ap=ugEHcmV2aWV3cw&ictx=111&ved=0CAAQ5JsGahcKEwjoiqbYquiWAxUAAAAAHQAAAAAQAw"
   },
 
@@ -1629,7 +1651,7 @@ window.CLOUD9_REVIEWS = {
     rating: 4.4,
     count: 575,
     suffix: "+",
-    updated: "2025-06-01",
+    updated: "2026-09-01",
     url: "https://www.tripadvisor.in/Hotel_Review-g608474-d1157903-Reviews-Cloud_9_Hills_Resort-Lonavala_Pune_District_Maharashtra.html"
   },
 

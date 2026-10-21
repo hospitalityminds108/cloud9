@@ -1000,6 +1000,9 @@
             gap: 20px;
         }
         .exp-scroll {
+            -webkit-overflow-scrolling: touch;
+            overscroll-behavior-x: contain;
+            touch-action: pan-x pan-y;
             display: flex;
             gap: 24px;
             overflow-x: auto;
@@ -4936,8 +4939,8 @@ form .btn-primary {
 }
 .gs-plat-note{
   margin:4px 0 0;
-  font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;
-  color:rgba(245,245,242,.42);
+  font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;
+  color:rgba(245,245,242,.75);
 }
 .gs-plat-score{
   display:flex;align-items:center;gap:16px;
@@ -5447,9 +5450,19 @@ form .btn-primary {
   .c9-exp-title{white-space:normal;}
   .c9-exp-desc{opacity:1;transform:none;}
   .c9-exp-features{opacity:1;transform:none;}
-  .c9-exp-bg img{filter:saturate(.95) brightness(.78);transform:scale(1.02);}
+  .c9-exp-bg img{filter:saturate(.95) brightness(.62);transform:scale(1.02);}
   .c9-exp-panel::after{transform:scaleX(1);}
   .c9-exp-hint{display:block;}
+  /* readability on mobile: darker veil, larger, brighter text */
+  .c9-exp-veil,
+  .c9-exp-panel.is-active .c9-exp-veil{
+    background:linear-gradient(180deg,rgba(10,22,10,.35) 0%,rgba(10,22,10,.72) 45%,rgba(10,22,10,.94) 100%);
+  }
+  .c9-exp-title{font-size:1.6rem;line-height:1.15;text-shadow:0 2px 12px rgba(0,0,0,.6);}
+  .c9-exp-desc{font-size:1rem;line-height:1.65;font-weight:400;color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.6);}
+  .c9-exp-features span{font-size:.72rem;letter-spacing:.12em;padding:7px 14px;color:#fff;border-color:rgba(255,255,255,.6);background:rgba(0,0,0,.35);}
+  .c9-exp-hint{font-size:.78rem;}
+  .c9-exp-num{font-size:.9rem;}
 }
 
 @media (max-width:430px){
